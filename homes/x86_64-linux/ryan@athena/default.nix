@@ -9,6 +9,7 @@ with lib;
 with lib.${namespace}; {
   snowfallorg.user.enable = true;
   zeus = {
+    bundles.common = enabled;
     config = {
       user = {
         username = "ryan";
@@ -21,9 +22,6 @@ with lib.${namespace}; {
         enable = true;
         username = "Ryan Wüest";
       };
-      zsh = enabled;
-      neovim = enabled;
-      brave = enabled;
     };
     misc = {xdg = enabled;};
   };

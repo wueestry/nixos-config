@@ -14,5 +14,23 @@ in {
     enable = mkBoolOpt false "Whether or not to configure printing support.";
   };
 
-  config = mkIf cfg.enable {services.printing.enable = true;};
+  config = mkIf cfg.enable {
+    services = {
+      avahi = { # Needed to find wireless printer
+        enable = true;
+
+        nssmdns = true;
+        publish = { # Needed for detecting the scanner
+          enable = true;
+
+          addresses = true;
+          userServices = true;
+        };
+      };
+      printing = {
+        enable = true;
+        drivers = [ pkgs.cnijfilter2 ];
+      };
+    };
+  };
 }
