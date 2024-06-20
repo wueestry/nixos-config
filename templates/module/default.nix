@@ -10,7 +10,7 @@ with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.module;
 in {
-  options.module = with types; {
+  options.${namespace}.module = with types; {
     enable = mkBoolOpt false "Enable module";
   };
 
