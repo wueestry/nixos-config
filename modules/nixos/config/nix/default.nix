@@ -15,7 +15,7 @@ in {
       nix-index
       nix-output-monitor
       nix-prefetch-git
-      nixfmt
+      nixfmt-rfc-style
     ];
     nix = let users = [ "root" user.name ];
     in {

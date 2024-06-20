@@ -11,7 +11,7 @@
 
     # Home Manager (release-24.05)
     home-manager = {
-      url = "github:nix-community/home-manager/master/release-24.05";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -60,7 +60,7 @@
       systems.modules.nixos = with inputs; [];
 
       systems.hosts.athena.modules = with inputs; [
-        nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia
+       # nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia
       ];
 
       templates = import ./templates {};

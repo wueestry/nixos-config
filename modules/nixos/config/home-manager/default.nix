@@ -8,7 +8,7 @@ in {
   };
 
   config = {
-    snowfallorg.user.${config.${namespace}.config.user.name}.home.config =
+    snowfallorg.users.${config.${namespace}.config.user.name}.home.config =
       config.${namespace}.programs.home-manager.extraOptions;
     home-manager = {
       useUserPackages = true;

@@ -1,9 +1,9 @@
 { config, lib, namespace, ... }:
 with lib;
 with lib.${namespace};
-let cfg = config.${namespace}.config.xkb.xkb-ch;
+let cfg = config.${namespace}.system.xkb.xkb-ch;
 in {
-  options.${namespace}.config.xkb.xkb-ch = {
+  options.${namespace}.system.xkb.xkb-ch = {
     enable = mkBoolOpt false "${namespace}.config.xkb.xkb-ch.enable";
   };
 

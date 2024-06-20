@@ -1,6 +1,7 @@
 { config, lib, osConfig, namespace, ... }:
 with lib;
 with lib.${namespace}; {
+    snowfallorg.user.enable = true;
     zeus = {
     config = {
         user = {
@@ -15,6 +16,8 @@ with lib.${namespace}; {
         username = "Ryan Wüest";
       };
       zsh = enabled;
+      neovim = enabled;
+      brave = enabled;
     };
     misc = { xdg = enabled; };
   };

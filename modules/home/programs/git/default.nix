@@ -3,7 +3,7 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.programs.git;
-  home = config.${namespace}.config.home;
+  home = config.${namespace}.config.user;
 in {
   options.${namespace}.programs.git = with types; {
     enable = mkBoolOpt false "${namespace}.programs.git.enable";

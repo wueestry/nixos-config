@@ -1,9 +1,9 @@
 { config, lib, namespace, ... }:
 with lib;
 with lib.${namespace};
-let cfg = config.${namespace}.config.locale;
+let cfg = config.${namespace}.system.locale;
 in {
-  options.${namespace}.config.locale = {
+  options.${namespace}.system.locale = {
     enable = mkBoolOpt false "${namespace}.config.locale.enable";
   };
 

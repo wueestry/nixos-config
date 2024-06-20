@@ -14,9 +14,10 @@ with lib.${namespace}; {
     config = {
         user.name = "ryan";
     };
-    bundles = {
+     bundles = {
       common = enabled;
     };
+    desktop.kde = enabled;
     programs = {
         nh = enabled;
         nix-ld = enabled;
@@ -32,5 +33,5 @@ with lib.${namespace}; {
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.04";
+  system.stateVersion = "24.05";
 }

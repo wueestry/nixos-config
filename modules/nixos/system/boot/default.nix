@@ -15,7 +15,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    boot.loader. = {
+    boot.loader = {
         systemd-boot = {
             enable = true;
 
