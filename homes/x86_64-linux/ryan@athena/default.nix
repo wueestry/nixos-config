@@ -1,13 +1,19 @@
-{ config, lib, osConfig, namespace, ... }:
+{
+  config,
+  lib,
+  osConfig,
+  namespace,
+  ...
+}:
 with lib;
 with lib.${namespace}; {
-    snowfallorg.user.enable = true;
-    zeus = {
+  snowfallorg.user.enable = true;
+  zeus = {
     config = {
-        user = {
-            username = "ryan";
-            useremail = "ryan.wueest@protonmail.com";
-        };
+      user = {
+        username = "ryan";
+        useremail = "ryan.wueest@protonmail.com";
+      };
     };
 
     programs = {
@@ -19,7 +25,7 @@ with lib.${namespace}; {
       neovim = enabled;
       brave = enabled;
     };
-    misc = { xdg = enabled; };
+    misc = {xdg = enabled;};
   };
 
   # This value determines the Home Manager release that your

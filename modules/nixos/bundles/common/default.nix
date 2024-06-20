@@ -17,7 +17,7 @@ in {
   config = mkIf cfg.enable {
     zeus = {
       config.nix = enabled;
-    
+
       hardware = {
         audio = enabled;
         networking = enabled;

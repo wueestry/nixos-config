@@ -1,7 +1,11 @@
-{ config, lib, namespace,... }:
+{
+  config,
+  lib,
+  namespace,
+  ...
+}:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.git;
   home = config.${namespace}.config.user;
 in {

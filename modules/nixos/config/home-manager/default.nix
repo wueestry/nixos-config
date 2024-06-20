@@ -1,10 +1,15 @@
-{ config, lib, namespace, ... }:
+{
+  config,
+  lib,
+  namespace,
+  ...
+}:
 with lib;
-with lib.${namespace};
-let cfg = config.${namespace}.programs.home-manager;
+with lib.${namespace}; let
+  cfg = config.${namespace}.programs.home-manager;
 in {
   options.${namespace}.programs.home-manager = with types; {
-    extraOptions = mkOpt attrs { } "${namespace}.programs.home-manager.extraOptions";
+    extraOptions = mkOpt attrs {} "${namespace}.programs.home-manager.extraOptions";
   };
 
   config = {

@@ -1,7 +1,11 @@
-{ config, lib, namespace, ... }:
+{
+  config,
+  lib,
+  namespace,
+  ...
+}:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.nh;
   user = config.${namespace}.config.user;
 in {
@@ -11,8 +15,8 @@ in {
 
   config = mkIf cfg.enable {
     programs.nh = {
-        enable = true;
-        #flake = "~/.nixcfg";
+      enable = true;
+      #flake = "~/.nixcfg";
     };
   };
 }

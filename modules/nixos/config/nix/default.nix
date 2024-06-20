@@ -1,7 +1,12 @@
-{ config, lib, pkgs, namespace, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  namespace,
+  ...
+}:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.config.nix;
   user = config.${namespace}.config.user;
 in {
@@ -17,7 +22,8 @@ in {
       nix-prefetch-git
       nixfmt-rfc-style
     ];
-    nix = let users = [ "root" user.name ];
+    nix = let
+      users = ["root" user.name];
     in {
       package = pkgs.nixVersions.latest;
       gc = {

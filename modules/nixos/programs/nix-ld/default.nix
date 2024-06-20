@@ -1,7 +1,14 @@
-{ config, inputs, lib, pkgs, namespace, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  namespace,
+  ...
+}:
 with lib;
-with lib.${namespace};
-let cfg = config.${namespace}.programs.nix-ld;
+with lib.${namespace}; let
+  cfg = config.${namespace}.programs.nix-ld;
 in {
   options.${namespace}.programs.nix-ld = {
     enable = mkBoolOpt false "${namespace}.programs.nix-ld.enable";

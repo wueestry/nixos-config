@@ -1,7 +1,13 @@
-{ config, lib, pkgs, namespace, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  namespace,
+  ...
+}:
 with lib;
-with lib.${namespace};
-let cfg = config.${namespace}.config.user;
+with lib.${namespace}; let
+  cfg = config.${namespace}.config.user;
 in {
   options.${namespace}.config.user = with types; {
     name = mkOpt str "ryan" "${namespace}.config.user.name";

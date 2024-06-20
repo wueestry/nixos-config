@@ -1,7 +1,12 @@
-{ config, pkgs, lib, namespace, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  namespace,
+  ...
+}:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.neovim;
   toLua = str: ''
     lua << EOF
@@ -14,16 +19,16 @@ let
     EOF
   '';
 in {
-options.${namespace}.programs.neovim = {
-  enable = mkBoolOpt false "${namespace}.programs.neovim.enable";
-};
-config = mkIf cfg.enable {
-  programs.neovim = {
-    enable = true;
-
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
+  options.${namespace}.programs.neovim = {
+    enable = mkBoolOpt false "${namespace}.programs.neovim.enable";
   };
-};
+  config = mkIf cfg.enable {
+    programs.neovim = {
+      enable = true;
+
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+    };
+  };
 }

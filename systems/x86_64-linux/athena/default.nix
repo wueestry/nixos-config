@@ -12,18 +12,18 @@ with lib.${namespace}; {
 
   zeus = {
     config = {
-        user.name = "ryan";
+      user.name = "ryan";
     };
-     bundles = {
+    bundles = {
       common = enabled;
     };
     desktop.kde = enabled;
     programs = {
-        nh = enabled;
-        nix-ld = enabled;
+      nh = enabled;
+      nix-ld = enabled;
     };
     system = {
-        xkb.xkb-ch = enabled;
+      xkb.xkb-ch = enabled;
     };
   };
 
