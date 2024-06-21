@@ -9,7 +9,10 @@ with lib;
 with lib.${namespace}; {
   snowfallorg.user.enable = true;
   zeus = {
-    bundles.common = enabled;
+    bundles = {
+      common = enabled;
+      desktop = enabled;
+    };
     config = {
       user = {
         username = "ryan";

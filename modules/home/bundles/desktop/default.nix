@@ -17,7 +17,7 @@ in {
   config = mkIf cfg.enable {
     zeus = {
       programs = {
-        rofi
+        rofi = enabled;
       };
     };
   };
