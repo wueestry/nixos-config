@@ -16,11 +16,13 @@ in {
 
   config = mkIf cfg.enable {
     services = {
-      avahi = { # Needed to find wireless printer
+      avahi = {
+        # Needed to find wireless printer
         enable = true;
 
         nssmdns4 = true;
-        publish = { # Needed for detecting the scanner
+        publish = {
+          # Needed for detecting the scanner
           enable = true;
 
           addresses = true;
@@ -29,7 +31,7 @@ in {
       };
       printing = {
         enable = true;
-        drivers = [ pkgs.cnijfilter2 ];
+        drivers = [pkgs.cnijfilter2];
       };
     };
   };

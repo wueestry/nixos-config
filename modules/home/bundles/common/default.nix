@@ -15,6 +15,23 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      # Terminal
+      btop
+      coreutils
+      killall
+      tldr
+      wget
+
+      # Video/Audio
+      feh
+      mpv
+
+      # File Management
+      unrar
+      unzip
+      zip
+    ];
     zeus = {
       programs = {
         brave = enabled;

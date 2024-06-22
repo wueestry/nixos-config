@@ -10,6 +10,8 @@ with lib.${namespace}; {
     ./hardware.nix
   ];
 
+  networking.hostName = "athena";
+
   zeus = {
     config = {
       user.name = "ryan";
@@ -17,7 +19,7 @@ with lib.${namespace}; {
     bundles = {
       common = enabled;
     };
-    desktop.kde = enabled;
+    desktop.hyprland = enabled;
     programs = {
       nh = enabled;
       nix-ld = enabled;

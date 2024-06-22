@@ -14,12 +14,11 @@ in {
     enable = mkBoolOpt false "Enable bluetooth";
   };
 
-  config =
-    mkIf cfg.enable {
-      hardware.bluetooth = {
-        enable = true;
-        package = pkgs.bluez;
-        powerOnBoot = true;
-      };
+  config = mkIf cfg.enable {
+    hardware.bluetooth = {
+      enable = true;
+      package = pkgs.bluez;
+      powerOnBoot = true;
     };
+  };
 }

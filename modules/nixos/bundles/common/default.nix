@@ -15,6 +15,9 @@ in {
   };
 
   config = mkIf cfg.enable {
+    services = {
+      xserver.enable = true;
+    };
     zeus = {
       config.nix = enabled;
 

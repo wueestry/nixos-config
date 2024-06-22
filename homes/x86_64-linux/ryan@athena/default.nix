@@ -11,7 +11,7 @@ with lib.${namespace}; {
   zeus = {
     bundles = {
       common = enabled;
-      desktop = enabled;
+      desktop.hyprland = enabled;
     };
     config = {
       user = {

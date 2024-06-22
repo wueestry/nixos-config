@@ -18,14 +18,18 @@ in {
   config = mkIf cfg.enable {
     environment = {
       sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
-      systemPackages = with pkgs; [];
+      systemPackages = with pkgs; [
+        brightnessctl
+        networkmanagerapplet
+        playerctl
+      ];
     };
-    home = {
-      packages = with pkgs; [];
-      zeus = {
-        bundles.desktop = enabled;
-        programs.waybar = enabled;
-      };
+    programs.hyprland.enable = true;
+    services.xserver.displayManager.gdm = {
+      enable = true;
+      wayland = true;
     };
+
+    zeus.services.polkit-gnome = enabled;
   };
 }

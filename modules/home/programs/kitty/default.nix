@@ -14,19 +14,18 @@ in {
     enable = mkBoolOpt false "Enable kitty";
   };
 
-  config =
-    mkIf cfg.enable {
-      programs.kitty = {
-        enable = true;
-        font = {
-          name = "MesloLGS NF";
-          package = pkgs.meslo-lgs-nf;
-        };
-        theme = "Catppuccin-Mocha";
-        shellIntegration = {
-          mode = "enabled";
-          enableZshIntegration = true;
-        };
+  config = mkIf cfg.enable {
+    programs.kitty = {
+      enable = true;
+      font = {
+        name = "MesloLGS NF";
+        package = pkgs.meslo-lgs-nf;
+      };
+      theme = "Catppuccin-Mocha";
+      shellIntegration = {
+        mode = "enabled";
+        enableZshIntegration = true;
       };
     };
+  };
 }
