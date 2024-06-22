@@ -16,6 +16,7 @@ in {
 
   config = mkIf cfg.enable {
     zeus = {
+      desktop.hyprland = enabled;
       programs = {
         rofi = enabled;
       };
