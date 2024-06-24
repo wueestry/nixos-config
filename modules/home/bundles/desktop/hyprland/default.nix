@@ -29,6 +29,7 @@ in {
     zeus = {
       desktop.hyprland = enabled;
       programs = {
+        dolphin = enabled;
         rofi = enabled;
         waybar = enabled;
       };

@@ -16,6 +16,7 @@ in {
 
   config = mkIf cfg.enable {
     services = {
+      udisks2.enable = true; # Required for e-reader connections to calibre
       xserver.enable = true;
     };
     zeus = {

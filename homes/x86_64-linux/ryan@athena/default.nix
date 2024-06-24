@@ -12,6 +12,7 @@ with lib.${namespace}; {
     bundles = {
       common = enabled;
       desktop.hyprland = enabled;
+      office = enabled;
     };
     config = {
       user = {
