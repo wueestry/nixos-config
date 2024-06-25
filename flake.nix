@@ -8,6 +8,8 @@
     # NixPkgs Unstable (nixos-unstable)
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    ### Additional Inputs ###
+
     # Home Manager (release-24.05)
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -17,17 +19,19 @@
     # Hardware Configuration
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
+    # Run unpatched dynamically compiled binaries
+    nix-ld = {
+      url = "github:Mic92/nix-ld";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Snowfall Lib
     snowfall-lib = {
       url = "github:snowfallorg/lib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Run unpatched dynamically compiled binaries
-    nix-ld = {
-      url = "github:Mic92/nix-ld";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = inputs: let

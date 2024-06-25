@@ -37,7 +37,8 @@ in {
         brave = enabled;
         kitty = enabled;
         neovim = enabled;
-	starship = enabled;
+	      starship = enabled;
+        stylix = enabled;
         zsh = enabled;
       };
     };
