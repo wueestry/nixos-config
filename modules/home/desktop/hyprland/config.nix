@@ -129,7 +129,7 @@
           col.active_border = $red $pink 45deg
           col.inactive_border = $teal $sky 45deg
           layout = dwindle
-          no_cursor_warps = true
+          #no_cursor_warps = true
       }
 
       # █▀▄▀█ █ █▀ █▀▀
@@ -223,10 +223,10 @@
       preserve_split = yes # you probably want this
       }
 
-      master {
+      #master {
       # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-      new_is_master = true
-      }
+      #new_is_master = true
+      #}
 
 
       # █▀▀ █▀▀ █▀ ▀█▀ █░█ █▀█ █▀▀ █▀

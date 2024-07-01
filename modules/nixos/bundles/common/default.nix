@@ -27,6 +27,10 @@ in {
         networking = enabled;
       };
 
+      programs = {
+        stylix = enabled;
+      };
+
       services = {
         printing = enabled;
         tailscale = enabled;

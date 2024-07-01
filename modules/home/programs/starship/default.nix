@@ -14,17 +14,16 @@ in {
     enable = mkBoolOpt false "Enable starship";
   };
 
-  config =
-    mkIf cfg.enable {
+  config = mkIf cfg.enable {
     programs.starship = {
-	enable = true;
-	settings = {
-          character = {
-            success_symbol = "[➜](bold green)";
-            error_symbol = "[✗](bold red) ";
-            vicmd_symbol = "[](bold blue) ";
-          };
+      enable = true;
+      settings = {
+        character = {
+          success_symbol = "[➜](bold green)";
+          error_symbol = "[✗](bold red) ";
+          vicmd_symbol = "[](bold blue) ";
         };
+      };
     };
-    };
+  };
 }

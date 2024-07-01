@@ -24,7 +24,7 @@ in {
       wget
 
       # Video/Audio
-      feh
+      loupe
       mpv
 
       # File Management
@@ -37,8 +37,7 @@ in {
         brave = enabled;
         kitty = enabled;
         neovim = enabled;
-	      starship = enabled;
-        stylix = enabled;
+        powerlevel10k = enabled;
         zsh = enabled;
       };
     };

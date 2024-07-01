@@ -14,12 +14,12 @@ with lib.${namespace}; {
       desktop.hyprland = enabled;
       office = enabled;
     };
-    config = {
-      user = {
-        username = "ryan";
-        useremail = "ryan.wueest@protonmail.com";
-      };
-    };
+    #config = {
+    #  user = {
+    #    username = "ryan";
+    #    useremail = "ryan.wueest@protonmail.com";
+    #  };
+    #};
 
     programs = {
       git = {

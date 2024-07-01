@@ -11,8 +11,8 @@ with lib.${namespace}; let
 in {
   options.${namespace}.programs.git = with types; {
     enable = mkBoolOpt false "${namespace}.programs.git.enable";
-    username = mkOpt str home.username "${namespace}.programs.git.username";
-    useremail = mkOpt str home.useremail "${namespace}.programs.git.useremail";
+    username = mkOpt str home.fullName "${namespace}.programs.git.username";
+    useremail = mkOpt str home.email "${namespace}.programs.git.useremail";
   };
 
   config = mkIf cfg.enable {
