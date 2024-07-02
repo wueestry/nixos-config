@@ -8,18 +8,15 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
-  inherit (builtins) attrValues;
-
+with lib.${namespace}; 
+let
   cfg = config.${namespace}.programs.stylix;
 in {
   options.${namespace}.programs.stylix = with types; {
     enable = mkBoolOpt false "Enable stylix";
   };
 
-  imports = attrValues {
-    inherit (inputs.stylix.nixosModules) stylix;
-  };
+  imports = [inputs.stylix.homeManagerModules.stylix];
 
   config = mkIf cfg.enable {
     stylix = {
@@ -37,7 +34,8 @@ in {
 
       polarity = "dark";
       targets = {
-        #waybar.enable = false;
+        kitty.enable = false;
+        waybar.enable = false;
       };
     };
   };
