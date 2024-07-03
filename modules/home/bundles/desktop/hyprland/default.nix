@@ -15,23 +15,31 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      blueman
-      pamixer
-      slurp
-      swappy
-      swaybg
+    home.packages = with pkgs; with gnome; [
+      adwaita-icon-theme
+      brightnessctl
+      gnome-system-monitor
+      gnome-control-center
+      morewaita-icon-theme
+      
+      pavucontrol
+      swww
 
+      qogir-icon-theme
+
+      wayshot
       wl-clipboard
-      wlogout
-      wlr-randr
+      wl-gammactl
     ];
+    
     zeus = {
       desktop.hyprland = enabled;
       programs = {
-        dolphin = enabled;
-        rofi = enabled;
-        waybar = enabled;
+        nautilus = enabled;
+        ags = enabled;
+        #dolphin = enabled;
+        #rofi = enabled;
+        #waybar = enabled;
       };
     };
   };

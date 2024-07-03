@@ -24,8 +24,8 @@ in {
       wget
 
       # Video/Audio
+      celluloid
       loupe
-      mpv
 
       # File Management
       unrar

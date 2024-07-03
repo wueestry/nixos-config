@@ -17,7 +17,10 @@ in {
   config = mkIf cfg.enable {
     services = {
       udisks2.enable = true; # Required for e-reader connections to calibre
-      xserver.enable = true;
+      xserver = {
+        enable = true;
+        excludePackages = [ pkgs.xterm ];
+      };
     };
     zeus = {
       config.nix = enabled;
@@ -25,10 +28,6 @@ in {
       hardware = {
         audio = enabled;
         networking = enabled;
-      };
-
-      programs = {
-        stylix = enabled;
       };
 
       services = {

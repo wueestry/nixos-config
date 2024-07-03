@@ -21,7 +21,11 @@ in {
 
     programs.seahorse.enable = true;
 
-    security.pam.services.gdm.enableGnomeKeyring = true;
+    security = {
+      #pam.services.gdm.enableGnomeKeyring = true;
+      polkit.enable = true;
+      pam.services.ags = {};
+    };
 
     services.gnome.gnome-keyring.enable = true;
   };

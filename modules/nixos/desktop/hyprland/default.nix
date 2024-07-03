@@ -18,18 +18,56 @@ in {
   config = mkIf cfg.enable {
     environment = {
       sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
-      systemPackages = with pkgs; [
-        brightnessctl
-        networkmanagerapplet
-        playerctl
-      ];
     };
     programs.hyprland.enable = true;
-    services.xserver.displayManager.gdm = {
-      enable = true;
-      wayland = true;
+    
+    #services.xserver.displayManager.gdm = {
+    #  enable = true;
+    #  wayland = true;
+    #};
+
+    services = {
+      gvfs.enable = true;
+      devmon.enable = true;
+      upower.enable = true;
+      gnome = {
+        glib-networking.enable = true;
+        gnome-online-accounts.enable = true;
+      };
     };
 
-    zeus.services.polkit-gnome = enabled;
+    systemd = {
+      user.services.polkit-gnome-authentication-agent-1 = {
+        description = "polkit-gnome-authentication-agent-1";
+        wantedBy = ["graphical-session.target"];
+        wants = ["graphical-session.target"];
+        after = ["graphical-session.target"];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+      };
+    };
+
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+      ];
+    };
+
+    zeus = {
+      programs = {
+        dconf = enabled;
+        kde-connect = enabled;
+      };
+      services = {        
+        greetd = enabled;
+        polkit-gnome = enabled;
+      };
+    };
   };
 }

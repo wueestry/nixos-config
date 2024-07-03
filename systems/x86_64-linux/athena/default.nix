@@ -12,17 +12,40 @@ with lib.${namespace}; {
 
   networking.hostName = "athena";
 
+  # logind
+  services.logind.extraConfig = ''
+    HandlePowerKey=ignore
+    HandleLidSwitch=suspend
+    HandleLidSwitchExternalPower=ignore
+  '';
+
   zeus = {
     config = {
-      user.name = "ryan";
+      user = {
+        name = "ryan";
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+          "audio"
+          "video"
+          "libvirtd"
+          "docker"
+        ];
+      };
     };
     bundles = {
       common = enabled;
     };
     desktop.hyprland = enabled;
+    hardware = {
+      bluetooth = enabled;
+    };
     programs = {
       nh = enabled;
       nix-ld = enabled;
+    };
+    services = {
+      virtualisation = enabled;
     };
     system = {
       xkb.xkb-ch = enabled;
