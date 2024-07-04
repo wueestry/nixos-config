@@ -25,7 +25,7 @@ in {
 
         virtualisation = {
             docker.enable = true;
-            libvirtd = true;
+            libvirtd.enable = true;
         };
     };
 }

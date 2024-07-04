@@ -25,8 +25,6 @@ in {
     nix = let
       users = ["root" user.name];
     in {
-      documentation.nixos.enable = false;
-
       package = pkgs.nixVersions.latest;
       gc = {
         options = "--delete-older-than 30d";

@@ -63,6 +63,7 @@ in {
       programs = {
         dconf = enabled;
         kde-connect = enabled;
+        nautilus = enabled;
       };
       services = {        
         greetd = enabled;

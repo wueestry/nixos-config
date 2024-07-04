@@ -10,6 +10,9 @@
 
     ### Additional Inputs ###
 
+    # ags
+    ags.url = "github:Aylur/ags";
+
     # Home Manager (release-24.05)
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";

@@ -83,16 +83,17 @@ in {
           sensitivity = 0;
         };
 
-        device = {
+        device = [
+          {
           name = "at-translated-set-2-keyboard";
           kb_layout = "ch";
-        };
-
-        device = {
+          }
+          {
           name = "msft0001:00-04f3:3202-mouse";
           sensitivity = 0;
           accel_profile = "adaptive";
-        };
+          }
+        ];
 
         binds = {
           allow_workspace_cycles = true;

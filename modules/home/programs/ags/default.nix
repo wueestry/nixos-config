@@ -4,14 +4,17 @@
   lib,
   pkgs,
   namespace,
+  inputs,
   ...
 }:
 with lib;
 with lib.${namespace}; let
-  cfg = config.${namespace}.module;
+  cfg = config.${namespace}.programs.ags;
 in {
-  options.${namespace}.module = with types; {
-    enable = mkBoolOpt false "Enable module";
+  imports = [inputs.ags.homeManagerModules.default];
+
+  options.${namespace}.programs.ags = with types; {
+    enable = mkBoolOpt false "Enable ags";
   };
 
   config =

@@ -35,7 +35,6 @@ in {
     zeus = {
       desktop.hyprland = enabled;
       programs = {
-        nautilus = enabled;
         ags = enabled;
         #dolphin = enabled;
         #rofi = enabled;
