@@ -21,10 +21,10 @@ in {
     };
     programs.hyprland.enable = true;
     
-    #services.xserver.displayManager.gdm = {
-    #  enable = true;
-    #  wayland = true;
-    #};
+    services.xserver.displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
 
     services = {
       gvfs.enable = true;
@@ -66,7 +66,7 @@ in {
         nautilus = enabled;
       };
       services = {        
-        greetd = enabled;
+        #greetd = enabled;
         polkit-gnome = enabled;
       };
     };

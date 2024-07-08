@@ -22,7 +22,7 @@ in {
     programs.seahorse.enable = true;
 
     security = {
-      #pam.services.gdm.enableGnomeKeyring = true;
+      pam.services.gdm.enableGnomeKeyring = true;
       polkit.enable = true;
       pam.services.ags = {};
     };

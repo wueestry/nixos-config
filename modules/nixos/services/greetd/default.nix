@@ -9,7 +9,7 @@
 with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.services.greetd;
-  name =  config.${namespace}.config.user.name;
+  name =  "ryan";
 in {
   options.${namespace}.services.greetd = with types; {
     enable = mkBoolOpt false "Enable greetd";

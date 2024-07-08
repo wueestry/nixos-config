@@ -70,7 +70,7 @@ in {
         };
 
         input = {
-          kp_layout = "us";
+          kb_layout = "us";
           kb_variant = "altgr-intl";
           follow_mouse = 1;
 
@@ -87,6 +87,7 @@ in {
           {
           name = "at-translated-set-2-keyboard";
           kb_layout = "ch";
+          kb_variant = "";
           }
           {
           name = "msft0001:00-04f3:3202-mouse";
