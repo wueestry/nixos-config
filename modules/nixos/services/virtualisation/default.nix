@@ -14,18 +14,17 @@ in {
     enable = mkBoolOpt false "Enable virtualisation";
   };
 
-  config =
-    mkIf cfg.enable {
-        environment.systemPackages = with pkgs; [
-            boxbuddy
-            distrobox
-        ];
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      boxbuddy
+      distrobox
+    ];
 
-        programs.virt-manager.enable = true;
+    programs.virt-manager.enable = true;
 
-        virtualisation = {
-            docker.enable = true;
-            libvirtd.enable = true;
-        };
+    virtualisation = {
+      docker.enable = true;
+      libvirtd.enable = true;
     };
+  };
 }

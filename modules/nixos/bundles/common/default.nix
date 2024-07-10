@@ -19,7 +19,7 @@ in {
       udisks2.enable = true; # Required for e-reader connections to calibre
       xserver = {
         enable = true;
-        excludePackages = [ pkgs.xterm ];
+        excludePackages = [pkgs.xterm];
       };
     };
     zeus = {

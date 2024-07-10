@@ -14,13 +14,12 @@ in {
     enable = mkBoolOpt false "Enable btop";
   };
 
-  config =
-    mkIf cfg.enable {
-        programs.btop = {
-            enable = true;
-            settings = {
-                vim_keys = true;
-            };
-        };
+  config = mkIf cfg.enable {
+    programs.btop = {
+      enable = true;
+      settings = {
+        vim_keys = true;
+      };
     };
+  };
 }

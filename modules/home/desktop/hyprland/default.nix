@@ -9,7 +9,7 @@
 with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.desktop.hyprland;
-  
+
   display_switcher = pkgs.writeShellScriptBin "display_switcher" ''
     #!/bin/sh
 
@@ -48,12 +48,12 @@ in {
 
       settings = {
         exec-once = [
-          "ags -b hypr"
+          "ags &"
           "hyprctl setcursor Qogir 24"
         ];
 
         monitor = [
-          ",preferred,auto,1"
+          ",preferred,auto,auto"
         ];
 
         general = {
@@ -85,14 +85,14 @@ in {
 
         device = [
           {
-          name = "at-translated-set-2-keyboard";
-          kb_layout = "ch";
-          kb_variant = "";
+            name = "at-translated-set-2-keyboard";
+            kb_layout = "ch";
+            kb_variant = "";
           }
           {
-          name = "msft0001:00-04f3:3202-mouse";
-          sensitivity = 0;
-          accel_profile = "adaptive";
+            name = "msft0001:00-04f3:3202-mouse";
+            sensitivity = 0;
+            accel_profile = "adaptive";
           }
         ];
 
@@ -147,8 +147,8 @@ in {
             "ALT, Tab, focuscurrentorlast"
             "CTRL ALT, Delete, exit"
             "SUPER, Q, killactive"
-            "SUPER, F, togglefloating"
-            "SUPER, G, fullscreen"
+            "SUPER, G, togglefloating"
+            "SUPER, F, fullscreen"
             "SUPER, O, fakefullscreen"
             "SUPER, P, togglesplit"
 

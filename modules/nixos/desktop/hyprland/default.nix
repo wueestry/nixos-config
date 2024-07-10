@@ -20,7 +20,7 @@ in {
       sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
     };
     programs.hyprland.enable = true;
-    
+
     services.xserver.displayManager.gdm = {
       enable = true;
       wayland = true;
@@ -65,7 +65,7 @@ in {
         kde-connect = enabled;
         nautilus = enabled;
       };
-      services = {        
+      services = {
         #greetd = enabled;
         polkit-gnome = enabled;
       };

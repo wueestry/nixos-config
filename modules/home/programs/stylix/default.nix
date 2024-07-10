@@ -8,8 +8,7 @@
   ...
 }:
 with lib;
-with lib.${namespace}; 
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.stylix;
 in {
   options.${namespace}.programs.stylix = with types; {

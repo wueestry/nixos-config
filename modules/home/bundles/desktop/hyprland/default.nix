@@ -15,13 +15,14 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; with gnome; [
+    home.packages = with pkgs;
+    with gnome; [
       adwaita-icon-theme
       brightnessctl
       gnome-system-monitor
       gnome-control-center
       morewaita-icon-theme
-      
+
       pavucontrol
       swww
 
@@ -31,13 +32,13 @@ in {
       wl-clipboard
       wl-gammactl
     ];
-    
+
     zeus = {
       desktop.hyprland = enabled;
       programs = {
         ags = enabled;
         #dolphin = enabled;
-        #rofi = enabled;
+        rofi = enabled;
         #waybar = enabled;
       };
     };

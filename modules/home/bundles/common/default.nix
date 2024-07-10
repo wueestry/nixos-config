@@ -38,7 +38,6 @@ in {
         brave = enabled;
         kitty = enabled;
         neovim = enabled;
-        powerlevel10k = enabled;
         zsh = enabled;
       };
     };

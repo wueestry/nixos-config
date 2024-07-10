@@ -31,7 +31,7 @@ in {
         dates = "daily";
         automatic = true;
       };
-      
+
       settings = {
         trusted-users = users;
         sandbox = "relaxed";

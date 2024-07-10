@@ -24,7 +24,7 @@ in {
     security = {
       pam.services.gdm.enableGnomeKeyring = true;
       polkit.enable = true;
-      pam.services.ags = {};
+      #pam.services.ags = {};
     };
 
     services.gnome.gnome-keyring.enable = true;

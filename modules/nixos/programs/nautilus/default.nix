@@ -14,23 +14,22 @@ in {
     enable = mkBoolOpt false "Enable nautilus";
   };
 
-  config =
-    mkIf cfg.enable {
-      environment = {
-            sessionVariables.NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
-            systemPackages = with pkgs; [
-                gnome.nautilus
-                gnome.nautilus-python
-            ];
+  config = mkIf cfg.enable {
+    environment = {
+      sessionVariables.NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
+      systemPackages = with pkgs; [
+        gnome.nautilus
+        gnome.nautilus-python
+      ];
 
-            pathsToLink = [
-            "/share/nautilus-python/extensions"
-          ];
-        };
-
-        programs.nautilus-open-any-terminal = {
-            enable = true;
-            terminal = "kitty";
-        };
+      pathsToLink = [
+        "/share/nautilus-python/extensions"
+      ];
     };
+
+    programs.nautilus-open-any-terminal = {
+      enable = true;
+      terminal = "kitty";
+    };
+  };
 }
