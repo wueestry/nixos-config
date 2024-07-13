@@ -42,6 +42,7 @@ with lib.${namespace}; {
       virtualisation = enabled;
     };
     system = {
+      boot.grub = enabled;
       xkb.xkb-us = enabled;
     };
   };

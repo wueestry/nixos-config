@@ -6,4 +6,5 @@
 - *Athena*: Lenovo Yoga Pro 7X Slim Nvidia
     - Used for development
 
-- *Ares*: Workstation
+- *Ares*: Workstation (AMD Ryzen 7 5800X, NVIDIA RTX 3070)
+    - Dual boot

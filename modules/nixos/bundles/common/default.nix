@@ -36,7 +36,6 @@ in {
       };
 
       system = {
-        boot = enabled;
         fonts = enabled;
         locale = enabled;
       };

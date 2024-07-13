@@ -28,6 +28,16 @@ in {
         name = "Papirus-Dark";
         package = pkgs.papirus-icon-theme;
       };
+
+      theme = {
+        name = "Catppuccin-Mocha-Compact-Teal-Dark";
+        package = pkgs.catppuccin-gtk.override {
+          accents = [ "teal" ];
+          size = "compact";
+          tweaks = [ "rimless" ];
+          variant = "mocha";
+        };
+      };
     };
   };
 }

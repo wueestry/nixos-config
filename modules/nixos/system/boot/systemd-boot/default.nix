@@ -8,10 +8,10 @@
 }:
 with lib;
 with lib.${namespace}; let
-  cfg = config.${namespace}.system.boot;
+  cfg = config.${namespace}.system.boot.systemd-boot;
 in {
-  options.${namespace}.system.boot = with types; {
-    enable = mkBoolOpt false "Whether or not to enable booting.";
+  options.${namespace}.system.boot.systemd-boot = with types; {
+    enable = mkBoolOpt false "Whether or not to enable systemd-booting.";
   };
 
   config = mkIf cfg.enable {

@@ -48,6 +48,7 @@ with lib.${namespace}; {
       virtualisation = enabled;
     };
     system = {
+      boot.systemd-boot = enabled;
       xkb.xkb-ch = enabled;
     };
   };
