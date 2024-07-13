@@ -5,3 +5,5 @@
 
 - *Athena*: Lenovo Yoga Pro 7X Slim Nvidia
     - Used for development
+
+- *Ares*: Workstation

@@ -29,10 +29,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      networkmanagerapplet
-    ];
-
     xdg.desktopEntries."org.gnome.Settings" = {
       name = "Settings";
       comment = "Gnome Control Center";
@@ -55,6 +51,9 @@ in {
           "ags &"
           "hyprctl setcursor Qogir 24"
           "nm-applet"
+          "swww daemon"
+          "hypridle"
+          "nextcloud --background"
         ];
 
         monitor = [
@@ -204,6 +203,9 @@ in {
           shadow_range = 8;
           shadow_render_power = 2;
           "col.shadow" = "rgba(00000044)";
+          rounding = 10;
+          active_opacity = 0.8;
+          inactive_opacity = 0.8;
 
           dim_inactive = false;
 

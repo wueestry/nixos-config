@@ -19,16 +19,18 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-    sassc
-    socat
-    imagemagick
-    pavucontrol #audio
-    wayshot #screen recorder
-    wf-recorder #screen recorder
-    swappy #screen recorder
-    wl-gammactl
-    brightnessctl
-    gjs
+      sassc
+      socat
+      imagemagick
+      pavucontrol #audio
+      wayshot #screen recorder
+      wf-recorder #screen recorder
+      swappy #screen recorder
+      wl-gammactl
+      brightnessctl
+      gjs
+      networkmanagerapplet
+      blueman
     ];
 
     programs.ags = {
