@@ -1,25 +1,27 @@
-import { readFile } from 'resource:///com/github/Aylur/ags/utils.js';
-import App from 'resource:///com/github/Aylur/ags/app.js';
-import GLib from 'gi://GLib';
-const pkgjson = JSON.parse(readFile(App.configDir + '/package.json'));
+// Windows
+import { Bar } from "./modules/bar/bar.js";
+import { Dashboard } from "./modules/dashboard/dashboard.js";
 
-const SKIP_CHECK = 'AGS_SKIP_V_CHECK';
+// Apply css
+const applyScss = () => {
+  // Compile scss
+  Utils.exec(
+    `sassc ${App.configDir}/scss/main.scss ${App.configDir}/style.css`,
+  );
+  console.log("Scss compiled");
 
-const v = {
-    ags: `v${pkg.version}`,
-    expected: `v${pkgjson.version}`,
-    check: !GLib.getenv(SKIP_CHECK),
+  // Apply compiled css
+  App.resetCss();
+  App.applyCss(`${App.configDir}/style.css`);
+  console.log("Compiled css applied");
 };
 
-function mismatch() {
-    print(`my config expects ${v.expected}, but your ags is ${v.ags}`);
-    print(`to skip the check run "${SKIP_CHECK}=true ags"`);
-    App.connect('config-parsed', app => app.Quit());
-    return {};
-}
+// Apply css then check for changes
+applyScss();
 
-// export default v.ags === v.expected || !v.check
-//     ? (await import('./js/main.js')).default
-//     : mismatch();
 
-export default (await import('./js/main.js')).default;
+// Main config
+App.config({
+    style: `${App.configDir}/style.css`,
+    windows: [Bar(), Dashboard() ],
+});

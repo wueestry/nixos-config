@@ -29,6 +29,10 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      networkmanagerapplet
+    ];
+
     xdg.desktopEntries."org.gnome.Settings" = {
       name = "Settings";
       comment = "Gnome Control Center";
@@ -50,6 +54,7 @@ in {
         exec-once = [
           "ags &"
           "hyprctl setcursor Qogir 24"
+          "nm-applet"
         ];
 
         monitor = [
@@ -109,7 +114,6 @@ in {
           f = regex: "float, ^(${regex})$";
         in [
           (f "org.gnome.Calculator")
-          (f "org.gnome.Nautilus")
           (f "pavucontrol")
           (f "nm-connection-editor")
           (f "blueberry.py")
@@ -135,7 +139,7 @@ in {
         in
           [
             "CTRL SHIFT, R,  ${e} quit; ags -b hypr"
-            "SUPER, D,       ${e} -t launcher"
+            "SUPER, D,       exec, launcher"
             "SUPER, Tab,     ${e} -t overview"
             ",XF86PowerOff,  ${e} -r 'powermenu.shutdown()'"
             ",XF86Launch4,   ${e} -r 'recorder.start()'"
