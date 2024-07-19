@@ -29,6 +29,15 @@ in {
         size = 32;
       };
 
+      fonts = {
+        monospace = [
+          {
+            name = "JetBrains Mono";
+            package = pkgs.jetbrains-mono;
+          }
+        ];
+      };
+
       image = ./wallpapers/yosemite.png;
 
       polarity = "dark";
