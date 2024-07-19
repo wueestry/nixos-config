@@ -41,6 +41,7 @@ in {
         brave = enabled;
         kitty = enabled;
         neovim = enabled;
+        starship = enabled;
         zsh = enabled;
       };
     };

@@ -39,6 +39,7 @@ with lib.${namespace}; {
     desktop.hyprland = enabled;
     hardware = {
       bluetooth = enabled;
+      cuda = enabled;
     };
     programs = {
       nh = enabled;
