@@ -9,6 +9,7 @@
 with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.programs.starship;
+  col = config.stylix.base16Scheme;
 in {
   options.${namespace}.programs.starship = with types; {
     enable = mkBoolOpt false "Enable starship";
@@ -20,15 +21,15 @@ in {
       settings = {
         command_timeout = 5000;
         format = concatStrings [
-          "[](#3B4252)"
+          "[](${col.base01})"
           "$python"
           "$username"
-          "[](bg:#434C5E fg:#3B4252)"
+          "[](bg:${col.base02} fg:${col.base01})"
           "$directory"
-          "[](fg:#434C5E bg:#4C566A)"
+          "[](fg:${col.base02} bg:${col.base03})"
           "$git_branch"
           "$git_status"
-          "[](fg:#4C566A bg:#86BBD8)"
+          "[](fg:${col.base03} bg:${col.base0A})"
           "$c"
           "$elixir"
           "$elm"
@@ -39,20 +40,20 @@ in {
           "$nodejs"
           "$nim"
           "$rust"
-          "[](fg:#86BBD8 bg:#06969A)"
+          "[](fg:${col.base0A} bg:${col.base0E})"
           "$docker_context"
-          "[](fg:#06969A bg:#33658A)"
+          "[](fg:${col.base0E} bg:${col.base09})"
           "$time"
-          "[ ](fg:#33658A)"
+          "[ ](fg:${col.base09})"
         ];
         username = {
           show_always = true;
-          style_user = "bg:#3B4252";
-          style_root = "bg:#3B4252";
+          style_user = "bg:${col.base01}";
+          style_root = "bg:${col.base01}";
           format = "[$user ]($style)";
         };
         directory = {
-          style = "bg:#434C5E";
+          style = "bg:${col.base02}";
           format = "[ $path ]($style)";
           truncation_length = 3;
           truncation_symbol = "…/";
@@ -66,90 +67,90 @@ in {
 
         c = {
           symbol = " ";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = " $symbol ($version) ]($style)";
         };
 
         docker_context = {
           symbol = " ";
-          style = "bg:#06969A";
+          style = "bg:${col.base0E}";
           format = "[ $symbol $context ]($style) $path";
         };
 
         elixir = {
           symbol = " ";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         elm = {
           symbol = " ";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         git_branch = {
           symbol = "";
-          style = "bg:#4C566A";
+          style = "bg:${col.base03}";
           format = "[ $symbol $branch ]($style)";
         };
 
         git_status = {
-          style = "bg:#4C566A";
+          style = "bg:${col.base03}";
           format = "[$all_status$ahead_behind ]($style)";
         };
 
         golang = {
           symbol = " ";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         haskell = {
           symbol = " ";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         java = {
           symbol = " ";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         julia = {
           symbol = " ";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         nodejs = {
           symbol = "";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         nim = {
           symbol = " ";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         python = {
-          style = "bg:#3B4252";
+          style = "bg:${col.base01}";
           format = "[(\($virtualenv\) )]($style)";
         };
 
         rust = {
           symbol = "";
-          style = "bg:#86BBD8";
+          style = "bg:${col.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         time = {
           disabled = false;
           time_format = "%R"; # Hour:Minute Format
-          style = "bg:#33658A";
+          style = "bg:${col.base09}";
           format = "[ $time ]($style)";
         };
       };
