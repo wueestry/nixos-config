@@ -19,32 +19,32 @@ in {
       enable = true;
       settings = {
         command_timeout = 5000;
-        format = """
-        [](#3B4252)\
-        $python\
-        $username\
-        [](bg:#434C5E fg:#3B4252)\
-        $directory\
-        [](fg:#434C5E bg:#4C566A)\
-        $git_branch\
-        $git_status\
-        [](fg:#4C566A bg:#86BBD8)\
-        $c\
-        $elixir\
-        $elm\
-        $golang\
-        $haskell\
-        $java\
-        $julia\
-        $nodejs\
-        $nim\
-        $rust\
-        [](fg:#86BBD8 bg:#06969A)\
-        $docker_context\
-        [](fg:#06969A bg:#33658A)\
-        $time\
-        [ ](fg:#33658A)\
-        """;
+        format = concatStrings [
+          "[](#3B4252)"
+          "$python"
+          "$username"
+          "[](bg:#434C5E fg:#3B4252)"
+          "$directory"
+          "[](fg:#434C5E bg:#4C566A)"
+          "$git_branch"
+          "$git_status"
+          "[](fg:#4C566A bg:#86BBD8)"
+          "$c"
+          "$elixir"
+          "$elm"
+          "$golang"
+          "$haskell"
+          "$java"
+          "$julia"
+          "$nodejs"
+          "$nim"
+          "$rust"
+          "[](fg:#86BBD8 bg:#06969A)"
+          "$docker_context"
+          "[](fg:#06969A bg:#33658A)"
+          "$time"
+          "[ ](fg:#33658A)"
+        ];
         username = {
           show_always = true;
           style_user = "bg:#3B4252";
