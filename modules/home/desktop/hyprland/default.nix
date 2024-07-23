@@ -40,8 +40,6 @@ in {
 
     wayland.windowManager.hyprland = {
       enable = true;
-      #enableNvidiaPatches = true;
-      #extraConfig = import ./config.nix;
       systemd.enable = true;
       xwayland.enable = true;
       plugins = [];

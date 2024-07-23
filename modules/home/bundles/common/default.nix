@@ -33,10 +33,6 @@ in {
       zip
     ];
     zeus = {
-      misc = {
-        gtk = enabled;
-        qt = enabled;
-      };
       programs = {
         brave = enabled;
         kitty = enabled;

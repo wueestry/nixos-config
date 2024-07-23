@@ -26,17 +26,31 @@ in {
       cursor = {
         package = pkgs.bibata-cursors;
         name = "Bibata-Original-Ice";
-        size = 32;
+        size = 24;
       };
 
       fonts = {
-        monospace = [
-          {
-            name = "JetBrains Mono";
-            package = pkgs.jetbrains-mono;
-          }
-        ];
+        monospace = {
+          package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+          name = "JetBrainsMono Nerd Font Mono";
+        };
+        sansSerif = {
+          package = pkgs.montserrat;
+          name = "Montserrat";
+        };
+        serif = {
+          package = pkgs.montserrat;
+          name = "Montserrat";
+        };
+        sizes = {
+          applications = 12;
+          terminal = 15;
+          desktop = 11;
+          popups = 12;
+        };
       };
+
+
 
       image = ./wallpapers/yosemite.png;
 

@@ -9,7 +9,6 @@
 with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.programs.starship;
-  col = config.stylix.base16Scheme;
 in {
   options.${namespace}.programs.starship = with types; {
     enable = mkBoolOpt false "Enable starship";
@@ -21,15 +20,15 @@ in {
       settings = {
         command_timeout = 5000;
         format = concatStrings [
-          "[](${col.base01})"
+          "[](#${config.stylix.base16Scheme.base01})"
           "$python"
           "$username"
-          "[](bg:${col.base02} fg:${col.base01})"
+          "[](bg:#${config.stylix.base16Scheme.base02} fg:#${config.stylix.base16Scheme.base01})"
           "$directory"
-          "[](fg:${col.base02} bg:${col.base03})"
+          "[](fg:#${config.stylix.base16Scheme.base02} bg:#${config.stylix.base16Scheme.base03})"
           "$git_branch"
           "$git_status"
-          "[](fg:${col.base03} bg:${col.base0A})"
+          "[](fg:#${config.stylix.base16Scheme.base03} bg:#${config.stylix.base16Scheme.base0A})"
           "$c"
           "$elixir"
           "$elm"
@@ -40,20 +39,20 @@ in {
           "$nodejs"
           "$nim"
           "$rust"
-          "[](fg:${col.base0A} bg:${col.base0E})"
+          "[](fg:#${config.stylix.base16Scheme.base0A} bg:#${config.stylix.base16Scheme.base0E})"
           "$docker_context"
-          "[](fg:${col.base0E} bg:${col.base09})"
+          "[](fg:#${config.stylix.base16Scheme.base0E} bg:#${config.stylix.base16Scheme.base09})"
           "$time"
-          "[ ](fg:${col.base09})"
+          "[ ](fg:#${config.stylix.base16Scheme.base09})"
         ];
         username = {
           show_always = true;
-          style_user = "bg:${col.base01}";
-          style_root = "bg:${col.base01}";
+          style_user = "bg:#${config.stylix.base16Scheme.base01}";
+          style_root = "bg:#${config.stylix.base16Scheme.base01}";
           format = "[$user ]($style)";
         };
         directory = {
-          style = "bg:${col.base02}";
+          style = "bg:#${config.stylix.base16Scheme.base02}";
           format = "[ $path ]($style)";
           truncation_length = 3;
           truncation_symbol = "…/";
@@ -67,90 +66,90 @@ in {
 
         c = {
           symbol = " ";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = " $symbol ($version) ]($style)";
         };
 
         docker_context = {
           symbol = " ";
-          style = "bg:${col.base0E}";
+          style = "bg:#${config.stylix.base16Scheme.base0E}";
           format = "[ $symbol $context ]($style) $path";
         };
 
         elixir = {
           symbol = " ";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         elm = {
           symbol = " ";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         git_branch = {
           symbol = "";
-          style = "bg:${col.base03}";
+          style = "bg:#${config.stylix.base16Scheme.base03}";
           format = "[ $symbol $branch ]($style)";
         };
 
         git_status = {
-          style = "bg:${col.base03}";
+          style = "bg:#${config.stylix.base16Scheme.base03}";
           format = "[$all_status$ahead_behind ]($style)";
         };
 
         golang = {
           symbol = " ";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         haskell = {
           symbol = " ";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         java = {
           symbol = " ";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         julia = {
           symbol = " ";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         nodejs = {
           symbol = "";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         nim = {
           symbol = " ";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         python = {
-          style = "bg:${col.base01}";
+          style = "bg:#${config.stylix.base16Scheme.base01}";
           format = "[(\($virtualenv\) )]($style)";
         };
 
         rust = {
           symbol = "";
-          style = "bg:${col.base0A}";
+          style = "bg:#${config.stylix.base16Scheme.base0A}";
           format = "[ $symbol ($version) ]($style)";
         };
 
         time = {
           disabled = false;
           time_format = "%R"; # Hour:Minute Format
-          style = "bg:${col.base09}";
+          style = "bg:#${config.stylix.base16Scheme.base09}";
           format = "[ $time ]($style)";
         };
       };
