@@ -200,7 +200,7 @@ in {
           drop_shadow = "yes";
           shadow_range = 8;
           shadow_render_power = 2;
-          "col.shadow" = "rgba(00000044)";
+          #"col.shadow" = "rgba(00000044)";
           rounding = 10;
           active_opacity = 0.8;
           inactive_opacity = 0.8;
