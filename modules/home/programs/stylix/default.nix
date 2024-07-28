@@ -22,7 +22,7 @@ in {
       enable = true;
 
       autoEnable = true;
-      base16Scheme = ./base16/catppuccin/mocha.yaml;
+      #base16Scheme = ./base16/catppuccin/mocha.yaml;
       cursor = {
         package = pkgs.bibata-cursors;
         name = "Bibata-Original-Ice";
@@ -31,7 +31,7 @@ in {
 
       fonts = {
         monospace = {
-          package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+          package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
           name = "JetBrainsMono Nerd Font Mono";
         };
         sansSerif = {
@@ -49,8 +49,6 @@ in {
           popups = 12;
         };
       };
-
-
 
       image = ./wallpapers/yosemite.png;
 

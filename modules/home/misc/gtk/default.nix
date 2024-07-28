@@ -32,9 +32,9 @@ in {
       theme = {
         name = "Catppuccin-Mocha-Compact-Teal-Dark";
         package = pkgs.catppuccin-gtk.override {
-          accents = [ "teal" ];
+          accents = ["teal"];
           size = "compact";
-          tweaks = [ "rimless" ];
+          tweaks = ["rimless"];
           variant = "mocha";
         };
       };
