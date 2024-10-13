@@ -9,7 +9,7 @@ with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.programs.librewolf;
 in {
-  options.${namespace}.programs.brave = {
+  options.${namespace}.programs.librewolf = {
     enable = mkBoolOpt false "${namespace}.programs.librewolf.enable";
   };
 

@@ -38,8 +38,8 @@ in {
         kitty = enabled;
         librewolf = enabled;
         neovim = enabled;
-        stylix = disabled;
-        starship = disabled;
+        stylix = enabled;
+        starship = enabled;
         zsh = enabled;
       };
     };
