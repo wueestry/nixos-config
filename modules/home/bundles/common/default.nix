@@ -36,9 +36,10 @@ in {
       programs = {
         brave = enabled;
         kitty = enabled;
+        librewolf = enabled;
         neovim = enabled;
-        stylix = enabled;
-        starship = enabled;
+        stylix = disabled;
+        starship = disabled;
         zsh = enabled;
       };
     };
