@@ -11,7 +11,7 @@
     ### Additional Inputs ###
 
     # ags
-    ags.url = "github:Aylur/ags";
+    # ags.url = "github:Aylur/ags";
 
     # Home Manager (release-24.05)
     home-manager = {
@@ -42,6 +42,18 @@
 
     # Stylix
     stylix.url = "github:danth/stylix";
+
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    # Hyprpanel
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
+    # Hyprswitch
+    # hyprswitch.url = "github:h3rmt/hyprswitch/release";
+
+    # Apple font
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
   };
 
   outputs = inputs: let
@@ -68,7 +80,9 @@
         permittedInsecurePackages = [];
       };
 
-      overlays = with inputs; [];
+      overlays = with inputs; [
+        inputs.hyprpanel.overlay
+      ];
 
       systems.modules.nixos = with inputs; [];
 

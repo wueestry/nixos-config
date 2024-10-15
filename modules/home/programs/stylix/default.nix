@@ -23,7 +23,7 @@ in {
 
       autoEnable = true;
       #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-      base16Scheme = ./base16/catppuccin/mocha.yaml;
+      base16Scheme = ./base16/catppuccin/custom.yaml;
       cursor = {
         package = pkgs.bibata-cursors;
         name = "Bibata-Original-Ice";
@@ -36,22 +36,26 @@ in {
           name = "JetBrainsMono Nerd Font Mono";
         };
         sansSerif = {
-          package = pkgs.montserrat;
-          name = "Montserrat";
+          package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+          name = "SFProDisplay Nerd Font";
         };
         serif = {
-          package = pkgs.montserrat;
-          name = "Montserrat";
+          package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+          name = "SFProDisplay Nerd Font";
+        };
+        emoji = {
+          package = pkgs.noto-fonts-emoji;
+          name = "Noto Color Emoji";
         };
         sizes = {
-          applications = 12;
-          terminal = 15;
-          desktop = 11;
-          popups = 12;
+          applications = 13;
+          desktop = 13;
+          popups = 13;
+          terminal = 13;
         };
       };
 
-      image = ./wallpapers/yosemite.png;
+      image = ./wallpapers/sports.png;
 
       polarity = "dark";
       targets = {

@@ -16,8 +16,10 @@ in {
   config = mkIf cfg.enable {
     programs.zsh = {
       enable = true;
+
       autosuggestion.enable = true;
       enableCompletion = true;
+      historySubstringSearch.enable = true;
       syntaxHighlighting.enable = true;
 
       initExtra = ''
@@ -28,7 +30,14 @@ in {
         set -o vi
       '';
 
-      shellAliases = {};
+      shellAliases = {
+        vim = "nvim";
+        vi = "nvim";
+        v = "nvim";
+        z = "cd";
+        ls = "eza --icons=always --no-quotes";
+        tree = "eza --icons=always --tree --no-quotes";
+      };
 
       plugins = [];
     };

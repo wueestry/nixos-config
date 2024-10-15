@@ -31,16 +31,18 @@ in {
       unrar
       unzip
       zip
+
+      bitwarden
     ];
     zeus = {
+      bundles.shell = enabled;
       programs = {
         brave = enabled;
         kitty = enabled;
         librewolf = enabled;
+        lazygit = enabled;
         neovim = enabled;
         stylix = enabled;
-        starship = enabled;
-        zsh = enabled;
       };
     };
   };
