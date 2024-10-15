@@ -36,6 +36,7 @@ in {
     ];
     zeus = {
       bundles.shell = enabled;
+      misc.scripts = enabled;
       programs = {
         brave = enabled;
         kitty = enabled;
