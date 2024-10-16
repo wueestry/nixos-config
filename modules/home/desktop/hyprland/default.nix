@@ -4,6 +4,7 @@
   lib,
   pkgs,
   namespace,
+  inputs,
   ...
 }:
 with lib;
@@ -21,10 +22,10 @@ in {
   };
 
   config = mkIf cfg.enable {
-    imports = [
-      ./animations.nix
-      ./keybindings.nix
-    ]
+    zeus.desktop.hyprland = {
+      animations = enabled;
+      keybindings = enabled;
+    };
     home.packages = with pkgs; [
       qt5.qtwayland
       qt6.qtwayland
@@ -51,7 +52,7 @@ in {
       enable = true;
       xwayland.enable = true;
       systemd.enable = true;
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+      #package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
     settings = {
       "$mod" = "SUPER";
@@ -61,35 +62,6 @@ in {
 
       monitor = [
         ",prefered,auto,auto"
-      ];
-
-      env = [
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "MOZ_ENABLE_WAYLAND,1"
-        "ANKI_WAYLAND,1"
-        "DISABLE_QT5_COMPAT,0"
-        "NIXOS_OZONE_WL,1"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        "QT_QPA_PLATFORM=wayland,xcb"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        "GTK_THEME,FlatColor:dark"
-        "GTK2_RC_FILES,/home/hadi/.local/share/themes/FlatColor/gtk-2.0/gtkrc"
-        "__GL_GSYNC_ALLOWED,0"
-        "__GL_VRR_ALLOWED,0"
-        "DISABLE_QT5_COMPAT,0"
-        "DIRENV_LOG_FORMAT,"
-        "WLR_DRM_NO_ATOMIC,1"
-        "WLR_BACKEND,vulkan"
-        "WLR_RENDERER,vulkan"
-        "WLR_NO_HARDWARE_CURSORS,1"
-        "XDG_SESSION_TYPE,wayland"
-        "SDL_VIDEODRIVER,wayland"
-        "CLUTTER_BACKEND,wayland"
-        "AQ_DRM_DEVICES,/dev/dri/card2" # CHANGEME: Related to the GPU
       ];
 
       cursor = {
@@ -105,6 +77,8 @@ in {
         layout = "master";
       };
 
+      debug.disable_logs = false;
+
       decoration = {
         active_opacity = active-opacity;
         inactive_opacity = inactive-opacity;
@@ -112,7 +86,7 @@ in {
         drop_shadow = true;
         shadow_range = 20;
         shadow_render_power = 3;
-        blur = true;
+        blur.enabled = true;
       };
 
       master = {
@@ -136,7 +110,7 @@ in {
         kb_layout = "us";
         kb_variant = "altgr-intl";
         follow_mouse = 1;
-        sensitivity = 0.5;
+        sensitivity = 0.0;
         repeat_delay = 300;
         repeat_rate = 50;
 
@@ -163,6 +137,6 @@ in {
     };
   };
 
-    systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
+    #systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };
 }

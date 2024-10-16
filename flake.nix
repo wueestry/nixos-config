@@ -11,7 +11,7 @@
     ### Additional Inputs ###
 
     # ags
-    # ags.url = "github:Aylur/ags";
+    ags.url = "github:Aylur/ags";
 
     # Home Manager (release-24.05)
     home-manager = {
@@ -47,7 +47,11 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     # Hyprpanel
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprpanel = {
+      #url = "github:Jas-SinghFSU/HyprPanel";
+      url = "github:Jas-SinghFSU/HyprPanel?ref=f21d70949f9f4426f39d12f542ec788d47330763";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Hyprswitch
     # hyprswitch.url = "github:h3rmt/hyprswitch/release";
@@ -81,7 +85,7 @@
       };
 
       overlays = with inputs; [
-        inputs.hyprpanel.overlay
+        hyprpanel.overlay
       ];
 
       systems.modules.nixos = with inputs; [];

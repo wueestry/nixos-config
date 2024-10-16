@@ -1,6 +1,16 @@
-{ config, ... }:
-let
-  animationSpeed = config.var.theme.animation-speed;
+{ 
+  options,
+  config,
+  lib,
+  pkgs,
+  namespace,
+  ... 
+}:
+with lib;
+with lib.${namespace}; let
+  cfg = config.${namespace}.desktop.hyprland.animations;
+
+  animationSpeed = "medium";
 
   animationDuration = if animationSpeed == "slow" then
     "4"
@@ -15,6 +25,11 @@ let
   else
     "3";
 in {
+  options.${namespace}.desktop.hyprland.animations = with types; {
+    enable = mkBoolOpt false "Enable hyprland animations";
+  };
+
+  config = mkIf cfg.enable {
   wayland.windowManager.hyprland.settings = {
     animations = {
       enabled = true;
@@ -49,5 +64,6 @@ in {
         "specialWorkspace, 1, ${animationDuration}, md3_decel, slidevert"
       ];
     };
+  };
   };
 }

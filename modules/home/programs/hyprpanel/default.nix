@@ -10,7 +10,7 @@ with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.programs.hyprpanel;
 
-  transparentButtons = mkBoolOpt false "Enable transparent button";
+  transparentButtons = false;
   accent = "#${config.lib.stylix.colors.base0D}";
   accent-alt = "#${config.lib.stylix.colors.base03}";
   background = "#${config.lib.stylix.colors.base00}";
@@ -23,8 +23,8 @@ with lib.${namespace}; let
   border-size = 1;
   gaps-out = 5;
   gaps-in = 3;
-  floating = mkBoolOpt true "Enable floating bar";
-  transparent = mkBoolOpt true "Enable transparency";
+  floating = true;
+  transparent = true;
 
   location = "Zurich";
   username = "ryan";
@@ -38,7 +38,7 @@ in {
         wayland.windowManager.hyprland.settings.exec-once =
     [ "${pkgs.hyprpanel}/bin/hyprpanel" ];
 
-    home.packages = with pkgs; [ hyprpanel libnotify ];
+    home.packages = with pkgs; [ hyprpanel libnotify];
 
     home.file.".cache/ags/hyprpanel/options.json" = {
     text = # json
@@ -105,12 +105,8 @@ in {
           },
           "theme.font.name": "${font}",
           "theme.font.size": "${fontSize}px",
-          "theme.bar.outer_spacing": "${
-            if floating && transparent then "0" else "8"
-          }px",
-          "theme.bar.buttons.y_margins": "${
-            if floating && transparent then "0" else "8"
-          }px",
+          "theme.bar.outer_spacing": "0px",
+          "theme.bar.buttons.y_margins": "0px",
           "theme.bar.buttons.spacing": "0.3em",
           "theme.bar.buttons.radius": "${
             if transparent then toString rounding else toString (rounding - 8)

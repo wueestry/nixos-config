@@ -1,13 +1,28 @@
-{ pkgs, ... }: {
+{
+  options,
+  config,
+  lib,
+  pkgs,
+  namespace,
+  ... 
+}: 
+with lib;
+with lib.${namespace}; let
+cfg = config.${namespace}.desktop.hyprland.keybindings;
+in {
+  options.${namespace}.desktop.hyprland.keybindings = with types; {
+    enable = mkBoolOpt false "Enable hyprland keybindings";
+  };
+  config = mkIf cfg.enable {
   wayland.windowManager.hyprland.settings = {
     bind = [
       "$mod,RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
-      "$mod,E, exec, ${pkgs.gonome.nautilus}/bin/nautilus" # Nautilus
+      "$mod,E, exec, ${pkgs.gnome.nautilus}/bin/nautilus" # Nautilus
       "$mod,B, exec, ${pkgs.librewolf}/bin/librewolf" # Librewolf
       "$mod,K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
       "$mod,L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
-      "$mod,X, exec, powermenu" # Powermenu
-      "$mod,SPACE, exec, menu" # Launcher
+      "$mod,X, exec, power-menu" # Powermenu
+      "$mod,SPACE, exec, launcher" # Launcher
       "$shiftMod,SPACE, exec, hyprfocus-toggle" # Toggle HyprFocus
 
       "$mod,Q, killactive," # Close window
@@ -54,5 +69,6 @@
       ",XF86MonBrightnessDown, exec, brightness-down" # Brightness Down
     ];
 
+  };
   };
 }

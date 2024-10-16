@@ -13,18 +13,18 @@ with lib.${namespace}; let
   menu = pkgs.writeShellScriptBin "menu"
     # bash
     ''
-      if pgrep wofi; then
-      	pkill wofi
+      if pgrep rofi; then
+      	pkill rofi
       else
-      	wofi --show drun
+      	rofi --show drun
       fi
     '';
 
   powermenu = pkgs.writeShellScriptBin "powermenu"
     # bash
     ''
-      if pgrep wofi; then
-      	pkill wofi
+      if pgrep rofi; then
+      	pkill rofi
       else
         options=(
           "󰌾 Lock"
@@ -34,7 +34,7 @@ with lib.${namespace}; let
           "󰿅 Shutdown"
         )
 
-        selected=$(printf '%s\n' "''${options[@]}" | wofi --dmenu)
+        selected=$(printf '%s\n' "''${options[@]}" | rofi --dmenu)
         selected=''${selected:2}
 
         case $selected in

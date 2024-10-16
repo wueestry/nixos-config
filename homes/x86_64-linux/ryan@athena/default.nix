@@ -20,6 +20,7 @@ with lib.${namespace}; {
         enable = true;
         username = "Ryan Wüest";
       };
+      spotify = enabled;
     };
     misc = {xdg = enabled;};
   };

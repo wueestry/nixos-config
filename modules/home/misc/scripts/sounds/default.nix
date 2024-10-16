@@ -8,7 +8,7 @@
 }:
 with lib;
 with lib.${namespace}; let
-  cfg = config.${namespace}.misc.scritps.sounds;
+  cfg = config.${namespace}.misc.scripts.sounds;
 
   increments = "5";
 
@@ -35,8 +35,8 @@ with lib.${namespace}; let
     sound-change mute
   '';
 in {
-  options.${namespace}.misc.scritps.sounds = with types; {
-    enable = mkBoolOpt false "Enable misc.scritps.sounds";
+  options.${namespace}.misc.scripts.sounds = with types; {
+    enable = mkBoolOpt false "Enable misc.scripts.sounds";
   };
 
   config =
