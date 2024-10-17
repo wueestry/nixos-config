@@ -37,9 +37,13 @@ in {
       desktop.hyprland = enabled;
       programs = {
         ags = enabled;
-        #dolphin = enabled;
+        # dolphin = disabled;
+        hypridle = enabled;
+        hyprlock = enabled;
+        hyprpanel = enabled;
+        hyprpaper = enabled;
         rofi = enabled;
-        #waybar = enabled;
+        # waybar = disabled;
       };
     };
   };

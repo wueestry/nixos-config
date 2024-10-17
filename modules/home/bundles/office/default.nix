@@ -19,7 +19,11 @@ in {
       calibre
       libreoffice
       obsidian
-      nextcloud-client
     ];
+    
+    services.nextcloud-client = {
+      enable = true;
+      startInBackground = true;
+    };
   };
 }

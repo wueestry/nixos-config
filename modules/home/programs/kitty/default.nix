@@ -26,6 +26,20 @@ in {
         mode = "enabled";
         enableZshIntegration = true;
       };
+      settings = {
+        confirm_os_window_close = "0";
+        cursor_shape = "Underline";
+        cursor_underline_thickness = 3;
+        disable_ligatures = "never";
+        enable_audio_bell = false;
+        initial_window_height = 600;
+        initial_window_width = 1200;
+        remember_window_size = "no";
+        scrollback_lines = 10000;
+        update_check_interval = 0;
+        url_style = "curly";
+        window_padding_width = 10;
+      };
     };
   };
 }

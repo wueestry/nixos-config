@@ -42,6 +42,22 @@
 
     # Stylix
     stylix.url = "github:danth/stylix";
+
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    # Hyprpanel
+    hyprpanel = {
+      #url = "github:Jas-SinghFSU/HyprPanel";
+      url = "github:Jas-SinghFSU/HyprPanel?ref=f21d70949f9f4426f39d12f542ec788d47330763";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Hyprswitch
+    # hyprswitch.url = "github:h3rmt/hyprswitch/release";
+
+    # Apple font
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
   };
 
   outputs = inputs: let
@@ -68,7 +84,9 @@
         permittedInsecurePackages = [];
       };
 
-      overlays = with inputs; [];
+      overlays = with inputs; [
+        hyprpanel.overlay
+      ];
 
       systems.modules.nixos = with inputs; [];
 

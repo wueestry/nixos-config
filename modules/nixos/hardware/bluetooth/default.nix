@@ -20,5 +20,7 @@ in {
       package = pkgs.bluez;
       powerOnBoot = true;
     };
+
+    services.blueman.enable = true;
   };
 }
