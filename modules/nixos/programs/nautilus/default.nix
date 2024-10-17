@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.nautilus;
-in {
+in
+{
   options.${namespace}.programs.nautilus = with types; {
     enable = mkBoolOpt false "Enable nautilus";
   };

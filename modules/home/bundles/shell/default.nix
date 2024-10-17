@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.bundles.shell;
-in {
+in
+{
   options.${namespace}.bundles.shell = with types; {
     enable = mkBoolOpt false "Enable shell bundle";
   };
@@ -19,14 +21,14 @@ in {
       yazi
     ];
     zeus = {
-        programs = {
-            eza = enabled;
-            fzf = enabled;
-            powerlevel10k = disabled;
-            starship = enabled;
-            zoxide = enabled;
-            zsh = enabled;
-        };
+      programs = {
+        eza = enabled;
+        fzf = enabled;
+        powerlevel10k = disabled;
+        starship = enabled;
+        zoxide = enabled;
+        zsh = enabled;
+      };
     };
   };
 }

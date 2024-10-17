@@ -6,7 +6,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; {
+with lib.${namespace};
+{
   snowfallorg.user.enable = true;
   zeus = {
     bundles = {
@@ -21,7 +22,9 @@ with lib.${namespace}; {
         username = "Ryan Wüest";
       };
     };
-    misc = {xdg = enabled;};
+    misc = {
+      xdg = enabled;
+    };
   };
 
   # This value determines the Home Manager release that your

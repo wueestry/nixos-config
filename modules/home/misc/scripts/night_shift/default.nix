@@ -7,7 +7,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.misc.scripts.night_shift;
 
   night-shift-on = pkgs.writeShellScriptBin "night-shift-on" ''
@@ -42,27 +43,26 @@ with lib.${namespace}; let
     fi
   '';
 
-  night-shift-status-icon =
-    pkgs.writeShellScriptBin "night-shift-status-icon" ''
-      if [[ $(hyprshade current) ]]; then
-          echo "󰖔"
-        else
-          echo "󰖕"
-        fi
-    '';
-in {
+  night-shift-status-icon = pkgs.writeShellScriptBin "night-shift-status-icon" ''
+    if [[ $(hyprshade current) ]]; then
+        echo "󰖔"
+      else
+        echo "󰖕"
+      fi
+  '';
+in
+{
   options.${namespace}.misc.scripts.night_shift = with types; {
     enable = mkBoolOpt false "Enable misc.scripts.night_shift";
   };
 
-  config =
-    mkIf cfg.enable {
-      home.packages = [
-    night-shift-on
-    night-shift-off
-    night-shift
-    night-shift-status
-    night-shift-status-icon
-  ];
-    };
+  config = mkIf cfg.enable {
+    home.packages = [
+      night-shift-on
+      night-shift-off
+      night-shift
+      night-shift-status
+      night-shift-status-icon
+    ];
+  };
 }

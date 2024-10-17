@@ -6,7 +6,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.waybar;
 
   brightnessctl = pkgs.brightnessctl + "/bin/brightnessctl";
@@ -14,8 +15,7 @@ with lib.${namespace}; let
   waybar-wttr = pkgs.stdenv.mkDerivation {
     name = "waybar-wttr";
     buildInputs = [
-      (pkgs.python39.withPackages
-        (pythonPackages: with pythonPackages; [requests]))
+      (pkgs.python39.withPackages (pythonPackages: with pythonPackages; [ requests ]))
     ];
     unpackPhase = "true";
     installPhase = ''
@@ -24,7 +24,8 @@ with lib.${namespace}; let
       chmod +x $out/bin/waybar-wttr
     '';
   };
-in {
+in
+{
   options.${namespace}.programs.waybar = {
     enable = mkBoolOpt false "${namespace}.programs.waybar.enable";
   };
@@ -50,7 +51,7 @@ in {
             "tray"
           ];
 
-          modules-center = [];
+          modules-center = [ ];
 
           modules-right = [
             "battery"
@@ -80,11 +81,12 @@ in {
             tooltip = true;
             format = "{}";
             interval = 7;
-            exec = let
-              todo = pkgs.todo + "/bin/todo";
-              sed = pkgs.gnused + "/bin/sed";
-              wc = pkgs.coreutils + "/bin/wc";
-            in
+            exec =
+              let
+                todo = pkgs.todo + "/bin/todo";
+                sed = pkgs.gnused + "/bin/sed";
+                wc = pkgs.coreutils + "/bin/wc";
+              in
               pkgs.writeShellScript "todo-waybar" ''
                 #!/bin/sh
 
@@ -131,7 +133,9 @@ in {
             format = "󰤆";
           };
 
-          tray = {spacing = 10;};
+          tray = {
+            spacing = 10;
+          };
 
           clock = {
             tooltip = false;
@@ -148,7 +152,15 @@ in {
           backlight = {
             tooltip = false;
             format = "{icon} {percent}%";
-            format-icons = ["󰋙" "󰫃" "󰫄" "󰫅" "󰫆" "󰫇" "󰫈"];
+            format-icons = [
+              "󰋙"
+              "󰫃"
+              "󰫄"
+              "󰫅"
+              "󰫆"
+              "󰫇"
+              "󰫈"
+            ];
             on-scroll-up = "${brightnessctl} s 1%-";
             on-scroll-down = "${brightnessctl} s +1%";
           };
@@ -163,7 +175,19 @@ in {
             format-charging = "󰂄 {capacity}%";
             format-plugged = "󰚥 {capacity}%";
             format-alt = "{time} {icon}";
-            format-icons = ["󰂃" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            format-icons = [
+              "󰂃"
+              "󰁺"
+              "󰁻"
+              "󰁼"
+              "󰁽"
+              "󰁾"
+              "󰁿"
+              "󰂀"
+              "󰂁"
+              "󰂂"
+              "󰁹"
+            ];
           };
 
           network = {
@@ -180,7 +204,13 @@ in {
             tooltip = false;
             format = "{icon} {volume}%";
             format-muted = "󰖁";
-            format-icons = {default = ["󰕿" "󰖀" "󰕾"];};
+            format-icons = {
+              default = [
+                "󰕿"
+                "󰖀"
+                "󰕾"
+              ];
+            };
             tooltip-format = "{desc}, {volume}%";
             on-click = "${pamixer} -t";
             on-scroll-up = "${pamixer} -d 1";

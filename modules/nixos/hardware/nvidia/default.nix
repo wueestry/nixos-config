@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.hardware.nvidia;
-in {
+in
+{
   options.${namespace}.hardware.nvidia = with types; {
     enable = mkBoolOpt false "Enable nvidia module";
   };
@@ -17,7 +19,7 @@ in {
   config = mkIf cfg.enable {
     hardware.opengl.enable = true;
 
-    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = [ "nvidia" ];
 
     hardware.nvidia = {
       # Modesetting is required.

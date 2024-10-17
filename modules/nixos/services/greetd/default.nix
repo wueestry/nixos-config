@@ -7,10 +7,12 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.greetd;
   name = "ryan";
-in {
+in
+{
   options.${namespace}.services.greetd = with types; {
     enable = mkBoolOpt false "Enable greetd";
   };

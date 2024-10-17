@@ -3,19 +3,23 @@
   config,
   pkgs,
   namespace,
-  osConfig ? {},
+  osConfig ? { },
   ...
-}: let
-  inherit (lib) types mkIf mkDefault mkMerge;
+}:
+let
+  inherit (lib)
+    types
+    mkIf
+    mkDefault
+    mkMerge
+    ;
   inherit (lib.${namespace}) mkOpt;
 
   cfg = config.${namespace}.config.user;
 
-  home-directory =
-    if cfg.name == null
-    then null
-    else "/home/${cfg.name}";
-in {
+  home-directory = if cfg.name == null then null else "/home/${cfg.name}";
+in
+{
   options.${namespace}.config.user = {
     enable = mkOpt types.bool true "Whether to configure the user account.";
     name = mkOpt (types.nullOr types.str) (config.snowfallorg.user.name or "ryan") "The user account.";

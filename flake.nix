@@ -60,40 +60,42 @@
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
   };
 
-  outputs = inputs: let
-    lib = inputs.snowfall-lib.mkLib {
-      inherit inputs;
-      src = ./.;
+  outputs =
+    inputs:
+    let
+      lib = inputs.snowfall-lib.mkLib {
+        inherit inputs;
+        src = ./.;
 
-      snowfall = {
-        meta = {
-          name = "zeus";
-          title = "NixOS config nicknamed Zeus";
+        snowfall = {
+          meta = {
+            name = "zeus";
+            title = "NixOS config nicknamed Zeus";
+          };
+
+          namespace = "zeus";
         };
-
-        namespace = "zeus";
       };
-    };
-  in
+    in
     lib.mkFlake {
       inherit inputs;
       src = ./.;
 
       channels-config = {
         allowUnfree = true;
-        permittedInsecurePackages = [];
+        permittedInsecurePackages = [ ];
       };
 
       overlays = with inputs; [
         hyprpanel.overlay
       ];
 
-      systems.modules.nixos = with inputs; [];
+      systems.modules.nixos = with inputs; [ ];
 
       systems.hosts.athena.modules = with inputs; [
         nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia
       ];
 
-      templates = import ./templates {};
+      templates = import ./templates { };
     };
 }

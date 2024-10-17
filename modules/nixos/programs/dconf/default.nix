@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.dconf;
-in {
+in
+{
   options.${namespace}.programs.dconf = with types; {
     enable = mkBoolOpt false "Enable dconf";
   };

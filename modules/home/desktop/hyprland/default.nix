@@ -8,7 +8,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.desktop.hyprland;
   border-size = 1;
   gaps-in = 3;
@@ -16,7 +17,8 @@ with lib.${namespace}; let
   active-opacity = 0.9;
   inactive-opacity = 0.8;
   rounding = 10;
-in {
+in
+{
   options.${namespace}.desktop.hyprland = with types; {
     enable = mkBoolOpt false "Enable hyprland";
   };
@@ -54,74 +56,76 @@ in {
       systemd.enable = true;
       #package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
-    settings = {
-      "$mod" = "SUPER";
-      "$shiftMod" = "SUPER_SHIFT";
+      settings = {
+        "$mod" = "SUPER";
+        "$shiftMod" = "SUPER_SHIFT";
 
-      exec-once = [ "${pkgs.bitwarden}/bin/bitwarden" ];
+        exec-once = [ "${pkgs.bitwarden}/bin/bitwarden" ];
 
-      monitor = [
-        ",prefered,auto,auto"
-      ];
+        monitor = [
+          ",prefered,auto,auto"
+        ];
 
-      cursor = {
-        no_hardware_cursors = true;
-      };
-
-      general = {
-        resize_on_border = true;
-        gaps_in = gaps-in;
-        gaps_out = gaps-out;
-        border_size = border-size;
-        border_part_of_window = true;
-        layout = "master";
-      };
-
-      debug.disable_logs = false;
-
-      decoration = {
-        active_opacity = active-opacity;
-        inactive_opacity = inactive-opacity;
-        rounding = rounding;
-        drop_shadow = true;
-        shadow_range = 20;
-        shadow_render_power = 3;
-        blur.enabled = true;
-      };
-
-      master = {
-        new_status = true;
-        allow_small_split = true;
-        mfact = 0.5;
-      };
-
-      gestures = { workspace_swipe = true; };
-
-      misc = {
-        vfr = true;
-        disable_hyprland_logo = true;
-        disable_splash_rendering = true;
-        disable_autoreload = true;
-        focus_on_activate = true;
-        new_window_takes_over_fullscreen = 2;
-      };
-
-      input = {
-        kb_layout = "us";
-        kb_variant = "altgr-intl";
-        follow_mouse = 1;
-        sensitivity = 0.0;
-        repeat_delay = 300;
-        repeat_rate = 50;
-
-        touchpad = {
-          natural_scroll = true;
-          clickfinger_behavior = true;
-          tap-to-click = true;
+        cursor = {
+          no_hardware_cursors = true;
         };
-      };
 
-      device = [
+        general = {
+          resize_on_border = true;
+          gaps_in = gaps-in;
+          gaps_out = gaps-out;
+          border_size = border-size;
+          border_part_of_window = true;
+          layout = "master";
+        };
+
+        debug.disable_logs = false;
+
+        decoration = {
+          active_opacity = active-opacity;
+          inactive_opacity = inactive-opacity;
+          rounding = rounding;
+          drop_shadow = true;
+          shadow_range = 20;
+          shadow_render_power = 3;
+          blur.enabled = true;
+        };
+
+        master = {
+          new_status = true;
+          allow_small_split = true;
+          mfact = 0.5;
+        };
+
+        gestures = {
+          workspace_swipe = true;
+        };
+
+        misc = {
+          vfr = true;
+          disable_hyprland_logo = true;
+          disable_splash_rendering = true;
+          disable_autoreload = true;
+          focus_on_activate = true;
+          new_window_takes_over_fullscreen = 2;
+        };
+
+        input = {
+          kb_layout = "us";
+          kb_variant = "altgr-intl";
+          follow_mouse = 1;
+          sensitivity = 0.0;
+          repeat_delay = 300;
+          repeat_rate = 50;
+
+          touchpad = {
+            natural_scroll = true;
+            clickfinger_behavior = true;
+            tap-to-click = true;
+          };
+        };
+
+        device = [
           {
             name = "at-translated-set-2-keyboard";
             kb_layout = "ch";
@@ -134,8 +138,8 @@ in {
           }
         ];
 
+      };
     };
-  };
 
     #systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };

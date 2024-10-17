@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.bundles.office;
-in {
+in
+{
   options.${namespace}.bundles.office = with types; {
     enable = mkBoolOpt false "Enable office bundle";
   };
@@ -20,7 +22,7 @@ in {
       libreoffice
       obsidian
     ];
-    
+
     services.nextcloud-client = {
       enable = true;
       startInBackground = true;

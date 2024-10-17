@@ -8,14 +8,16 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.stylix;
-in {
+in
+{
   options.${namespace}.programs.stylix = with types; {
     enable = mkBoolOpt false "Enable stylix";
   };
 
-  imports = [inputs.stylix.homeManagerModules.stylix];
+  imports = [ inputs.stylix.homeManagerModules.stylix ];
 
   config = mkIf cfg.enable {
     stylix = {
@@ -32,7 +34,7 @@ in {
 
       fonts = {
         monospace = {
-          package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+          package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
           name = "JetBrainsMono Nerd Font Mono";
         };
         sansSerif = {

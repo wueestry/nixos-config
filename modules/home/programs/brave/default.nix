@@ -6,9 +6,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.brave;
-in {
+in
+{
   options.${namespace}.programs.brave = {
     enable = mkBoolOpt false "${namespace}.programs.brave.enable";
   };
@@ -18,9 +20,9 @@ in {
       enable = true;
       package = pkgs.brave;
       extensions = [
-        {id = "nngceckbapebfimnlniiiahkandclblb";} # Bitwarden
-        {id = "eimadpbcbfnmbkopoojfekhnkhdbieeh";} # Dark Reader
-        {id = "edibdbjcniadpccecjdfdjjppcpchdlm";} # I still dont care about cookies
+        { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
+        { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; } # Dark Reader
+        { id = "edibdbjcniadpccecjdfdjjppcpchdlm"; } # I still dont care about cookies
       ];
     };
   };

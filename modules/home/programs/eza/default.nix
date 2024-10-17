@@ -7,25 +7,26 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.eza;
-in {
+in
+{
   options.${namespace}.programs.eza = with types; {
     enable = mkBoolOpt false "Enable programs.eza";
   };
 
-  config =
-    mkIf cfg.enable {
-        programs.eza = {
-            enable = true;
-            icons = true;
+  config = mkIf cfg.enable {
+    programs.eza = {
+      enable = true;
+      icons = true;
 
-            extraOptions = [
-            "--group-directories-first"
-            "--no-quotes"
-            "--git-ignore"
-            "--icons=always"
-            ];
-        };
+      extraOptions = [
+        "--group-directories-first"
+        "--no-quotes"
+        "--git-ignore"
+        "--icons=always"
+      ];
     };
+  };
 }

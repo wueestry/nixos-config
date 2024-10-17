@@ -6,9 +6,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.zsh;
-in {
+in
+{
   options.${namespace}.programs.zsh = {
     enable = mkBoolOpt false "${namespace}.programs.zsh.enable";
   };
@@ -39,7 +41,7 @@ in {
         tree = "eza --icons=always --tree --no-quotes";
       };
 
-      plugins = [];
+      plugins = [ ];
     };
   };
 }

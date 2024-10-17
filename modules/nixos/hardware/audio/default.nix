@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.hardware.audio;
-in {
+in
+{
   options.${namespace}.hardware.audio = with types; {
     enable = mkBoolOpt false "Enable pipewire";
   };

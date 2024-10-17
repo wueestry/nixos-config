@@ -7,14 +7,17 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.module;
-in {
+in
+{
   options.${namespace}.module = with types; {
     enable = mkBoolOpt false "Enable module";
   };
 
   config =
-    mkIf cfg.enable {
-    };
+    mkIf cfg.enable
+      {
+      };
 }

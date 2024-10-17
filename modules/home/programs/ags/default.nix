@@ -8,10 +8,12 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.ags;
-in {
-  imports = [inputs.ags.homeManagerModules.default];
+in
+{
+  imports = [ inputs.ags.homeManagerModules.default ];
 
   options.${namespace}.programs.ags = with types; {
     enable = mkBoolOpt false "Enable ags";
@@ -22,10 +24,10 @@ in {
       sassc
       socat
       imagemagick
-      pavucontrol #audio
-      wayshot #screen recorder
-      wf-recorder #screen recorder
-      swappy #screen recorder
+      pavucontrol # audio
+      wayshot # screen recorder
+      wf-recorder # screen recorder
+      swappy # screen recorder
       wl-gammactl
       brightnessctl
       gjs

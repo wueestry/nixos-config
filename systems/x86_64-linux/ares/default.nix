@@ -5,7 +5,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; {
+with lib.${namespace};
+{
   imports = [
     ./hardware.nix
   ];

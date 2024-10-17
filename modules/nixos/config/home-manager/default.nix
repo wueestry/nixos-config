@@ -5,11 +5,13 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.home-manager;
-in {
+in
+{
   options.${namespace}.programs.home-manager = with types; {
-    extraOptions = mkOpt attrs {} "${namespace}.programs.home-manager.extraOptions";
+    extraOptions = mkOpt attrs { } "${namespace}.programs.home-manager.extraOptions";
   };
 
   config = {

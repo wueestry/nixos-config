@@ -7,22 +7,23 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.hyprpaper;
-in {
+in
+{
   options.${namespace}.programs.hyprpaper = with types; {
     enable = mkBoolOpt false "Enable programs.hyprpaper";
   };
 
-  config =
-    mkIf cfg.enable {
-        services.hyprpaper = {
-    enable = true;
-    settings = {
-      ipc = "on";
-      splash = false;
-      splash_offset = 2.0;
+  config = mkIf cfg.enable {
+    services.hyprpaper = {
+      enable = true;
+      settings = {
+        ipc = "on";
+        splash = false;
+        splash_offset = 2.0;
+      };
     };
   };
-    };
 }
