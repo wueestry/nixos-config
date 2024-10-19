@@ -14,9 +14,7 @@ let
   pamixer = pkgs.pamixer + "/bin/pamixer";
   waybar-wttr = pkgs.stdenv.mkDerivation {
     name = "waybar-wttr";
-    buildInputs = [
-      (pkgs.python39.withPackages (pythonPackages: with pythonPackages; [ requests ]))
-    ];
+    buildInputs = [ (pkgs.python39.withPackages (pythonPackages: with pythonPackages; [ requests ])) ];
     unpackPhase = "true";
     installPhase = ''
       mkdir -p $out/bin

@@ -7,9 +7,7 @@
 with lib;
 with lib.${namespace};
 {
-  imports = [
-    ./hardware.nix
-  ];
+  imports = [ ./hardware.nix ];
 
   networking.hostName = "athena";
 
@@ -45,6 +43,7 @@ with lib.${namespace};
     programs = {
       nh = enabled;
       nix-ld = enabled;
+      steam = enabled;
     };
     services = {
       virtualisation = enabled;
@@ -55,6 +54,12 @@ with lib.${namespace};
     };
   };
 
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024;
+    }
+  ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

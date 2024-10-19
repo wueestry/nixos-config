@@ -24,9 +24,7 @@ in
         gnome.nautilus-python
       ];
 
-      pathsToLink = [
-        "/share/nautilus-python/extensions"
-      ];
+      pathsToLink = [ "/share/nautilus-python/extensions" ];
     };
 
     programs.nautilus-open-any-terminal = {

@@ -16,8 +16,5 @@ in
     enable = mkBoolOpt false "Enable module";
   };
 
-  config =
-    mkIf cfg.enable
-      {
-      };
+  config = mkIf cfg.enable { };
 }

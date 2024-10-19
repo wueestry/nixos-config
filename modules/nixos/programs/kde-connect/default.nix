@@ -16,7 +16,5 @@ in
     enable = mkBoolOpt false "Enable kde connect";
   };
 
-  config = mkIf cfg.enable {
-    programs.kdeconnect.enable = true;
-  };
+  config = mkIf cfg.enable { programs.kdeconnect.enable = true; };
 }

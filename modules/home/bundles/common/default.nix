@@ -35,11 +35,16 @@ in
       zip
 
       bitwarden
+      fastfetch
+
+      # Config formatting
+      nixfmt-rfc-style
     ];
     zeus = {
       bundles.shell = enabled;
       misc = {
-        gtk = enabled;
+        gtk = disabled; # Done by stylix
+        qt = enabled;
         scripts = enabled;
       };
       programs = {

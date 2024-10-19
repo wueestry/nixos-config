@@ -25,7 +25,7 @@ in
           "$mod,K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
           "$mod,L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
           "$mod,X, exec, power-menu" # Powermenu
-          "$mod,SPACE, exec, launcher" # Launcher
+          "$mod,D, exec, launcher" # Launcher
           "$shiftMod,SPACE, exec, hyprfocus-toggle" # Toggle HyprFocus
 
           "$mod,Q, killactive," # Close window
@@ -69,7 +69,8 @@ in
 
       bindl = [
         ",XF86AudioMute, exec, sound-toggle" # Toggle Mute
-        ",switch:Lid Switch, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock when closing Lid
+        ",switch:on:Lid Switch, exec, hyprctl keyword monitor 'eDP-1, disable'"
+        ",switch:off:Lid Switch, exec, hyprctl keyword monitor 'eDP-1, prefered, auto, auto'"
       ];
 
       bindle = [
@@ -78,7 +79,6 @@ in
         ",XF86MonBrightnessUp, exec, brightness-up" # Brightness Up
         ",XF86MonBrightnessDown, exec, brightness-down" # Brightness Down
       ];
-
     };
   };
 }

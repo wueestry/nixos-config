@@ -86,9 +86,7 @@
         permittedInsecurePackages = [ ];
       };
 
-      overlays = with inputs; [
-        hyprpanel.overlay
-      ];
+      overlays = with inputs; [ hyprpanel.overlay ];
 
       systems.modules.nixos = with inputs; [ ];
 

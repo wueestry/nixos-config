@@ -53,9 +53,7 @@ in
   };
 
   config = {
-    environment.systemPackages = with pkgs; [
-      propagatedIcon
-    ];
+    environment.systemPackages = with pkgs; [ propagatedIcon ];
 
     programs.zsh = enabled;
 

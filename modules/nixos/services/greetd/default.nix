@@ -27,8 +27,6 @@ in
       '';
     };
 
-    systemd.tmpfiles.rules = [
-      "d '/var/cache/greeter' - greeter greeter - -"
-    ];
+    systemd.tmpfiles.rules = [ "d '/var/cache/greeter' - greeter greeter - -" ];
   };
 }

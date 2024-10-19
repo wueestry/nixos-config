@@ -60,11 +60,7 @@ in
         "$mod" = "SUPER";
         "$shiftMod" = "SUPER_SHIFT";
 
-        exec-once = [ "${pkgs.bitwarden}/bin/bitwarden" ];
-
-        monitor = [
-          ",prefered,auto,auto"
-        ];
+        monitor = [ ",prefered,auto,auto" ];
 
         cursor = {
           no_hardware_cursors = true;
@@ -128,6 +124,11 @@ in
         device = [
           {
             name = "at-translated-set-2-keyboard";
+            kb_layout = "ch";
+            kb_variant = "";
+          }
+          {
+            name = "logitech-wireless-keyboard-pid:4023";
             kb_layout = "ch";
             kb_variant = "";
           }

@@ -16,7 +16,5 @@ in
     enable = mkBoolOpt false "Enable dconf";
   };
 
-  config = mkIf cfg.enable {
-    programs.dconf.enable = true;
-  };
+  config = mkIf cfg.enable { programs.dconf.enable = true; };
 }
