@@ -19,9 +19,10 @@ in
   config = mkIf cfg.enable {
     environment = {
       sessionVariables.NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
-      systemPackages = with pkgs; [
-        gnome.nautilus
-        gnome.nautilus-python
+      systemPackages = with pkgs.gnome; [
+        file-roller
+        nautilus
+        nautilus-python
       ];
 
       pathsToLink = [ "/share/nautilus-python/extensions" ];

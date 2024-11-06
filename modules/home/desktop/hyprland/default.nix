@@ -60,7 +60,10 @@ in
         "$mod" = "SUPER";
         "$shiftMod" = "SUPER_SHIFT";
 
-        monitor = [ ",prefered,auto,auto" ];
+        monitor = [
+          ",prefered,auto,auto"
+          "Unknown-1, disable"
+        ];
 
         cursor = {
           no_hardware_cursors = true;

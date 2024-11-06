@@ -18,7 +18,8 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       fzf
-      inputs.neovim.packages.${system}.default
+      #inputs.neovim.packages.${system}.default
+      neovim
       nodejs
       ripgrep
     ];

@@ -35,6 +35,7 @@ with lib.${namespace};
       nvidia = enabled;
     };
     programs = {
+      steam = enabled;
       nh = enabled;
       nix-ld = enabled;
     };
