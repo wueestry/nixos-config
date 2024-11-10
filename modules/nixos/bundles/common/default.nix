@@ -32,6 +32,10 @@ in
         networking = enabled;
       };
 
+      programs = {
+	sops = enabled;
+      };
+
       services = {
         printing = enabled;
         tailscale = enabled;

@@ -48,8 +48,8 @@
 
     # Hyprpanel
     hyprpanel = {
-      #url = "github:Jas-SinghFSU/HyprPanel";
-      url = "github:Jas-SinghFSU/HyprPanel?ref=f21d70949f9f4426f39d12f542ec788d47330763";
+      url = "github:Jas-SinghFSU/HyprPanel";
+      #url = "github:Jas-SinghFSU/HyprPanel?ref=f21d70949f9f4426f39d12f542ec788d47330763";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -58,6 +58,12 @@
 
     # Apple font
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
+
+    # Sops secrets management
+    sops-nix = {
+	url = "github:Mic92/sops-nix";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
