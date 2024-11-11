@@ -23,13 +23,13 @@ in
     "${inputs.nixpkgs-unstable}/nixos/modules/services/web-apps/immich.nix"
   ];
 
-  config = mkIf cfg.enable { 
-	services.immich = {
-		enable = true;
+  config = mkIf cfg.enable {
+    services.immich = {
+      enable = true;
 
-		port = 3001;
-		package = inputs.nixpkgs-unstable.immich;
-		host = "localhost";
-	};
+      port = 3001;
+      package = inputs.nixpkgs-unstable.immich;
+      host = "localhost";
+    };
   };
 }

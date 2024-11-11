@@ -7,10 +7,12 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.starship;
   stylix = config.lib.stylix.colors;
-in {
+in
+{
   options.${namespace}.programs.starship = with types; {
     enable = mkBoolOpt false "Enable starship";
   };
@@ -186,7 +188,7 @@ in {
           disabled = false;
         };
 
-        character =  {
+        character = {
           disabled = false;
           success_symbol = "[](bold fg:#${stylix.base0B})";
           error_symbol = "[](bold fg:#${stylix.base08})";

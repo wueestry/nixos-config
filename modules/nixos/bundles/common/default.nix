@@ -33,7 +33,7 @@ in
       };
 
       programs = {
-	sops = enabled;
+        sops = enabled;
       };
 
       services = {

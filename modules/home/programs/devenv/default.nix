@@ -16,14 +16,14 @@ in
     enable = mkBoolOpt false "Enable devenv";
   };
 
-  config = mkIf cfg.enable { 
-      home.packages = with pkgs; [
-        devenv
-      ];
-      programs.direnv = {
-          enable = true;
-          enableZshIntegration = true;
-          nix-direnv = true;
-        };
+  config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      devenv
+    ];
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv = true;
     };
+  };
 }
