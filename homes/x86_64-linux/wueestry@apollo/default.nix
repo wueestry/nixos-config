@@ -11,10 +11,14 @@ with lib.${namespace};
   snowfallorg.user.enable = true;
   zeus = {
     programs = {
+      eza = enabled;
       git = {
         enable = true;
         username = "Ryan Wüest";
       };
+      kitty = enabled;
+      neovim = enabled;
+      zsh = enabled;
     };
   };
 
