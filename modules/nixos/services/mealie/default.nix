@@ -20,6 +20,7 @@ in
 	services.mealie = {
 		enable = true;
 		port = 8088;
+		listenAddress = "0.0.0.0";
 	};
   };
 }

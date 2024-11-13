@@ -29,6 +29,9 @@ with lib.${namespace};
     services = {
 	ssh = enabled;
 	tailscale = enabled;
+
+	immich = enabled;
+	mealie = enabled;
     };
     system = {
       boot.systemd-boot = enabled;

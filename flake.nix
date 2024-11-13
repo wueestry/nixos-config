@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # NixPkgs Unstable (nixos-unstable)
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     ### Additional Inputs ###
 

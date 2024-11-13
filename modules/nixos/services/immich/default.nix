@@ -20,7 +20,7 @@ in
   # Fix until immich is in stable
   disabledModules = [ "services/web-apps/immich.nix" ];
   imports = [
-    "${inputs.nixpkgs-unstable}/nixos/modules/services/web-apps/immich.nix"
+    "${inputs.unstable}/nixos/modules/services/web-apps/immich.nix"
   ];
 
   config = mkIf cfg.enable { 
@@ -28,8 +28,18 @@ in
 		enable = true;
 
 		port = 3001;
-		package = inputs.nixpkgs-unstable.immich;
-		host = "localhost";
+		package = inputs.unstable.legacyPackages.x86_64-linux.immich;
+		host = "0.0.0.0";
+		mediaLocation = "/mnt/storage/immich";
+
+		machine-learning = {
+			enable = true;
+		};
+		redis = {
+      enable = true;
+      host = "127.0.0.1";
+      port = 6379;
+    };
 	};
   };
 }
