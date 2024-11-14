@@ -23,5 +23,6 @@ in
       nodejs
       ripgrep
     ];
+    programs.neovim.defaultEditor = true;
   };
 }

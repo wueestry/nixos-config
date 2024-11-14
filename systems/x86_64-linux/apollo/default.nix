@@ -33,12 +33,16 @@ with lib.${namespace};
       immich = enabled;
       mealie = enabled;
       jellyfin = enabled;
+      stirling-pdf = enabled;
 
       homepage-dashboard = enabled;
     };
     system = {
       boot.systemd-boot = enabled;
       xkb.xkb-us = enabled;
+    };
+    programs = {
+	sops = enabled;
     };
   };
 

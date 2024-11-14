@@ -21,6 +21,9 @@ in
       enable = true;
       port = 8088;
       listenAddress = "0.0.0.0";
+      settings = {
+	TZ = "Europe/Zurich";
+      };
     };
   };
 }

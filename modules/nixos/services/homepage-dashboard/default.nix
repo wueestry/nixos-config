@@ -52,6 +52,17 @@ in
             }
           ];
         }
+	{
+	  "Tools" = [
+		{
+		 "Stirling PDF" = {
+		 description = "A locally hosted web application that allows you to perform various operations on PDF files";
+		 icon = "stirling-pdf.png";
+		 href = "http://apollo:8001";
+		 };
+		}
+	  ];
+	}
       ];
     };
   };
