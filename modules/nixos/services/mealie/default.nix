@@ -16,11 +16,11 @@ in
     enable = mkBoolOpt false "Enable mealie";
   };
 
-  config = mkIf cfg.enable { 
-	services.mealie = {
-		enable = true;
-		port = 8088;
-		listenAddress = "0.0.0.0";
-	};
+  config = mkIf cfg.enable {
+    services.mealie = {
+      enable = true;
+      port = 8088;
+      listenAddress = "0.0.0.0";
+    };
   };
 }

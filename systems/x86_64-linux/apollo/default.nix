@@ -22,16 +22,19 @@ with lib.${namespace};
           "video"
           "libvirtd"
           "docker"
-	  "render"
+          "render"
         ];
       };
     };
     services = {
-	ssh = enabled;
-	tailscale = enabled;
+      ssh = enabled;
+      tailscale = enabled;
 
-	immich = enabled;
-	mealie = enabled;
+      immich = enabled;
+      mealie = enabled;
+      jellyfin = enabled;
+
+      homepage-dashboard = enabled;
     };
     system = {
       boot.systemd-boot = enabled;
