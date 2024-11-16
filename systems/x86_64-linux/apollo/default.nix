@@ -34,6 +34,8 @@ with lib.${namespace};
       mealie = enabled;
       jellyfin = enabled;
       stirling-pdf = enabled;
+      firefly-iii = enabled;
+      #nextcloud = enabled;
 
       homepage-dashboard = enabled;
     };
@@ -42,7 +44,7 @@ with lib.${namespace};
       xkb.xkb-us = enabled;
     };
     programs = {
-	sops = enabled;
+      sops = enabled;
     };
   };
 

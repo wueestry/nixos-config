@@ -20,6 +20,9 @@ in
     services.homepage-dashboard = {
       enable = true;
       listenPort = 8082;
+      settings = {
+        background = "https://images.unsplash.com/photo-1730725469217-0832a94d7c2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+      };
 
       services = [
         {
@@ -52,17 +55,17 @@ in
             }
           ];
         }
-	{
-	  "Tools" = [
-		{
-		 "Stirling PDF" = {
-		 description = "A locally hosted web application that allows you to perform various operations on PDF files";
-		 icon = "stirling-pdf.png";
-		 href = "http://apollo:8001";
-		 };
-		}
-	  ];
-	}
+        {
+          "Tools" = [
+            {
+              "Stirling PDF" = {
+                description = "A locally hosted web application that allows you to perform various operations on PDF files";
+                icon = "stirling-pdf.png";
+                href = "http://apollo:8001";
+              };
+            }
+          ];
+        }
       ];
     };
   };

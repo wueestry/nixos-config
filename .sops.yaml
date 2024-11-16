@@ -1,9 +1,9 @@
 keys:
-  - &ares: age1qv2fve2mwtdsz56d3xj8d89jhn4m3272dh3h3jytm3rt8c3gnadq9cfgu6
-  - &apollo: age1730emkf8agd0jza2g9ezuxrmaqfqjyzg22dlg59vxnax2wfqaacsxu2tqd
+  - &ares age1qv2fve2mwtdsz56d3xj8d89jhn4m3272dh3h3jytm3rt8c3gnadq9cfgu6
+  - &apollo age1730emkf8agd0jza2g9ezuxrmaqfqjyzg22dlg59vxnax2wfqaacsxu2tqd
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
-      - age:
-        - *ares
-        - *apollo
+    - age:
+      - *ares
+      - *apollo

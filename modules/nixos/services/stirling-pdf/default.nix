@@ -20,12 +20,12 @@ in
   disabledModules = [ "services/web-apps/stirling-pdf.nix" ];
   imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/stirling-pdf.nix" ];
 
-  config = mkIf cfg.enable { 
-	services.stirling-pdf = {
-		enable = true;
-		environment = {
-			SERVER_PORT = 8001;
-		};
-	};
+  config = mkIf cfg.enable {
+    services.stirling-pdf = {
+      enable = true;
+      environment = {
+        SERVER_PORT = 8001;
+      };
+    };
   };
 }
