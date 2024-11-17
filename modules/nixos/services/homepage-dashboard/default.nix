@@ -22,6 +22,8 @@ in
       listenPort = 8082;
       settings = {
         background = "https://images.unsplash.com/photo-1730725469217-0832a94d7c2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+        color = "neutral";
+	theme = "dark";
       };
 
       services = [
@@ -51,6 +53,13 @@ in
                 description = "Self hosted recipe manager and meal planner";
                 icon = "mealie.png";
                 href = "http://apollo:8088";
+              };
+            }
+            {
+              "Firefly III" = {
+                description = "A personal finances manager";
+                icon = "firefly.png";
+                href = "http://apollo:9080";
               };
             }
           ];

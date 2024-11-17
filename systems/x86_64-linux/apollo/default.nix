@@ -35,7 +35,7 @@ with lib.${namespace};
       jellyfin = enabled;
       stirling-pdf = enabled;
       firefly-iii = enabled;
-      #nextcloud = enabled;
+      nextcloud = enabled;
 
       homepage-dashboard = enabled;
     };

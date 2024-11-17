@@ -13,8 +13,6 @@ let
   cfg = config.${namespace}.services.nextcloud;
 in
 {
-  imports = [ inputs.sops-nix.nixosModules.sops ];
-
   options.${namespace}.services.nextcloud = with types; {
     enable = mkBoolOpt false "Enable nextcloud";
   };
@@ -22,46 +20,44 @@ in
   config = mkIf cfg.enable {
     sops.secrets.nextcloud-admin = {
       owner = "nextcloud";
+      group = "nextcloud";
     };
 
     services.nextcloud = {
       enable = true;
       configureRedis = true;
-      package = pkgs.nextcloud29;
-      hostName = "nix-nextcloud";
-      home = "/mnt/storage/nextcloud";
+      package = pkgs.nextcloud30;
+      hostName = "apollo.nextcloud.home";
+      #home = "/var/lib/nextcloud";
+      datadir = "/mnt/storage/nextcloud";
+      database.createLocally = true;
+      extraAppsEnable = true;
+      autoUpdateApps.enable = true;
 
       config = {
         dbtype = "pgsql";
-        dbuser = "nextcloud";
-        dbhost = "/run/postgresql";
-        dbname = "nextcloud";
         adminpassFile = config.sops.secrets.nextcloud-admin.path;
         adminuser = "admin";
-        trustedProxies = [
-          "localhost"
-          "127.0.0.1"
-          "100.120.33.43"
-        ];
+      };
+      settings = {
+	trusted_domains = [
+	"localhost"
+	"127.0.0.1"
+	"100.123.33.43"
+	"apollo"
+	];
       };
     };
-    services.postgresql = {
-      enable = true;
-      ensureDatabases = [ "nextcloud" ];
-      #ensureUsers = [
-      #{ name = "nextcloud";
-      #ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
-      #}
-      #];
-    };
-    systemd.services."nextcloud-setup" = {
-      requires = [ "postgresql.service" ];
-      after = [ "postgresql.service" ];
-    };
-    services.nginx.virtualHosts."nix-nextcloud".listen = [
+
+#services.postgresqlBackup = {
+#      enable = true;
+#      startAt = "*-*-* 01:15:00";
+#    };
+
+    services.nginx.virtualHosts.${config.services.nextcloud.hostName}.listen = [
       {
-        addr = "127.0.0.1";
-        port = 8011;
+        addr = "0.0.0.0";
+        port = 8081;
       }
     ];
   };
