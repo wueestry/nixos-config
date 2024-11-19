@@ -21,6 +21,7 @@ in
       calibre
       libreoffice
       obsidian
+      okular
     ];
 
     services.nextcloud-client = {

@@ -30,6 +30,8 @@ in
 
         # Use vim bindings.
         set -o vi
+
+	export EDITOR="nvim"
       '';
 
       shellAliases = {

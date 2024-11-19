@@ -23,7 +23,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     # Neovim
-    neovim = {
+    nixvim = {
       url = "github:wueestry/nixvim-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };

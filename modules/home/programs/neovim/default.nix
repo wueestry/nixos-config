@@ -18,11 +18,17 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       fzf
-      #inputs.neovim.packages.${system}.default
-      neovim
       nodejs
       ripgrep
     ];
-    programs.neovim.defaultEditor = true;
+    programs.neovim = {
+    	enable = true;
+	defaultEditor = true;
+	plugins = [
+	  {
+		plugin = pkgs.vimPlugins.LazyVim;
+	  }
+	];
+    };
   };
 }
