@@ -23,7 +23,7 @@ in
       settings = {
         background = "https://images.unsplash.com/photo-1730725469217-0832a94d7c2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
         color = "neutral";
-	theme = "dark";
+        theme = "dark";
       };
 
       services = [
@@ -43,6 +43,20 @@ in
                 href = "http://apollo:8096";
               };
 
+            }
+            {
+              "Nextcloud" = {
+                description = "Sharing solution for files, calendars, contacts and more";
+                icon = "nextcloud.png";
+                href = "http://apollo:8081";
+              };
+            }
+            {
+              "Audiobookshelf" = {
+                description = "Self-hosted audiobook and podcast server";
+                icon = "audiobookshelf.png";
+                href = "http://apollo:8008";
+              };
             }
           ];
         }

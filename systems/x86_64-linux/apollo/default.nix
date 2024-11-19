@@ -36,6 +36,7 @@ with lib.${namespace};
       stirling-pdf = enabled;
       firefly-iii = enabled;
       nextcloud = enabled;
+      audiobookshelf = enabled;
 
       homepage-dashboard = enabled;
     };
