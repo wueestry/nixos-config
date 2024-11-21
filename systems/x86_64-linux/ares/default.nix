@@ -36,6 +36,7 @@ with lib.${namespace};
     };
     programs = {
       steam = enabled;
+      sops = enabled;
       nh = enabled;
       nix-ld = enabled;
     };

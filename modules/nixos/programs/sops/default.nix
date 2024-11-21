@@ -29,6 +29,6 @@ in
     sops.defaultSopsFile = ./../../../../secrets/secrets.yaml;
     sops.defaultSopsFormat = "yaml";
 
-    sops.age.keyFile = "/home/wueestry/.config/sops/age/keys.txt";
+    sops.age.keyFile = "/home/${config.zeus.config.user.name}/.config/sops/age/keys.txt";
   };
 }
