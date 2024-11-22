@@ -22,13 +22,9 @@ in
       ripgrep
     ];
     programs.neovim = {
-    	enable = true;
-	defaultEditor = true;
-	plugins = [
-	  {
-		plugin = pkgs.vimPlugins.LazyVim;
-	  }
-	];
+      enable = true;
+      defaultEditor = true;
+      plugins = [ { plugin = pkgs.vimPlugins.LazyVim; } ];
     };
   };
 }

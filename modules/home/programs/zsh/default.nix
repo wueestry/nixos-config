@@ -25,13 +25,13 @@ in
       syntaxHighlighting.enable = true;
 
       initExtra = ''
-        # Fix an issue with tmux.
-        export KEYTIMEOUT=1
+                # Fix an issue with tmux.
+                export KEYTIMEOUT=1
 
-        # Use vim bindings.
-        set -o vi
+                # Use vim bindings.
+                set -o vi
 
-	export EDITOR="nvim"
+        	export EDITOR="nvim"
       '';
 
       shellAliases = {

@@ -58,6 +58,20 @@ in
                 href = "http://apollo:8008";
               };
             }
+            {
+              "Calibre" = {
+                description = "Comprehensive e-book software";
+                icon = "calibre.png";
+                href = "http://apollo:8195";
+              };
+            }
+            {
+              "Calibre Web" = {
+                description = "Web app for browsing, reading and downloading eBooks stored in a Calibre database";
+                icon = "calibre-web.png";
+                href = "http://apollo:8095";
+              };
+            }
           ];
         }
         {

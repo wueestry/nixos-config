@@ -35,6 +35,14 @@ in
       hostName = "apollo.nextcloud.home";
       home = "/var/lib/nextcloud";
       database.createLocally = true;
+      extraApps = {
+        inherit (config.services.nextcloud.package.packages.apps)
+          contacts
+          calendar
+          tasks
+          onlyoffice
+          ;
+      };
       extraAppsEnable = true;
       autoUpdateApps.enable = true;
 
@@ -65,6 +73,7 @@ in
           "OC\\Preview\\HEIC"
         ];
       };
+      maxUploadSize = "10G";
     };
 
     #services.postgresqlBackup = {

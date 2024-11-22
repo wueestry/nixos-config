@@ -25,6 +25,7 @@ with lib.${namespace};
           "render"
         ];
       };
+      nix = enabled;
     };
     services = {
       ssh = enabled;
@@ -37,12 +38,14 @@ with lib.${namespace};
       firefly-iii = enabled;
       nextcloud = enabled;
       audiobookshelf = enabled;
+      calibre = enabled;
 
       homepage-dashboard = enabled;
     };
     system = {
       boot.systemd-boot = enabled;
       xkb.xkb-us = enabled;
+      locale = enabled;
     };
     programs = {
       sops = enabled;
