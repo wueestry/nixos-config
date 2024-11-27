@@ -19,7 +19,6 @@ in
   config = mkIf cfg.enable {
     home.packages =
       with pkgs;
-      with gnome;
       [
         adwaita-icon-theme
         brightnessctl

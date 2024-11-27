@@ -20,7 +20,7 @@ in
       bind =
         [
           "$mod,RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
-          "$mod,E, exec, ${pkgs.gnome.nautilus}/bin/nautilus" # Nautilus
+          "$mod,E, exec, ${pkgs.nautilus}/bin/nautilus" # Nautilus
           "$mod,B, exec, ${pkgs.librewolf}/bin/librewolf" # Librewolf
           "$mod,K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
           "$mod,L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock

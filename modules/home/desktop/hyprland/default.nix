@@ -31,7 +31,7 @@ in
     home.packages = with pkgs; [
       qt5.qtwayland
       qt6.qtwayland
-      qt5ct
+      libsForQt5.qt5ct
       qt6ct
       hyprshot
       hyprpicker
@@ -84,9 +84,11 @@ in
           active_opacity = active-opacity;
           inactive_opacity = inactive-opacity;
           rounding = rounding;
-          drop_shadow = true;
-          shadow_range = 20;
-          shadow_render_power = 3;
+	  shadow = {
+		enabled = true;
+		range = 20;
+		render_power = 3;
+	  };
           blur.enabled = true;
         };
 

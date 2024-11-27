@@ -27,8 +27,8 @@ in
       style = {
         name = "Catppuccin-Mocha-Teal";
         package = pkgs.catppuccin-kvantum.override {
-          accent = "Teal";
-          variant = "Mocha";
+          accent = "teal";
+          variant = "mocha";
         };
       };
     };
