@@ -23,7 +23,7 @@ in
         name = "MesloLGS NF";
         package = pkgs.meslo-lgs-nf;
       };
-      theme = "Catppuccin-Mocha";
+      themeFile = "Catppuccin-Mocha";
       shellIntegration = {
         mode = "enabled";
         enableZshIntegration = true;
