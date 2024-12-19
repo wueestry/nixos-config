@@ -21,6 +21,7 @@ with lib.${namespace};
         enable = true;
         username = "Ryan Wüest";
       };
+      freetube = enabled;
     };
     misc = {
       xdg = enabled;

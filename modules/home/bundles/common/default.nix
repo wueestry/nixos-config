@@ -42,6 +42,9 @@ in
     ];
     zeus = {
       bundles.shell = enabled;
+      config = {
+        apps = enabled;
+      };
       misc = {
         gtk = disabled; # Done by stylix
         qt = enabled;

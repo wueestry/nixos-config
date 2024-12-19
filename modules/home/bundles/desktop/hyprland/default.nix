@@ -17,24 +17,22 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages =
-      with pkgs;
-      [
-        adwaita-icon-theme
-        brightnessctl
-        gnome-system-monitor
-        gnome-control-center
-        morewaita-icon-theme
+    home.packages = with pkgs; [
+      adwaita-icon-theme
+      brightnessctl
+      gnome-system-monitor
+      gnome-control-center
+      morewaita-icon-theme
 
-        pavucontrol
-        swww
+      pavucontrol
+      swww
 
-        qogir-icon-theme
+      qogir-icon-theme
 
-        wayshot
-        wl-clipboard
-        wl-gammactl
-      ];
+      wayshot
+      wl-clipboard
+      wl-gammactl
+    ];
 
     zeus = {
       desktop.hyprland = enabled;

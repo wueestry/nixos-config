@@ -84,11 +84,11 @@ in
           active_opacity = active-opacity;
           inactive_opacity = inactive-opacity;
           rounding = rounding;
-	  shadow = {
-		enabled = true;
-		range = 20;
-		render_power = 3;
-	  };
+          shadow = {
+            enabled = true;
+            range = 20;
+            render_power = 3;
+          };
           blur.enabled = true;
         };
 

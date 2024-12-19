@@ -37,7 +37,7 @@ let
 
   hyprfocus-toggle =
     pkgs.writeShellScriptBin "hyprfocus-toggle"
-      # bash 
+      # bash
       ''
         if [ -f /tmp/hyprfocus ]; then
           hyprfocus-off

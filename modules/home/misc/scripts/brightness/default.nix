@@ -1,5 +1,5 @@
 # - ## Brightness
-#- 
+#-
 #- This module provides a set of scripts to control the brightness of the screen.
 #-
 #- - `brightness-up` increases the brightness by 5%.
