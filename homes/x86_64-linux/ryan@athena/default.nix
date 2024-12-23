@@ -22,6 +22,7 @@ with lib.${namespace};
         username = "Ryan Wüest";
       };
       spotify = enabled;
+      gimp = enabled;
     };
     misc = {
       xdg = enabled;

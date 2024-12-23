@@ -90,6 +90,13 @@ in
                 href = "http://apollo:9080";
               };
             }
+            {
+              "Wanderer" = {
+                description = "Self hosted trail database";
+                icon = "https://github.com/Flomp/wanderer/blob/main/docs/src/assets/logo_dark.svg";
+                href = "http://apollo:3000";
+              };
+            }
           ];
         }
         {
