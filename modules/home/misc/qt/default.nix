@@ -20,6 +20,8 @@ in
     home.packages = with pkgs; [
       libsForQt5.qt5ct
       libsForQt5.qtstyleplugin-kvantum
+      kdePackages.qtstyleplugin-kvantum
+      catppuccin-kvantum
     ];
     qt = {
       enable = true;

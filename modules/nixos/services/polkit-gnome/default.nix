@@ -17,7 +17,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ polkit_gnome ];
+    environment.systemPackages = with pkgs; [ 
+    polkit_gnome
+    libsecret
+    ];
 
     programs.seahorse.enable = true;
 

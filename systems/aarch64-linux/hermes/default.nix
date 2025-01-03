@@ -9,12 +9,12 @@ with lib.${namespace};
 {
   imports = [ ./hardware.nix ];
 
-  networking.hostName = "ares";
+  networking.hostName = "hermes";
 
   zeus = {
     config = {
       user = {
-        name = "ryan";
+        name = "wueestry";
         extraGroups = [
           "networkmanager"
           "wheel"
@@ -22,31 +22,26 @@ with lib.${namespace};
           "video"
           "libvirtd"
           "docker"
+          "render"
         ];
       };
-    };
-    bundles = {
-      common = enabled;
-    };
-    desktop.hyprland = enabled;
-    hardware = {
-      bluetooth = enabled;
-      cuda = enabled;
-      nvidia = enabled;
-    };
-    programs = {
-      steam = enabled;
-      sops = enabled;
-      nh = enabled;
-      nix-ld = enabled;
+      nix = enabled;
     };
     services = {
-      virtualisation = enabled;
-      wanderer = enabled;
+      ssh = enabled;
+      tailscale = enabled;
+
+      immich = enabled;
+
+      homepage-dashboard = enabled;
     };
     system = {
-      boot.grub = enabled;
+      boot.generic-extlinux = enabled;
       xkb.xkb-us = enabled;
+      locale = enabled;
+    };
+    programs = {
+      sops = enabled;
     };
   };
 
