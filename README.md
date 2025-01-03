@@ -48,3 +48,8 @@ After a fresh install, the user home directory is completly empty. In order to g
 nix-shell -p xdg-user-dirs
 xdg-user-dirs-update
 ```
+
+## Inspiration
+Thanks to the work of the following projects which inspired this configuration:
+- [anotherhadi/nixy](https://github.com/anotherhadi/nixy)
+- [jakehamilton/config](https://github.com/jakehamilton/config)
