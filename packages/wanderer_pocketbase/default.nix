@@ -18,11 +18,11 @@ let
   };
 in
 buildGoModule {
-    inherit pname version;
+  inherit pname version;
 
-    vendorHash = "sha256-WF7Q/Aa0EK01X9XPt7trgP3KeOGzheLLDpNdyIiVzRA=";
-    
-    src = wanderer_src;
+  vendorHash = "sha256-WF7Q/Aa0EK01X9XPt7trgP3KeOGzheLLDpNdyIiVzRA=";
 
-    sourceRoot = "${wanderer_src.name}/db";
-  }
+  src = wanderer_src;
+
+  sourceRoot = "${wanderer_src.name}/db";
+}

@@ -64,6 +64,7 @@ in
         kitty.enable = false;
         waybar.enable = false;
         hyprlock.enable = false;
+        neovim.enable = false;
       };
     };
   };

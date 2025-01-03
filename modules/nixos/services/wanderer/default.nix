@@ -16,8 +16,8 @@ let
     cd ${pkgs.zeus.wanderer}/bin/build  && node build &
 
     wait
-    '';
-  meili_key = "8MjSmA7Smu2N7qk6axgeeduHEqWmEgB7";#"$(sudo cat /run/secrets/meili-master-key)";
+  '';
+  meili_key = "8MjSmA7Smu2N7qk6axgeeduHEqWmEgB7"; # "$(sudo cat /run/secrets/meili-master-key)";
 in
 {
   options.${namespace}.services.wanderer = with types; {
@@ -28,20 +28,20 @@ in
     sops.secrets.meili-master-key = { };
     environment = {
       sessionVariables = {
-	MEILI_MASTER_KEY = meili_key;
+        MEILI_MASTER_KEY = meili_key;
       };
       variables = {
-	ORIGIN = "http://localhost:3000";
-	MEILI_URL = "http://127.0.0.1:7700";
-	PUBLIC_POCKETBASE_URL = "http://127.0.0.1:7090";
-	PUBLIC_VALHALLA_URL = "https://valhalla1.openstreetmap.de";
+        ORIGIN = "http://localhost:3000";
+        MEILI_URL = "http://127.0.0.1:7700";
+        PUBLIC_POCKETBASE_URL = "http://127.0.0.1:7090";
+        PUBLIC_VALHALLA_URL = "https://valhalla1.openstreetmap.de";
       };
       systemPackages = with pkgs; [
         meilisearch
-	zeus.wanderer
-	zeus.wanderer_pocketbase
-	wanderer_startup
+        zeus.wanderer
+        zeus.wanderer_pocketbase
+        wanderer_startup
       ];
-  };
+    };
   };
 }

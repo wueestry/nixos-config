@@ -24,7 +24,6 @@ in
     programs.neovim = {
       enable = true;
       defaultEditor = true;
-      plugins = [ { plugin = pkgs.vimPlugins.LazyVim; } ];
     };
   };
 }

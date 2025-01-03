@@ -16,10 +16,10 @@ in
     enable = mkBoolOpt false "Enable generic extlinux booting";
   };
 
-  config = mkIf cfg.enable { 
-	boot.loader = {
-		grub.enable = false;
-		generic-extlinux-compatible.enable = true;
-	};
+  config = mkIf cfg.enable {
+    boot.loader = {
+      grub.enable = false;
+      generic-extlinux-compatible.enable = true;
+    };
   };
 }
