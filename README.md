@@ -3,12 +3,23 @@
 
 ## Systems
 
-- *Athena*: Lenovo Yoga Pro 7X Slim Nvidia
-    - Used for development
+- *Apollo*: Homeserver
+    - Running the following services on a tailscale network
+        - Audiobookshelf
+        - Calibre / Calibre Web
+        - Firefly III
+        - Immich
+        - Jellyfin
+        - Nextcloud
+        - Mealie
+        - Wanderer
 
 - *Ares*: Workstation (AMD Ryzen 7 5800X, NVIDIA RTX 3070)
     - Dual boot with Windows
- 
+
+- *Athena*: Lenovo Yoga Pro 7X Slim Nvidia
+    - Used for development
+
 
 ## Installation
 1. Enable flakes in nixos. By adding the following lines to `/etc/nixos/config.nix`.

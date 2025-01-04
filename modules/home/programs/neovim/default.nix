@@ -20,6 +20,7 @@ in
       fzf
       nodejs
       ripgrep
+      gcc
     ];
     programs.neovim = {
       enable = true;
