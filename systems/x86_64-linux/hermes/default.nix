@@ -36,7 +36,7 @@ with lib.${namespace};
       homepage-dashboard = enabled;
     };
     system = {
-      boot.generic-extlinux = enabled;
+      boot.systemd-boot = enabled;
       xkb.xkb-us = enabled;
       locale = enabled;
     };

@@ -10,6 +10,7 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.services.homepage-dashboard;
+  hostname = "${networking.hostName}";
 in
 {
   options.${namespace}.services.homepage-dashboard = with types; {
