@@ -34,14 +34,14 @@ in
               "Immich" = {
                 description = "Self-hosted photo and video backup solution";
                 icon = "immich.png";
-                href = "http://apollo:3001";
+                href = "http://${hostname}:3001";
               };
             }
             {
               "Jellyfin" = {
                 description = "Free Software Media System";
                 icon = "jellyfin.png";
-                href = "http://apollo:8096";
+                href = "http://${hostname}:8096";
               };
 
             }
@@ -49,28 +49,28 @@ in
               "Nextcloud" = {
                 description = "Sharing solution for files, calendars, contacts and more";
                 icon = "nextcloud.png";
-                href = "http://apollo:8081";
+                href = "http://${hostname}:8081";
               };
             }
             {
               "Audiobookshelf" = {
                 description = "Self-hosted audiobook and podcast server";
                 icon = "audiobookshelf.png";
-                href = "http://apollo:8008";
+                href = "http://${hostname}:8008";
               };
             }
             {
               "Calibre" = {
                 description = "Comprehensive e-book software";
                 icon = "calibre.png";
-                href = "http://apollo:8195";
+                href = "http://${hostname}:8195";
               };
             }
             {
               "Calibre Web" = {
                 description = "Web app for browsing, reading and downloading eBooks stored in a Calibre database";
                 icon = "calibre-web.png";
-                href = "http://apollo:8095";
+                href = "http://${hostname}:8095";
               };
             }
           ];
@@ -81,21 +81,21 @@ in
               "Mealie" = {
                 description = "Self hosted recipe manager and meal planner";
                 icon = "mealie.png";
-                href = "http://apollo:8088";
+                href = "http://${hostname}:8088";
               };
             }
             {
               "Firefly III" = {
                 description = "A personal finances manager";
                 icon = "firefly.png";
-                href = "http://apollo:9080";
+                href = "http://${hostname}:9080";
               };
             }
             {
               "Wanderer" = {
                 description = "Self hosted trail database";
                 icon = "https://github.com/Flomp/wanderer/blob/main/docs/src/assets/logo_dark.svg";
-                href = "http://apollo:3000";
+                href = "http://${hostname}:3000";
               };
             }
           ];
@@ -106,7 +106,7 @@ in
               "Stirling PDF" = {
                 description = "A locally hosted web application that allows you to perform various operations on PDF files";
                 icon = "stirling-pdf.png";
-                href = "http://apollo:8001";
+                href = "http://${hostname}:8001";
               };
             }
           ];
