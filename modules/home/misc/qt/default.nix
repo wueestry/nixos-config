@@ -34,13 +34,11 @@ in
         };
       };
     };
-    xdg.configFile = {
-      "Kvantum/kvantum.kvconfig".text = ''
-        [General]
-        theme=Catppuccin-Mocha-Teal
-      '';
-
-      "Kvantum/Catppuccin".source = "${pkgs.catppuccin-kvantum}/share/Kvantum/Catppuccin-Mocha-Teal";
-    };
+    #xdg.configFile = {
+    #  "Kvantum/Catppuccin-Mocha-Teal/Catppuccin-Mocha-Teal/Catppuccin-Mocha-Teal.kvconfig".source =
+    #    "${pkgs.catppuccin-kvantum}/share/Kvantum/Catppuccin-Mocha-Teal/Catppuccin-Mocha-Teal.kvconfig";
+    #  "Kvantum/Catppuccin-Mocha-Teal/Catppuccin-Mocha-Teal/Catppuccin-Mocha-Teal.svg".source =
+    #    "${pkgs.catppuccin-kvantum}/share/Kvantum/Catppuccin-Mocha-Teal/Catpuccin-Mocha-Teal.svg";
+    #};
   };
 }
