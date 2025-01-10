@@ -57,6 +57,7 @@ in
         lazygit = enabled;
         neovim = enabled;
         stylix = enabled;
+        tmux = enabled;
       };
     };
   };

@@ -25,20 +25,7 @@ in
       terminal = "kitty";
       keyMode = "vi";
 
-      extraConfig = ''
-        bind-key h select-pane -L
-        bind-key j select-pane -D
-        bind-key k select-pane -U
-        bind-key l select-pane -R
-
-        set -gq allow-passthrough on
-        bind-key x kill-pane # skip "kill-pane 1? (y/n)" prompt
-        set -g detach-on-destroy off  # don't exit from tmux when closing a session
-
-        bind-key -n C-Tab next-window
-        bind-key -n C-S-Tab previous-window
-        bind-key -n M-Tab new-window
-      '';
+      extraConfig = '''';
 
       plugins = with pkgs; [
         tmuxPlugins.catppuccin

@@ -16,5 +16,10 @@ in
     enable = mkBoolOpt false "Enable ssh";
   };
 
-  config = mkIf cfg.enable { services.openssh.enable = true; };
+  config = mkIf cfg.enable {
+    services.openssh.enable = true;
+    environment.systemPackages = [
+      pkgs.sshs
+    ];
+  };
 }

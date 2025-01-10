@@ -22,12 +22,6 @@
     # Hardware Configuration
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
-    # Neovim
-    nixvim = {
-      url = "github:wueestry/nixvim-config";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Run unpatched dynamically compiled binaries
     nix-ld = {
       url = "github:Mic92/nix-ld";
