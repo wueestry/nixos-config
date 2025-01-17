@@ -22,6 +22,9 @@ in
       libreoffice
       obsidian
       okular
+
+      planify
+      newsflash
     ];
 
     services.nextcloud-client = {

@@ -13,8 +13,8 @@ let
   nvim_config = pkgs.fetchFromGitHub {
     owner = "wueestry";
     repo = "neovim-config";
-    rev = "a3b788a2d3e9db10546c487fca4e29a73bdfd372";
-    hash = "sha256-4nOlnvN3v/jYAhFI5dvbw3YVs41U/zihhiAEsrAqVu0=";
+    rev = "a7d654888673961bb58306f880cc1921650d0f6b";
+    hash = "sha256-0PiddTy7Mpm8Bnuatm6sRY4eZoCXuxMugJ0DNXk7JEM=";
   };
 in
 {
