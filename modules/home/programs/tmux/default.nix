@@ -24,8 +24,11 @@ in
       prefix = "C-s";
       terminal = "kitty";
       keyMode = "vi";
+      baseIndex = 1;
 
-      extraConfig = '''';
+      extraConfig = ''
+        set -g set-clipboard on
+      '';
 
       plugins = with pkgs; [
         tmuxPlugins.catppuccin

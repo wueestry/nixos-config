@@ -20,6 +20,7 @@ in
     home.packages = with pkgs; [ yazi ];
     zeus = {
       programs = {
+        atuin = enabled;
         eza = enabled;
         fzf = enabled;
         powerlevel10k = disabled;
