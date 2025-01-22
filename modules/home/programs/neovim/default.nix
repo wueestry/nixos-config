@@ -13,8 +13,8 @@ let
   nvim_config = pkgs.fetchFromGitHub {
     owner = "wueestry";
     repo = "neovim-config";
-    rev = "a7d654888673961bb58306f880cc1921650d0f6b";
-    hash = "sha256-0PiddTy7Mpm8Bnuatm6sRY4eZoCXuxMugJ0DNXk7JEM=";
+    rev = "d99df6c377695f50568a87bba444b0eac10c0746";
+    hash = "sha256-nFTHIwF1DKrYgpACM/m9jndW4CqqGOqoBheJHtzXTrk=";
   };
 in
 {
@@ -48,6 +48,10 @@ in
         nodejs
         cargo
         rustc
+        cmake
+
+        ripgrep
+        fzf
       ];
     };
     xdg.configFile."nvim" = {

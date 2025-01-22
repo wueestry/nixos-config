@@ -14,6 +14,7 @@ with lib.${namespace};
       common = enabled;
       desktop.hyprland = enabled;
       office = enabled;
+      development = enabled;
     };
 
     programs = {
