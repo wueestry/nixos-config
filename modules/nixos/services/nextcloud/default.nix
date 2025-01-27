@@ -41,6 +41,8 @@ in
           calendar
           tasks
           onlyoffice
+          news
+	  notes
           ;
       };
       extraAppsEnable = true;

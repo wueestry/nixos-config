@@ -52,6 +52,7 @@ in
       };
     };
 
+    networking.firewall.allowedTCPPorts = [ 8195 ];
     systemd.services.calibre-web.after = [ "calibre-server.service" ];
   };
 }

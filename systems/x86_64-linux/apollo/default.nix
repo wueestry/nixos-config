@@ -30,6 +30,7 @@ with lib.${namespace};
     services = {
       ssh = enabled;
       tailscale = enabled;
+      virtualisation = enabled;
 
       immich = enabled;
       mealie = enabled;
@@ -39,6 +40,7 @@ with lib.${namespace};
       nextcloud = enabled;
       audiobookshelf = enabled;
       calibre = enabled;
+      #wanderer = enabled;
 
       homepage-dashboard = enabled;
     };
@@ -49,6 +51,7 @@ with lib.${namespace};
     };
     programs = {
       sops = enabled;
+      nh = enabled;
     };
   };
 

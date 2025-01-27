@@ -21,6 +21,7 @@ in
       boxbuddy
       distrobox
       bottles-unwrapped
+      docker-compose
     ];
 
     programs.virt-manager.enable = true;

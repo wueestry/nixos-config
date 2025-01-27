@@ -10,7 +10,7 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.services.homepage-dashboard;
-  hostname = "${networking.hostName}";
+  hostname = "apollo"; #"${networking.hostName}";
 in
 {
   options.${namespace}.services.homepage-dashboard = with types; {
@@ -94,7 +94,7 @@ in
             {
               "Wanderer" = {
                 description = "Self hosted trail database";
-                icon = "https://github.com/Flomp/wanderer/blob/main/docs/src/assets/logo_dark.svg";
+                icon = "https://raw.githubusercontent.com/Flomp/wanderer/refs/heads/main/docs/public/favicon.svg";
                 href = "http://${hostname}:3000";
               };
             }
