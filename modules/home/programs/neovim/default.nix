@@ -49,13 +49,14 @@ in
         cargo
         rustc
         cmake
+        clang-tools
 
         ripgrep
         fzf
       ];
     };
-    xdg.configFile."nvim" = {
-      source = "${nvim_config}";
-    };
+    # xdg.configFile."nvim" = {
+    #   source = "${nvim_config}";
+    # };
   };
 }

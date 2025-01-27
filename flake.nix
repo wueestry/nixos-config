@@ -35,7 +35,11 @@
     };
 
     # Stylix
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      # url = "github:danth/stylix";
+      url = "github:danth/stylix/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";

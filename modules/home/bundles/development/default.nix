@@ -18,6 +18,9 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
+      clang-tools
+      cmake
+      python3
       devenv
     ];
 

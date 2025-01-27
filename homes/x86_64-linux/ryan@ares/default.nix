@@ -13,6 +13,7 @@ with lib.${namespace};
     bundles = {
       common = enabled;
       desktop.hyprland = enabled;
+      development = enabled;
       office = enabled;
     };
 

@@ -20,6 +20,7 @@ in
     environment.systemPackages = with pkgs; [
       boxbuddy
       distrobox
+      bottles-unwrapped
     ];
 
     programs.virt-manager.enable = true;

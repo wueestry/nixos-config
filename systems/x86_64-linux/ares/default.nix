@@ -41,6 +41,7 @@ with lib.${namespace};
       nix-ld = enabled;
     };
     services = {
+      ollama = enabled;
       virtualisation = enabled;
       wanderer = enabled;
     };
