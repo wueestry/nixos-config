@@ -24,11 +24,17 @@ in
       docker-compose
     ];
 
-    programs.virt-manager.enable = true;
+    programs = {
+      localsend = {
+        enable = true;
+      };
+      virt-manager.enable = true;
+    };
 
     virtualisation = {
       docker.enable = true;
       libvirtd.enable = true;
+      spiceUSBRedirection.enable = true;
     };
   };
 }

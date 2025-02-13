@@ -23,6 +23,7 @@ with lib.${namespace};
         username = "Ryan Wüest";
       };
       freetube = enabled;
+      spotify = enabled;
     };
     misc = {
       xdg = enabled;
