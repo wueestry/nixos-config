@@ -58,6 +58,7 @@ in
         neovim = enabled;
         stylix = enabled;
         tmux = enabled;
+        zen = enabled;
       };
     };
   };
