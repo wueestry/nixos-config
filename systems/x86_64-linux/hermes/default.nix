@@ -11,6 +11,16 @@ with lib.${namespace};
 
   networking.hostName = "hermes";
 
+  # logind
+  services.logind.extraConfig = ''
+    HandlePowerKey=ignore
+    HandleLidSwitch=ignore
+    HandleLidSwitchExternalPower=ignore
+  '';
+
+  boot.swraid.enable = true;
+  networking.firewall.enable = false;
+
   zeus = {
     config = {
       user = {
@@ -27,17 +37,16 @@ with lib.${namespace};
       };
       nix = enabled;
     };
+    hardware.networking = enabled;
     services = {
       ssh = enabled;
       tailscale = enabled;
 
       immich = enabled;
-
-      homepage-dashboard = enabled;
     };
     system = {
       boot.systemd-boot = enabled;
-      xkb.xkb-us = enabled;
+      xkb.xkb-ch = enabled;
       locale = enabled;
     };
     programs = {
