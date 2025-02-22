@@ -20,7 +20,7 @@ in
     environment.systemPackages = with pkgs; [
       boxbuddy
       distrobox
-      bottles-unwrapped
+      bottles
       docker-compose
     ];
 
