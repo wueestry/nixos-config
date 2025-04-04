@@ -39,8 +39,8 @@ in
       nextjs-ollama-llm-ui = {
         enable = true;
         ollamaUrl = "http://127.0.0.1:11434";
-        hostname = "localhost";
-        port = 3000;
+        hostname = "0.0.0.0";
+        port = 3050;
       };
     };
   };

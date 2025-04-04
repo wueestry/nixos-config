@@ -10,7 +10,7 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.services.homepage-dashboard;
-  hostname = "apollo"; #"${networking.hostName}";
+  hostname = "apollo"; # "${networking.hostName}";
 in
 {
   options.${namespace}.services.homepage-dashboard = with types; {
@@ -96,6 +96,13 @@ in
                 description = "Self hosted trail database";
                 icon = "https://raw.githubusercontent.com/Flomp/wanderer/refs/heads/main/docs/public/favicon.svg";
                 href = "http://${hostname}:3000";
+              };
+            }
+            {
+              "Ollama" = {
+                description = "Ollama web ui";
+                icon = "ollama.png";
+                href = "http://${hostname}:3050";
               };
             }
           ];
