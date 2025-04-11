@@ -43,7 +43,6 @@ with lib.${namespace};
     services = {
       ollama = enabled;
       virtualisation = enabled;
-      wanderer = enabled;
     };
     system = {
       boot.grub = enabled;

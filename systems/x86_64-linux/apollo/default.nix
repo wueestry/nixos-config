@@ -35,12 +35,12 @@ with lib.${namespace};
       immich = enabled;
       mealie = enabled;
       jellyfin = enabled;
-      #stirling-pdf = enabled;
+      stirling-pdf = enabled;
       firefly-iii = enabled;
       nextcloud = enabled;
       audiobookshelf = enabled;
       calibre = enabled;
-      #wanderer = enabled;
+      wanderer = enabled;
       ollama = enabled;
 
       homepage-dashboard = enabled;
