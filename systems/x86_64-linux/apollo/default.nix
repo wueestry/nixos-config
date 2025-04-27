@@ -27,6 +27,10 @@ with lib.${namespace};
       };
       nix = enabled;
     };
+    hardware = {
+      cuda = enabled;
+      nvidia = enabled;
+    };
     services = {
       ssh = enabled;
       tailscale = enabled;
@@ -35,7 +39,7 @@ with lib.${namespace};
       immich = enabled;
       mealie = enabled;
       jellyfin = enabled;
-      stirling-pdf = enabled;
+      # stirling-pdf = enabled;
       firefly-iii = enabled;
       nextcloud = enabled;
       audiobookshelf = enabled;
