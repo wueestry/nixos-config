@@ -17,8 +17,8 @@ in
     enable = mkBoolOpt false "Enable stirling-pdf";
   };
 
-  disabledModules = [ "services/web-apps/stirling-pdf.nix" ];
-  imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/stirling-pdf.nix" ];
+  # disabledModules = [ "services/web-apps/stirling-pdf.nix" ];
+  # imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/stirling-pdf.nix" ];
 
   config = mkIf cfg.enable {
     services.stirling-pdf = {

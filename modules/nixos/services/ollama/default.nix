@@ -36,11 +36,16 @@ in
         acceleration = "cuda";
         package = pkgs_unstable.ollama;
       };
-      nextjs-ollama-llm-ui = {
+      #nextjs-ollama-llm-ui = {
+      #  enable = true;
+      #  ollamaUrl = "http://127.0.0.1:11434";
+      #  hostname = "0.0.0.0";
+      #  port = 3050;
+      #};
+      open-webui = {
         enable = true;
-        ollamaUrl = "http://127.0.0.1:11434";
-        hostname = "0.0.0.0";
         port = 3050;
+        host = "0.0.0.0";
       };
     };
   };
