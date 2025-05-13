@@ -32,7 +32,7 @@ in
       ollama = {
         enable = true;
         port = 11434;
-        openFirewall = true;
+        host = "0.0.0.0";
         acceleration = "cuda";
         package = pkgs_unstable.ollama;
       };
