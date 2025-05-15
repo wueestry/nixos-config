@@ -28,6 +28,9 @@ in
       listenAddress = "0.0.0.0";
       settings = {
         TZ = "Europe/Zurich";
+        OPENAI_BASE_URL = "http://apollo:11434/v1";
+        OPENAI_API_KEY = "ignore123";
+        OPENAI_MODEL = "gemma3:12b";
       };
     };
   };
