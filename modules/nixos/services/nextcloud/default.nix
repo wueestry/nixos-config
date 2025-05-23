@@ -31,7 +31,7 @@ in
     services.nextcloud = {
       enable = true;
       configureRedis = true;
-      package = pkgs.nextcloud30;
+      package = pkgs.nextcloud31;
       hostName = "apollo.nextcloud.home";
       home = "/var/lib/nextcloud";
       database.createLocally = true;
@@ -39,10 +39,11 @@ in
         inherit (config.services.nextcloud.package.packages.apps)
           contacts
           calendar
+          cookbook
           tasks
           onlyoffice
           news
-	  notes
+          notes
           ;
       };
       extraAppsEnable = true;

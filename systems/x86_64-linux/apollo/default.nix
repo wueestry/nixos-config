@@ -46,6 +46,7 @@ with lib.${namespace};
       calibre = enabled;
       wanderer = enabled;
       ollama = enabled;
+      navidrome = enabled;
 
       homepage-dashboard = enabled;
     };

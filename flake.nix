@@ -3,7 +3,7 @@
 
   inputs = {
     # NixPkgs (nixos-24.05)
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # NixPkgs Unstable (nixos-unstable)
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -15,7 +15,7 @@
 
     # Home Manager (release-24.05)
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -37,7 +37,7 @@
     # Stylix
     stylix = {
       # url = "github:danth/stylix";
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

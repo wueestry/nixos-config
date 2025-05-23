@@ -73,6 +73,13 @@ in
                 href = "http://${hostname}:8095";
               };
             }
+            {
+              "Navidrome" = {
+                description = "Navidrome Music Server and Streamer compatible with Subsonic/Airsonic";
+                icon = "navidrome.png";
+                href = "http://${hostname}:4533";
+              };
+            }
           ];
         }
         {

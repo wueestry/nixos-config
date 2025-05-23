@@ -11,22 +11,22 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.services.ollama;
-  pkgs_unstable = import inputs.unstable {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-  };
 in
+# pkgs_unstable = import inputs.unstable {
+#  system = "x86_64-linux";
+#  config.allowUnfree = true;
+#};
 {
   options.${namespace}.services.ollama = with types; {
     enable = mkBoolOpt false "Enable ollama";
   };
 
-  disabledModules = [
-    "services/misc/ollama.nix"
-  ];
-  imports = [
-    "${inputs.unstable}/nixos/modules/services/misc/ollama.nix"
-  ];
+  # disabledModules = [
+  #   "services/misc/ollama.nix"
+  # ];
+  # imports = [
+  #   "${inputs.unstable}/nixos/modules/services/misc/ollama.nix"
+  # ];
   config = mkIf cfg.enable {
     services = {
       ollama = {
@@ -34,7 +34,7 @@ in
         port = 11434;
         host = "0.0.0.0";
         acceleration = "cuda";
-        package = pkgs_unstable.ollama;
+        # package = pkgs_unstable.ollama;
       };
       #nextjs-ollama-llm-ui = {
       #  enable = true;

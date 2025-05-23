@@ -34,7 +34,6 @@ in
         # LSPs
         luajitPackages.lua-lsp
         nil
-        ruff-lsp
         pyright
 
         # Formatter
