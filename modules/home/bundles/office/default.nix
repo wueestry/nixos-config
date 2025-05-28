@@ -21,9 +21,9 @@ in
       calibre
       libreoffice
       obsidian
-      okular
+      evince
 
-      planify
+      # planify
       newsflash
     ];
 

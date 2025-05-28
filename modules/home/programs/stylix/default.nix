@@ -17,7 +17,7 @@ in
     enable = mkBoolOpt false "Enable stylix";
   };
 
-  imports = [ inputs.stylix.homeManagerModules.stylix ];
+  imports = [ inputs.stylix.homeModules.stylix ];
 
   config = mkIf cfg.enable {
     stylix = {
@@ -34,7 +34,7 @@ in
 
       fonts = {
         monospace = {
-          package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+          package = pkgs.nerd-fonts.jetbrains-mono;
           name = "JetBrainsMono Nerd Font Mono";
         };
         sansSerif = {

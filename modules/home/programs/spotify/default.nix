@@ -16,5 +16,10 @@ in
     enable = mkBoolOpt false "Enable ncspot a spotify client";
   };
 
-  config = mkIf cfg.enable { home.packages = with pkgs; [ ncspot ]; };
+  config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      ncspot
+      rmpc
+    ];
+  };
 }

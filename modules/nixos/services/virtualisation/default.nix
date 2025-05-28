@@ -18,7 +18,6 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      boxbuddy
       distrobox
       bottles
       docker-compose

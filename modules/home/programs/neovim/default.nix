@@ -10,12 +10,6 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.programs.neovim;
-  nvim_config = pkgs.fetchFromGitHub {
-    owner = "wueestry";
-    repo = "neovim-config";
-    rev = "d99df6c377695f50568a87bba444b0eac10c0746";
-    hash = "sha256-nFTHIwF1DKrYgpACM/m9jndW4CqqGOqoBheJHtzXTrk=";
-  };
 in
 {
   options.${namespace}.programs.neovim = {
@@ -48,14 +42,16 @@ in
         cargo
         rustc
         cmake
+        gnumake
         clang-tools
 
         ripgrep
         fzf
       ];
     };
-    # xdg.configFile."nvim" = {
-    #   source = "${nvim_config}";
-    # };
+    #xdg.configFile."nvim" = {
+    #  source = config.lib.file.mkOutOfStoreSymlink ./config;
+    #  recursive = true;
+    #};
   };
 }

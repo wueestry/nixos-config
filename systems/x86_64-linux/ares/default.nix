@@ -41,7 +41,7 @@ with lib.${namespace};
       nix-ld = enabled;
     };
     services = {
-      ollama = enabled;
+      ollama = disabled;
       virtualisation = enabled;
     };
     system = {

@@ -47,13 +47,13 @@ in
       };
       misc = {
         gtk = disabled; # Done by stylix
-        qt = enabled;
+        qt = disabled; # Done by stylix
         scripts = enabled;
       };
       programs = {
         brave = enabled;
         kitty = enabled;
-        librewolf = enabled;
+        librewolf = disabled;
         lazygit = enabled;
         neovim = enabled;
         stylix = enabled;

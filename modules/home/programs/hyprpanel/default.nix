@@ -60,7 +60,7 @@ in
                 "systray"
                 "volume"
                 "bluetooth"
-                "battery"
+                # "battery"
                 "network"
                 "clock"
                 "notifications"
@@ -91,7 +91,7 @@ in
         "theme.bar.border_radius" = "${toString rounding}px";
         "bar.launcher.icon" = "";
         "theme.bar.transparent" = "${if transparent then "true" else "false"}";
-        "bar.workspaces.show_numbered" = false;
+        "bar.workspaces.show_numbered" = true;
         "bar.workspaces.workspaces" = 5;
         "bar.workspaces.monitorSpecific" = false;
         "bar.workspaces.hideUnoccupied" = false;
@@ -99,7 +99,7 @@ in
         "bar.volume.label" = false;
         "bar.network.truncation_size" = 12;
         "bar.bluetooth.label" = false;
-        "bar.clock.format" = "%a %b %d  %I:%M %p";
+        "bar.clock.format" = "%A %d/%m/%Y  %H:%M";
         "bar.notifications.show_total" = true;
         "theme.notification.border_radius" = "${toString rounding}px";
         "theme.osd.enable" = true;

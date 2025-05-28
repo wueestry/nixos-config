@@ -17,9 +17,18 @@ in
     enable = mkBoolOpt false "Enable module";
   };
 
+  imports = [
+    inputs.zen-browser.homeModules.twilight
+  ];
+
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      inputs.zen-browser.packages."${system}".default
-    ];
+    programs.zen-browser = {
+      enable = true;
+      policies = {
+        DisableAppUpdate = true;
+        DisableTelemetry = true;
+        # find more options here: https://mozilla.github.io/policy-templates/
+      };
+    };
   };
 }
