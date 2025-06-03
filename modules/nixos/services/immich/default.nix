@@ -30,6 +30,8 @@ in
       host = "0.0.0.0";
       mediaLocation = "/mnt/storage/immich";
 
+      accelerationDevices = null;
+
       machine-learning = {
         enable = true;
       };
@@ -41,6 +43,10 @@ in
 
       environment = {
         TZ = "Europe/Zurich";
+      };
+
+      database = {
+        enable = true;
       };
     };
   };

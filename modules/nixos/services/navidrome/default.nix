@@ -31,9 +31,20 @@ in
       settings = {
         Address = "0.0.0.0";
         Port = 4533;
-        MusicFolder = "/mnt/storage/navidrome/music";
+        MusicFolder = "/mnt/data/navidrome/music";
         LastFM.ApiKey = "$(cat ${config.sops.secrets.last-fm-key.path})";
         LastFM.Secret = "$(cat ${config.sops.secrets.last-fm-secret.path})";
+      };
+    };
+    services.mpd = {
+      enable = true;
+      user = "navidrome";
+      group = "navidrome";
+      musicDirectory = "/mnt/data/navidrome/music";
+      dataDir = "/mnt/data/navidrome/data";
+      network = {
+        port = 6600;
+        listenAddress = "0.0.0.0";
       };
     };
   };

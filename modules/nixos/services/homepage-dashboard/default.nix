@@ -26,6 +26,7 @@ in
         color = "neutral";
         theme = "dark";
       };
+      allowedHosts = "apollo:8082,0.0.0.0:8082";
 
       services = [
         {
@@ -37,14 +38,13 @@ in
                 href = "http://${hostname}:3001";
               };
             }
-            {
-              "Jellyfin" = {
-                description = "Free Software Media System";
-                icon = "jellyfin.png";
-                href = "http://${hostname}:8096";
-              };
-
-            }
+            # {
+            #   "Jellyfin" = {
+            #     description = "Free Software Media System";
+            #     icon = "jellyfin.png";
+            #     href = "http://${hostname}:8096";
+            #   };
+            # }
             {
               "Nextcloud" = {
                 description = "Sharing solution for files, calendars, contacts and more";
@@ -112,6 +112,13 @@ in
                 href = "http://${hostname}:3050";
               };
             }
+            {
+              "Referee Assistance Program" = {
+                description = "React app to show RAP";
+                icon = "https://upload.wikimedia.org/wikipedia/de/5/53/SFV_Logo.svg";
+                href = "http://${hostname}:5173";
+              };
+            }
           ];
         }
         {
@@ -121,6 +128,13 @@ in
                 description = "A locally hosted web application that allows you to perform various operations on PDF files";
                 icon = "stirling-pdf.png";
                 href = "http://${hostname}:8001";
+              };
+            }
+            {
+              "Syncthing" = {
+                description = "Open Source Continuous File Synchronisation";
+                icon = "syncthing.png";
+                href = "http://${hostname}:8384";
               };
             }
           ];

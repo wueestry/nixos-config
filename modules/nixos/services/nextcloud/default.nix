@@ -24,7 +24,7 @@ in
     };
 
     fileSystems."/var/lib/nextcloud" = {
-      device = "/mnt/storage/nextcloud";
+      device = "/mnt/data/nextcloud";
       options = [ "bind" ];
     };
 

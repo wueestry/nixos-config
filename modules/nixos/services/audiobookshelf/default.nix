@@ -19,7 +19,7 @@ in
   config = mkIf cfg.enable {
 
     fileSystems."/var/lib/audiobookshelf" = {
-      device = "/mnt/storage/audiobookshelf";
+      device = "/mnt/data/audiobookshelf";
       options = [ "bind" ];
     };
 

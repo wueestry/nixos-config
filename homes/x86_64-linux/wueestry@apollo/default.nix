@@ -10,6 +10,9 @@ with lib.${namespace};
 {
   snowfallorg.user.enable = true;
   zeus = {
+    bundles = {
+      development = enabled;
+    };
     programs = {
       eza = enabled;
       git = {

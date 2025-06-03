@@ -29,7 +29,7 @@ in
         APP_ENV = "production";
         APP_KEY_FILE = config.sops.secrets.firefly-key.path;
 
-        DB_CONNECTION = "sqlite";
+        DB_CONNECTION = "mysql";
 
         TZ = "Europe/Zurich";
         EXPECT_SECURE_URL = "false";

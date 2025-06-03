@@ -11,6 +11,8 @@ with lib.${namespace};
 
   networking.hostName = "apollo";
 
+  boot.swraid.enable = true;
+
   zeus = {
     config = {
       user = {
@@ -38,7 +40,7 @@ with lib.${namespace};
 
       immich = enabled;
       mealie = enabled;
-      jellyfin = enabled;
+      jellyfin = disabled;
       stirling-pdf = enabled;
       firefly-iii = enabled;
       nextcloud = enabled;
@@ -47,6 +49,7 @@ with lib.${namespace};
       wanderer = enabled;
       ollama = enabled;
       navidrome = enabled;
+      syncthing = enabled;
 
       homepage-dashboard = enabled;
     };

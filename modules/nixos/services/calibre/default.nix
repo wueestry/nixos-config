@@ -19,7 +19,7 @@ in
 
   config = mkIf cfg.enable {
     fileSystems."/var/lib/calibre-server" = {
-      device = "/mnt/storage/calibre";
+      device = "/mnt/data/calibre";
       options = [ "bind" ];
     };
     services = {
