@@ -21,6 +21,9 @@ in
   };
 
   config = mkIf cfg.enable {
+    environment.variables = {
+      "NLTK_DATA" = "/usr/share/nltk_data";
+    };
     services.mealie = {
       enable = true;
       # package = inputs.unstable.legacyPackages.x86_64-linux.mealie;

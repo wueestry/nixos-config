@@ -3,14 +3,15 @@
     "ags": {
       "inputs": {
         "astal": "astal",
+        "gnim": "gnim",
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1744557573,
-        "narHash": "sha256-XAyj0iDuI51BytJ1PwN53uLpzTDdznPDQFG4RwihlTQ=",
+        "lastModified": 1751619699,
+        "narHash": "sha256-3Si+Gi0e8PDIzUrV6LYCUN21EvaQyPaOU64kF6KT824=",
         "owner": "Aylur",
         "repo": "ags",
-        "rev": "3ed9737bdbc8fc7a7c7ceef2165c9109f336bff6",
+        "rev": "e5e2efaf2e05e077190cfddabf5b827edae5ef8b",
         "type": "github"
       },
       "original": {
@@ -19,6 +20,7 @@
         "type": "github"
       }
     },
+<<<<<<< HEAD
     "ags_2": {
       "inputs": {
         "astal": "astal_2",
@@ -41,6 +43,8 @@
         "type": "github"
       }
     },
+=======
+>>>>>>> e04921f (Update & move back to docker wanderer)
     "apple-fonts": {
       "inputs": {
         "nixpkgs": "nixpkgs_2",
@@ -87,11 +91,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749155310,
         "narHash": "sha256-t0HfHg/1+TbSra5s6nNM0o4tnb3uqWedShSpZXsUMYY=",
         "owner": "hyprwm",
         "repo": "aquamarine",
         "rev": "94981cf75a9f11da0b6dd6a1abbd7c50a36ab2d3",
+=======
+        "lastModified": 1751569683,
+        "narHash": "sha256-PoQcCYTiN52PanxgWBN4Tqet1x4PCk6KtjaHNjELH88=",
+        "owner": "hyprwm",
+        "repo": "aquamarine",
+        "rev": "c0c56dde3e471030edb135425a82107cf0057c6f",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -108,10 +120,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742571008,
-        "narHash": "sha256-5WgfJAeBpxiKbTR/gJvxrGYfqQRge5aUDcGKmU1YZ1Q=",
+        "lastModified": 1751126708,
+        "narHash": "sha256-AodIKw7TmI7rHVcOfEsO82stupMYIMVQeLAUQfVxnkU=",
         "owner": "aylur",
         "repo": "astal",
+<<<<<<< HEAD
         "rev": "dc0e5d37abe9424c53dcbd2506a4886ffee6296e",
         "type": "github"
       },
@@ -156,6 +169,9 @@
         "owner": "aylur",
         "repo": "astal",
         "rev": "c1bd89a47c81c66ab5fc6872db5a916c0433fb89",
+=======
+        "rev": "ac90f09385a2295da9fdc108aaba4a317aaeacc7",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -201,11 +217,11 @@
     "base16-helix": {
       "flake": false,
       "locked": {
-        "lastModified": 1736852337,
-        "narHash": "sha256-esD42YdgLlEh7koBrSqcT7p2fsMctPAcGl/+2sYJa2o=",
+        "lastModified": 1748408240,
+        "narHash": "sha256-9M2b1rMyMzJK0eusea0x3lyh3mu5nMeEDSc4RZkGm+g=",
         "owner": "tinted-theming",
         "repo": "base16-helix",
-        "rev": "03860521c40b0b9c04818f2218d9cc9efc21e7a5",
+        "rev": "6c711ab1a9db6f51e2f6887cc3345530b33e152e",
         "type": "github"
       },
       "original": {
@@ -234,11 +250,11 @@
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1744642301,
-        "narHash": "sha256-5A6LL7T0lttn1vrKsNOKUk9V0ittdW0VEqh6AtefxJ4=",
+        "lastModified": 1748383148,
+        "narHash": "sha256-pGvD/RGuuPf/4oogsfeRaeMm6ipUIznI2QSILKjKzeA=",
         "owner": "rafaelmardojai",
         "repo": "firefox-gnome-theme",
-        "rev": "59e3de00f01e5adb851d824cf7911bd90c31083a",
+        "rev": "4eb2714fbed2b80e234312611a947d6cb7d70caf",
         "type": "github"
       },
       "original": {
@@ -281,11 +297,11 @@
     },
     "flake-compat_3": {
       "locked": {
-        "lastModified": 1733328505,
-        "narHash": "sha256-NeCCThCEP3eCl2l/+27kNNK7QrwZB1IJCrXfrbv5oqU=",
+        "lastModified": 1747046372,
+        "narHash": "sha256-CIVLLkVgvHYbgI2UpXvIIBJ12HWgX+fjA8Xf8PUmqCY=",
         "owner": "edolstra",
         "repo": "flake-compat",
-        "rev": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
+        "rev": "9100a0f413b0c601e0533d1d94ffd501ce2e7885",
         "type": "github"
       },
       "original": {
@@ -302,11 +318,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1733312601,
-        "narHash": "sha256-4pDvzqnegAfRkPwO3wmwBhVi/Sye1mzps0zHWYnP88c=",
+        "lastModified": 1749398372,
+        "narHash": "sha256-tYBdgS56eXYaWVW3fsnPQ/nFlgWi/Z2Ymhyu21zVM98=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "205b12d8b7cd4802fbcb8e8ef6a0f1408781a4f9",
+        "rev": "9305fe4e5c2a6fcf5ba6a3ff155720fbe4076569",
         "type": "github"
       },
       "original": {
@@ -320,11 +336,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1694529238,
-        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
@@ -335,7 +351,7 @@
     },
     "flake-utils-plus": {
       "inputs": {
-        "flake-utils": "flake-utils"
+        "flake-utils": "flake-utils_2"
       },
       "locked": {
         "lastModified": 1715533576,
@@ -349,6 +365,24 @@
         "owner": "gytis-ivaskevicius",
         "repo": "flake-utils-plus",
         "rev": "3542fe9126dc492e53ddd252bb0260fe035f2c0f",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1694529238,
+        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },
@@ -381,11 +415,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742649964,
-        "narHash": "sha256-DwOTp7nvfi8mRfuL1escHDXabVXFGT1VlPD1JHrtrco=",
+        "lastModified": 1750779888,
+        "narHash": "sha256-wibppH3g/E2lxU43ZQHC5yA/7kIKLGxVEnsnVK1BtRg=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "dcf5072734cb576d2b0c59b2ac44f5050b5eac82",
+        "rev": "16ec914f6fb6f599ce988427d9d94efddf25fe6d",
         "type": "github"
       },
       "original": {
@@ -438,6 +472,22 @@
         "type": "github"
       }
     },
+    "gnim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1751120710,
+        "narHash": "sha256-sT1ILM8m1QG8CeMmqLHhW/8T/MzUq3JL9jO3V7FMa4w=",
+        "owner": "aylur",
+        "repo": "gnim",
+        "rev": "5d2b734be452e2819f3a7313dbb34fa43c23e5d9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "gnim",
+        "type": "github"
+      }
+    },
     "gnome-shell": {
       "flake": false,
       "locked": {
@@ -462,11 +512,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749154018,
         "narHash": "sha256-gjN3j7joRvT3a8Zgcylnd4NFsnXeDBumqiu4HmY1RIg=",
         "owner": "nix-community",
         "repo": "home-manager",
         "rev": "7aae0ee71a17b19708b93b3ed448a1a0952bf111",
+=======
+        "lastModified": 1751810233,
+        "narHash": "sha256-kllkNbIqQi3VplgTMeGzuh1t8Gk8TauvkTRt93Km+tQ=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "9b0873b46c9f9e4b7aa01eb634952c206af53068",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -479,16 +537,37 @@
     "home-manager_2": {
       "inputs": {
         "nixpkgs": [
+          "hyprpanel",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1750798083,
+        "narHash": "sha256-DTCCcp6WCFaYXWKFRA6fiI2zlvOLCf5Vwx8+/0R8Wc4=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "ff31a4677c1a8ae506aa7e003a3dba08cb203f82",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager_3": {
+      "inputs": {
+        "nixpkgs": [
           "stylix",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1747556831,
-        "narHash": "sha256-Qb84nbYFFk0DzFeqVoHltS2RodAYY5/HZQKE8WnBDsc=",
+        "lastModified": 1750792728,
+        "narHash": "sha256-Lh3dopA8DdY+ZoaAJPrtkZOZaFEJGSYjOdAYYgOPgE4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d0bbd221482c2713cccb80220f3c9d16a6e20a33",
+        "rev": "366f00797b1efb70f2882d3da485e3c10fd3d557",
         "type": "github"
       },
       "original": {
@@ -498,7 +577,7 @@
         "type": "github"
       }
     },
-    "home-manager_3": {
+    "home-manager_4": {
       "inputs": {
         "nixpkgs": [
           "zen-browser",
@@ -564,11 +643,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749145600,
         "narHash": "sha256-v2kY5RDk9oyo1x9m8u83GdklC96xlJ7ka1rrvZoYL78=",
         "owner": "hyprwm",
         "repo": "hyprgraphics",
         "rev": "80b754e38e836777ad3a9d5d1ffc3491b0332471",
+=======
+        "lastModified": 1750621377,
+        "narHash": "sha256-8u6b5oAdX0rCuoR8wFenajBRmI+mzbpNig6hSCuWUzE=",
+        "owner": "hyprwm",
+        "repo": "hyprgraphics",
+        "rev": "b3d628d01693fb9bb0a6690cd4e7b80abda04310",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -593,11 +680,19 @@
         "xdph": "xdph"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749186454,
         "narHash": "sha256-aOu9Z8XVJkNw67/898ThHvnwTjCr+4BZcbDYDQkgJV8=",
         "owner": "hyprwm",
         "repo": "Hyprland",
         "rev": "d6fbd89336f2f0b631856e6a68a9d62c772ef50f",
+=======
+        "lastModified": 1751714318,
+        "narHash": "sha256-nkoRnDkRGaCT0JTuHcDXPCMkdmhUFEtI1TMUiQcrxfs=",
+        "owner": "hyprwm",
+        "repo": "Hyprland",
+        "rev": "6a5f4f5954a64bac718e3938f062d045256e7aeb",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -686,11 +781,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749155776,
         "narHash": "sha256-t1PM0wxQLQwv2F2AW23uA7pm5giwmcgYEWbNIRct9r4=",
         "owner": "hyprwm",
         "repo": "hyprland-qtutils",
         "rev": "396e8aa1c06274835b69da7f9a015fff9a9b7522",
+=======
+        "lastModified": 1750371812,
+        "narHash": "sha256-D868K1dVEACw17elVxRgXC6hOxY+54wIEjURztDWLk8=",
+        "owner": "hyprwm",
+        "repo": "hyprland-qtutils",
+        "rev": "b13c7481e37856f322177010bdf75fccacd1adc8",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -715,11 +818,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749145882,
         "narHash": "sha256-qr0KXeczF8Sma3Ae7+dR2NHhvG7YeLBJv19W4oMu6ZE=",
         "owner": "hyprwm",
         "repo": "hyprlang",
         "rev": "1bfb84f54d50c7ae6558c794d3cfd5f6a7e6e676",
+=======
+        "lastModified": 1750371198,
+        "narHash": "sha256-/iuJ1paQOBoSLqHflRNNGyroqfF/yvPNurxzcCT0cAE=",
+        "owner": "hyprwm",
+        "repo": "hyprlang",
+        "rev": "cee01452bca58d6cadb3224e21e370de8bc20f0b",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -730,18 +841,31 @@
     },
     "hyprpanel": {
       "inputs": {
+<<<<<<< HEAD
         "ags": "ags_2",
         "astal": "astal_3",
+=======
+        "flake-utils": "flake-utils",
+        "home-manager": "home-manager_2",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749022112,
         "narHash": "sha256-NNGvih5zDjic+UVxm+1YYQMgRok6PcdNE0/6vzs+XrM=",
         "owner": "Jas-SinghFSU",
         "repo": "HyprPanel",
         "rev": "20532ee760fdf492afcf987ae091497a37878197",
+=======
+        "lastModified": 1751528316,
+        "narHash": "sha256-MGJmxnjlERXJLDywrSHYSgpt7fhh3/HOHQboRrxDW64=",
+        "owner": "Jas-SinghFSU",
+        "repo": "HyprPanel",
+        "rev": "343c9857bd7f1d302d591e8d5f3f9952dc84775b",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -762,11 +886,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749135356,
         "narHash": "sha256-Q8mAKMDsFbCEuq7zoSlcTuxgbIBVhfIYpX0RjE32PS0=",
         "owner": "hyprwm",
         "repo": "hyprutils",
         "rev": "e36db00dfb3a3d3fdcc4069cb292ff60d2699ccb",
+=======
+        "lastModified": 1751061882,
+        "narHash": "sha256-g9n8Vrbx+2JYM170P9BbvGHN39Wlkr4U+V2WLHQsXL8=",
+        "owner": "hyprwm",
+        "repo": "hyprutils",
+        "rev": "4737241eaf8a1e51671a2a088518071f9a265cf4",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -787,11 +919,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749145760,
         "narHash": "sha256-IHaGWpGrv7seFWdw/1A+wHtTsPlOGIKMrk1TUIYJEFI=",
         "owner": "hyprwm",
         "repo": "hyprwayland-scanner",
         "rev": "817918315ea016cc2d94004bfb3223b5fd9dfcc6",
+=======
+        "lastModified": 1750371869,
+        "narHash": "sha256-lGk4gLjgZQ/rndUkzmPYcgbHr8gKU5u71vyrjnwfpB4=",
+        "owner": "hyprwm",
+        "repo": "hyprwayland-scanner",
+        "rev": "aa38edd6e3e277ae6a97ea83a69261a5c3aab9fd",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -807,11 +947,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1748870023,
         "narHash": "sha256-VUVB5DgFpa1XVLFyipoteK8M/m0l0gRRwVO5sEaGS5E=",
         "owner": "Mic92",
         "repo": "nix-ld",
         "rev": "ed90272a773404844e439cf4ee40779f42a27980",
+=======
+        "lastModified": 1751299546,
+        "narHash": "sha256-9UQQstDOhUD4qjFdOtO3lp0FY7lafPsUYUiC4q6wszM=",
+        "owner": "Mic92",
+        "repo": "nix-ld",
+        "rev": "9b03141cf43989ce602e3d3cc50a15ab63e11ebd",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -822,11 +970,19 @@
     },
     "nixos-hardware": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749056381,
         "narHash": "sha256-QITcurR19KZlrCngBoCjsFF2BdYsiCG4UqmlrVcLb8Q=",
         "owner": "nixos",
         "repo": "nixos-hardware",
         "rev": "029bd66faa180e11262dd1bc2732254c33415f52",
+=======
+        "lastModified": 1751432711,
+        "narHash": "sha256-136MeWtckSHTN9Z2WRNRdZ8oRP3vyx3L8UxeBYE+J9w=",
+        "owner": "nixos",
+        "repo": "nixos-hardware",
+        "rev": "497ae1357f1ac97f1aea31a4cb74ad0d534ef41f",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -837,11 +993,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1743583204,
-        "narHash": "sha256-F7n4+KOIfWrwoQjXrL2wD9RhFYLs2/GGe/MQY1sSdlE=",
+        "lastModified": 1751011381,
+        "narHash": "sha256-krGXKxvkBhnrSC/kGBmg5MyupUUT5R6IBCLEzx9jhMM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "2c8d3f48d33929642c1c12cd243df4cc7d2ce434",
+        "rev": "30e2e2857ba47844aa71991daa6ed1fc678bcbb7",
         "type": "github"
       },
       "original": {
@@ -869,11 +1025,19 @@
     },
     "nixpkgs_3": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1748929857,
         "narHash": "sha256-lcZQ8RhsmhsK8u7LIFsJhsLh/pzR9yZ8yqpTzyGdj+Q=",
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "c2a03962b8e24e669fb37b7df10e7c79531ff1a4",
+=======
+        "lastModified": 1751011381,
+        "narHash": "sha256-krGXKxvkBhnrSC/kGBmg5MyupUUT5R6IBCLEzx9jhMM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "30e2e2857ba47844aa71991daa6ed1fc678bcbb7",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -885,11 +1049,19 @@
     },
     "nixpkgs_4": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749086602,
         "narHash": "sha256-DJcgJMekoxVesl9kKjfLPix2Nbr42i7cpEHJiTnBUwU=",
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "4792576cb003c994bd7cc1edada3129def20b27d",
+=======
+        "lastModified": 1751741127,
+        "narHash": "sha256-t75Shs76NgxjZSgvvZZ9qOmz5zuBE8buUaYD28BMTxg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "29e290002bfff26af1db6f64d070698019460302",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -912,11 +1084,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1746056780,
-        "narHash": "sha256-/emueQGaoT4vu0QjU9LDOG5roxRSfdY0K2KkxuzazcM=",
+        "lastModified": 1751320053,
+        "narHash": "sha256-3m6RMw0FbbaUUa01PNaMLoO7D99aBClmY5ed9V3vz+0=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "d476cd0972dd6242d76374fcc277e6735715c167",
+        "rev": "cbde1735782f9c2bb2c63d5e05fba171a14a4670",
         "type": "github"
       },
       "original": {
@@ -947,11 +1119,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747372754,
-        "narHash": "sha256-2Y53NGIX2vxfie1rOW0Qb86vjRZ7ngizoo+bnXU9D9k=",
+        "lastModified": 1750779888,
+        "narHash": "sha256-wibppH3g/E2lxU43ZQHC5yA/7kIKLGxVEnsnVK1BtRg=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "80479b6ec16fefd9c1db3ea13aeb038c60530f46",
+        "rev": "16ec914f6fb6f599ce988427d9d94efddf25fe6d",
         "type": "github"
       },
       "original": {
@@ -1090,11 +1262,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747603214,
-        "narHash": "sha256-lAblXm0VwifYCJ/ILPXJwlz0qNY07DDYdLD+9H+Wc8o=",
+        "lastModified": 1751606940,
+        "narHash": "sha256-KrDPXobG7DFKTOteqdSVeL1bMVitDcy7otpVZWDE6MA=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "8d215e1c981be3aa37e47aeabd4e61bb069548fd",
+        "rev": "3633fc4acf03f43b260244d94c71e9e14a2f6e0d",
         "type": "github"
       },
       "original": {
@@ -1114,12 +1286,12 @@
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
         "gnome-shell": "gnome-shell",
-        "home-manager": "home-manager_2",
+        "home-manager": "home-manager_3",
         "nixpkgs": [
           "nixpkgs"
         ],
         "nur": "nur",
-        "systems": "systems_3",
+        "systems": "systems_4",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
@@ -1127,11 +1299,19 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749166576,
         "narHash": "sha256-9VUpw7i1VYaRybn6uOqtYAxKbYPZVi+GEDTBkTFlt1Q=",
         "owner": "danth",
         "repo": "stylix",
         "rev": "3979552fe5fb3627a85cc70ceff6efb770c44531",
+=======
+        "lastModified": 1751842457,
+        "narHash": "sha256-4TSfUGqqvIBbCtxjAglmhXfo3y46NS/8g/YquolCnYo=",
+        "owner": "danth",
+        "repo": "stylix",
+        "rev": "3ee8e0d42ec6127b22570b65d88566bbd7959246",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -1186,6 +1366,21 @@
         "type": "github"
       }
     },
+    "systems_4": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "tinted-foot": {
       "flake": false,
       "locked": {
@@ -1222,11 +1417,11 @@
     "tinted-schemes": {
       "flake": false,
       "locked": {
-        "lastModified": 1744974599,
-        "narHash": "sha256-Fg+rdGs5FAgfkYNCs74lnl8vkQmiZVdBsziyPhVqrlY=",
+        "lastModified": 1750770351,
+        "narHash": "sha256-LI+BnRoFNRa2ffbe3dcuIRYAUcGklBx0+EcFxlHj0SY=",
         "owner": "tinted-theming",
         "repo": "schemes",
-        "rev": "28c26a621123ad4ebd5bbfb34ab39421c0144bdd",
+        "rev": "5a775c6ffd6e6125947b393872cde95867d85a2a",
         "type": "github"
       },
       "original": {
@@ -1238,11 +1433,11 @@
     "tinted-tmux": {
       "flake": false,
       "locked": {
-        "lastModified": 1745111349,
-        "narHash": "sha256-udV+nHdpqgkJI9D0mtvvAzbqubt9jdifS/KhTTbJ45w=",
+        "lastModified": 1751159871,
+        "narHash": "sha256-UOHBN1fgHIEzvPmdNMHaDvdRMgLmEJh2hNmDrp3d3LE=",
         "owner": "tinted-theming",
         "repo": "tinted-tmux",
-        "rev": "e009f18a01182b63559fb28f1c786eb027c3dee9",
+        "rev": "bded5e24407cec9d01bd47a317d15b9223a1546c",
         "type": "github"
       },
       "original": {
@@ -1254,11 +1449,11 @@
     "tinted-zed": {
       "flake": false,
       "locked": {
-        "lastModified": 1725758778,
-        "narHash": "sha256-8P1b6mJWyYcu36WRlSVbuj575QWIFZALZMTg5ID/sM4=",
+        "lastModified": 1751158968,
+        "narHash": "sha256-ksOyv7D3SRRtebpXxgpG4TK8gZSKFc4TIZpR+C98jX8=",
         "owner": "tinted-theming",
         "repo": "base16-zed",
-        "rev": "122c9e5c0e6f27211361a04fae92df97940eccf9",
+        "rev": "86a470d94204f7652b906ab0d378e4231a5b3384",
         "type": "github"
       },
       "original": {
@@ -1291,11 +1486,19 @@
     },
     "unstable": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1748929857,
         "narHash": "sha256-lcZQ8RhsmhsK8u7LIFsJhsLh/pzR9yZ8yqpTzyGdj+Q=",
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "c2a03962b8e24e669fb37b7df10e7c79531ff1a4",
+=======
+        "lastModified": 1751792365,
+        "narHash": "sha256-J1kI6oAj25IG4EdVlg2hQz8NZTBNYvIS0l4wpr9KcUo=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "1fd8bada0b6117e6c7eb54aad5813023eed37ccb",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -1333,11 +1536,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749155346,
         "narHash": "sha256-KIkJu3zF8MF3DuGwzAmo3Ww9wsWXolwV30SjJRTAxYE=",
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
         "rev": "44bf29f1df45786098920c655af523535a9191ae",
+=======
+        "lastModified": 1750372504,
+        "narHash": "sha256-VBeZb1oqZM1cqCAZnFz/WyYhO8aF/ImagI7WWg/Z3Og=",
+        "owner": "hyprwm",
+        "repo": "xdg-desktop-portal-hyprland",
+        "rev": "400308fc4f9d12e0a93e483c2e7a649e12af1a92",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {
@@ -1348,17 +1559,25 @@
     },
     "zen-browser": {
       "inputs": {
-        "home-manager": "home-manager_3",
+        "home-manager": "home-manager_4",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1749179754,
         "narHash": "sha256-L1O1oMtM9rSJzmhwocNbZm3C99aCpYrMxw2qoO7PRNA=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
         "rev": "a27925b8b5644a64fa272f3525c399e6295de905",
+=======
+        "lastModified": 1751858709,
+        "narHash": "sha256-xghd1GDPRSa6aD6tEk2JCuQDZWdHITlCA/stwSVoZJQ=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "216dd333fa41aa013bf8aab9322d7c1a2aee5b4a",
+>>>>>>> e04921f (Update & move back to docker wanderer)
         "type": "github"
       },
       "original": {

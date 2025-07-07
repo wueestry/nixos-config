@@ -19,7 +19,7 @@ in
 
   config = mkIf cfg.enable {
     fileSystems."/var/lib/calibre-server" = {
-      device = "/mnt/data/calibre";
+      device = "/mnt/data/nextcloud/data/ryan/files/Documents/calibre";
       options = [ "bind" ];
     };
     services = {
@@ -31,8 +31,8 @@ in
         libraries = [ library ];
         auth.enable = false;
 
-        user = "calibre-server";
-        group = "calibre-server";
+        user = "nextcloud";
+        group = "nextcloud";
       };
       calibre-web = {
         enable = true;
@@ -47,8 +47,8 @@ in
           calibreLibrary = "/var/lib/calibre-server";
         };
 
-        user = "calibre-server";
-        group = "calibre-server";
+        user = "nextcloud";
+        group = "nextcloud";
       };
     };
 

@@ -29,7 +29,7 @@ in
         APP_ENV = "production";
         APP_KEY_FILE = config.sops.secrets.firefly-key.path;
 
-        DB_CONNECTION = "mysql";
+        DB_CONNECTION = "sqlite";
 
         TZ = "Europe/Zurich";
         EXPECT_SECURE_URL = "false";
@@ -37,6 +37,8 @@ in
       };
       enableNginx = true;
       virtualHost = "apollo.firefly-iii.home";
+
+      dataDir = "/var/lib/firefly-iii";
     };
 
     services.nginx.virtualHosts.${config.services.firefly-iii.virtualHost} = {

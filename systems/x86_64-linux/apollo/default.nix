@@ -46,7 +46,7 @@ with lib.${namespace};
       nextcloud = enabled;
       audiobookshelf = enabled;
       calibre = enabled;
-      wanderer = enabled;
+      wanderer = disabled;
       ollama = enabled;
       navidrome = enabled;
       syncthing = enabled;
