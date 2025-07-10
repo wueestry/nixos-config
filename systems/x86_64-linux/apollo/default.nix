@@ -38,6 +38,7 @@ with lib.${namespace};
       tailscale = enabled;
       virtualisation = enabled;
       docker = {
+        garmin-grafana = enabled;
         wanderer = enabled;
       };
 

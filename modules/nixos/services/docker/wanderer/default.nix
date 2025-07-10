@@ -19,8 +19,8 @@ in
   config = mkIf cfg.enable {
     # sops
     sops.secrets = {
-      meili-master-key = {};
-      pocketbase-encryption-key = {};
+      meili-master-key = { };
+      pocketbase-encryption-key = { };
     };
 
     # Runtime
