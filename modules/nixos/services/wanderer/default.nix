@@ -15,7 +15,7 @@ let
   frontend-port = 3000;
   meilisearch-port = 7700;
   secrets_location = "/run/wanderer/wanderer.env";
-  in
+in
 {
   options.${namespace}.services.wanderer = with types; {
     enable = mkBoolOpt false "Enable wanderer";
@@ -31,6 +31,9 @@ let
         wanderer-web
       ]
     );
+    environment.variables = {
+      "MEILI_DB_PATH" = "/mnt/data/wanderer/data";
+    };
     services.meilisearch = {
       enable = true;
       package = pkgs.meilisearch;

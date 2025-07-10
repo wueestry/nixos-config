@@ -37,6 +37,9 @@ with lib.${namespace};
       ssh = enabled;
       tailscale = enabled;
       virtualisation = enabled;
+      docker = {
+        wanderer = enabled;
+      };
 
       immich = enabled;
       mealie = enabled;
