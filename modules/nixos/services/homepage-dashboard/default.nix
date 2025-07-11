@@ -88,7 +88,7 @@ in
               "Mealie" = {
                 description = "Self hosted recipe manager and meal planner";
                 icon = "mealie.png";
-                href = "http://${hostname}:8088";
+                href = "http://${hostname}:8099";
               };
             }
             {

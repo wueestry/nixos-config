@@ -27,7 +27,7 @@ in
     services.mealie = {
       enable = true;
       # package = inputs.unstable.legacyPackages.x86_64-linux.mealie;
-      port = 8088;
+      port = 8099;
       listenAddress = "0.0.0.0";
       settings = {
         TZ = "Europe/Zurich";

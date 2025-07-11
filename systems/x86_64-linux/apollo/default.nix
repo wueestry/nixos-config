@@ -38,7 +38,7 @@ with lib.${namespace};
       tailscale = enabled;
       virtualisation = enabled;
       docker = {
-        garmin-grafana = enabled;
+        garmin-grafana = disabled;
         wanderer = enabled;
       };
 
@@ -54,6 +54,7 @@ with lib.${namespace};
       ollama = enabled;
       navidrome = enabled;
       syncthing = enabled;
+      grafana = enabled;
 
       homepage-dashboard = enabled;
     };

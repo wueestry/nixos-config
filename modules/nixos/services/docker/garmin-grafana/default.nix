@@ -18,10 +18,10 @@ in
 
   config = mkIf cfg.enable {
     sops.secrets = {
-      garmin-email = {};
-      garmin-password = {};
-      influxdb-user = {};
-      influxdb-password = {};
+      garmin-email = { };
+      garmin-password = { };
+      influxdb-user = { };
+      influxdb-password = { };
     };
     # Runtime
     virtualisation.docker = {
