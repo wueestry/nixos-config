@@ -119,6 +119,13 @@ in
                 href = "http://${hostname}:5173";
               };
             }
+            {
+              "Grafana" = {
+                description = "Analytics & monitoring solution for every database.";
+                icon = "grafana.png";
+                href = "http://${hostname}:3030";
+              };
+            }
           ];
         }
         {

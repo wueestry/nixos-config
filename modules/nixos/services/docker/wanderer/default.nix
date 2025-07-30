@@ -34,11 +34,15 @@ in
     virtualisation.oci-containers.containers."wanderer-db" = {
       image = "flomp/wanderer-db";
       environment = {
-        "MEILI_MASTER_KEY" = "$(cat ${config.sops.secrets.meili-master-key.path})";
+        # "MEILI_MASTER_KEY" = "$(cat ${config.sops.secrets.meili-master-key.path})";
         "MEILI_URL" = "http://search:7700";
         "ORIGIN" = "http://apollo:3000";
-        "POCKETBASE_ENCRYPTION_KEY" = "$(cat ${config.sops.secrets.pocketbase-encryption-key.path})";
+        # "POCKETBASE_ENCRYPTION_KEY" = "$(cat ${config.sops.secrets.pocketbase-encryption-key.path})";
       };
+      environmentFiles = [
+        config.sops.secrets.meili-master-key.path
+        config.sops.secrets.pocketbase-encryption-key.path
+      ];
       volumes = [
         "/mnt/data/wanderer/data/pb_data:/pb_data:rw"
       ];
@@ -77,10 +81,13 @@ in
     virtualisation.oci-containers.containers."wanderer-search" = {
       image = "getmeili/meilisearch:v1.11.3";
       environment = {
-        "MEILI_MASTER_KEY" = "$(cat ${config.sops.secrets.meili-master-key.path})";
+        # "MEILI_MASTER_KEY" = "$(cat ${config.sops.secrets.meili-master-key.path})";
         "MEILI_NO_ANALYTICS" = "true";
         "MEILI_URL" = "http://search:7700";
       };
+      environmentFiles = [
+        config.sops.secrets.meili-master-key.path
+      ];
       volumes = [
         "/mnt/data/wanderer/data/data.ms:/meili_data/data.ms:rw"
       ];
@@ -122,7 +129,7 @@ in
       image = "flomp/wanderer-web";
       environment = {
         "BODY_SIZE_LIMIT" = "Infinity";
-        "MEILI_MASTER_KEY" = "$(cat ${config.sops.secrets.meili-master-key.path})";
+        # "MEILI_MASTER_KEY" = "$(cat ${config.sops.secrets.meili-master-key.path})";
         "MEILI_URL" = "http://search:7700";
         "ORIGIN" = "http://apollo:3000";
         "PUBLIC_DISABLE_SIGNUP" = "false";
@@ -131,6 +138,9 @@ in
         "PUBLIC_VALHALLA_URL" = "https://valhalla1.openstreetmap.de";
         "UPLOAD_FOLDER" = "/app/uploads";
       };
+      environmentFiles = [
+        config.sops.secrets.meili-master-key.path
+      ];
       volumes = [
         "/mnt/data/wanderer/data/uploads:/app/uploads:rw"
       ];
