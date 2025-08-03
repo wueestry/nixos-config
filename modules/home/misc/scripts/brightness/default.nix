@@ -6,7 +6,6 @@
 #- - `brightness-down` decreases the brightness by 5%.
 #- - `brightness-set [value]` sets the brightness to the given value.
 #- - `brightness-change [up|down] [value]` increases or decreases the brightness by the given value.
-
 {
   options,
   config,
@@ -16,8 +15,7 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.misc.scripts.brightness;
 
   increments = "5";
@@ -38,9 +36,7 @@ let
   brightness-down = pkgs.writeShellScriptBin "brightness-down" ''
     brightness-change down ${increments}
   '';
-
-in
-{
+in {
   options.${namespace}.misc.scripts.brightness = with types; {
     enable = mkBoolOpt false "Enable misc.scripts.brightness";
   };

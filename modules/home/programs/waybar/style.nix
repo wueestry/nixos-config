@@ -4,8 +4,7 @@ let
     url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake-colours.svg";
     sha256 = "1cifj774r4z4m856fva1mamnpnhsjl44kw3asklrc57824f5lyz3";
   };
-in
-''
+in ''
   * {
     border: none;
     border-radius: 0;

@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.bundles.common;
-in
-{
+in {
   options.${namespace}.bundles.common = with types; {
     enable = mkBoolOpt false "Whether or not to enable common bundle configuration.";
   };
@@ -53,12 +51,12 @@ in
       programs = {
         brave = enabled;
         kitty = enabled;
-        librewolf = disabled;
+        librewolf = enabled;
         lazygit = enabled;
         neovim = enabled;
         stylix = enabled;
         tmux = enabled;
-        zen = enabled;
+        zen = disabled;
       };
     };
   };

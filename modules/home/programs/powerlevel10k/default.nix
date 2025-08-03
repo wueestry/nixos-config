@@ -6,11 +6,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.powerlevel10k;
-in
-{
+in {
   options.${namespace}.programs.powerlevel10k = {
     enable = mkBoolOpt false "${namespace}.programs.powerlevel10k.enable";
   };

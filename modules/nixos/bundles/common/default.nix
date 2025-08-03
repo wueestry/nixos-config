@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.bundles.common;
-in
-{
+in {
   options.${namespace}.bundles.common = with types; {
     enable = mkBoolOpt false "Whether or not to enable common configuration.";
   };
@@ -21,7 +19,7 @@ in
       udisks2.enable = true; # Required for e-reader connections to calibre
       xserver = {
         enable = true;
-        excludePackages = [ pkgs.xterm ];
+        excludePackages = [pkgs.xterm];
       };
     };
     zeus = {

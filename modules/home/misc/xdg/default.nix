@@ -5,14 +5,12 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.misc.xdg;
-in
-{
+in {
   options.${namespace}.misc.xdg = {
     enable = mkBoolOpt false "${namespace}.misc.xdg.enable";
   };
 
-  config = mkIf cfg.enable { xdg = enabled; };
+  config = mkIf cfg.enable {xdg = enabled;};
 }

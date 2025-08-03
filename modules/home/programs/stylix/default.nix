@@ -8,16 +8,14 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.stylix;
-in
-{
+in {
   options.${namespace}.programs.stylix = with types; {
     enable = mkBoolOpt false "Enable stylix";
   };
 
-  imports = [ inputs.stylix.homeModules.stylix ];
+  imports = [inputs.stylix.homeModules.stylix];
 
   config = mkIf cfg.enable {
     stylix = {

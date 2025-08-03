@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.misc.scripts;
-in
-{
+in {
   options.${namespace}.misc.scripts = with types; {
     enable = mkBoolOpt false "Enable misc.scripts";
   };

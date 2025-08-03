@@ -6,8 +6,7 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-{
+with lib.${namespace}; {
   snowfallorg.user.enable = true;
   zeus = {
     bundles = {

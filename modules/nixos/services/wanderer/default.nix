@@ -8,25 +8,22 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.services.wanderer;
   backend-port = 8090;
   frontend-port = 3000;
   meilisearch-port = 7700;
   secrets_location = "/run/wanderer/wanderer.env";
-in
-{
+in {
   options.${namespace}.services.wanderer = with types; {
     enable = mkBoolOpt false "Enable wanderer";
   };
 
   config = mkIf cfg.enable {
-    sops.secrets.meili-master-key = { };
+    sops.secrets.meili-master-key = {};
 
     environment.systemPackages = (
-      with pkgs.zeus;
-      [
+      with pkgs.zeus; [
         wanderer-db
         wanderer-web
       ]
@@ -43,8 +40,8 @@ in
     systemd.services = {
       wanderer-db = {
         description = "Wanderer backend service";
-        after = [ "network.target" ];
-        wantedBy = [ "multi-user.target" ];
+        after = ["network.target"];
+        wantedBy = ["multi-user.target"];
 
         serviceConfig = {
           ExecStart = "${lib.getExe pkgs.zeus.wanderer-db} serve --http=0.0.0.0:${toString backend-port} --dir=/var/lib/wanderer-db/pb_data";
@@ -74,8 +71,8 @@ in
           "network.target"
           "wanderer-db.service"
         ];
-        requires = [ "wanderer-db.service" ];
-        wantedBy = [ "multi-user.target" ];
+        requires = ["wanderer-db.service"];
+        wantedBy = ["multi-user.target"];
 
         serviceConfig = {
           ExecStart = lib.getExe pkgs.zeus.wanderer-web;

@@ -7,12 +7,10 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.services.homepage-dashboard;
   hostname = "apollo"; # "${networking.hostName}";
-in
-{
+in {
   options.${namespace}.services.homepage-dashboard = with types; {
     enable = mkBoolOpt false "Enable homepage-dashboard";
   };

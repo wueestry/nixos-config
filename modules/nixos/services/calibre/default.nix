@@ -7,12 +7,10 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.services.calibre;
   library = "/var/lib/calibre-server";
-in
-{
+in {
   options.${namespace}.services.calibre = with types; {
     enable = mkBoolOpt false "Enable calibre";
   };
@@ -20,7 +18,7 @@ in
   config = mkIf cfg.enable {
     fileSystems."/var/lib/calibre-server" = {
       device = "/mnt/data/nextcloud/data/ryan/files/Documents/calibre";
-      options = [ "bind" ];
+      options = ["bind"];
     };
     services = {
       calibre-server = {
@@ -28,7 +26,7 @@ in
 
         host = "0.0.0.0";
         port = 8195;
-        libraries = [ library ];
+        libraries = [library];
         auth.enable = false;
 
         user = "nextcloud";
@@ -52,7 +50,7 @@ in
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ 8195 ];
-    systemd.services.calibre-web.after = [ "calibre-server.service" ];
+    networking.firewall.allowedTCPPorts = [8195];
+    systemd.services.calibre-web.after = ["calibre-server.service"];
   };
 }

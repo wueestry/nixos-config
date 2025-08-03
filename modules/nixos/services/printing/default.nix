@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.services.printing;
-in
-{
+in {
   options.${namespace}.services.printing = with types; {
     enable = mkBoolOpt false "Whether or not to configure printing support.";
   };
@@ -33,7 +31,7 @@ in
       };
       printing = {
         enable = true;
-        drivers = [ pkgs.cnijfilter2 ];
+        drivers = [pkgs.cnijfilter2];
       };
     };
   };

@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.gimp;
-in
-{
+in {
   options.${namespace}.programs.gimp = with types; {
     enable = mkBoolOpt false "Enable gimp";
   };

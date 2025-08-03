@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.rmpc;
-in
-{
+in {
   options.${namespace}.programs.rmpc = with types; {
     enable = mkBoolOpt false "Enable rmpc";
   };
@@ -34,6 +32,5 @@ in
     systemd.services.mpd.environment = {
       XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.userRunningPipeWire.uid}"; # User-id must match above user. MPD will look inside this directory for the PipeWire socket.
     };
-
   };
 }

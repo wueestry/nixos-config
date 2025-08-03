@@ -8,12 +8,10 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.sops;
-in
-{
-  imports = [ inputs.sops-nix.nixosModules.sops ];
+in {
+  imports = [inputs.sops-nix.nixosModules.sops];
 
   options.${namespace}.programs.sops = with types; {
     enable = mkBoolOpt false "Enable sops";

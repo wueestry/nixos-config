@@ -44,13 +44,6 @@
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
 
-    # Hyprpanel
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      #url = "github:Jas-SinghFSU/HyprPanel?ref=f21d70949f9f4426f39d12f542ec788d47330763";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Hyprswitch
     # hyprswitch.url = "github:h3rmt/hyprswitch/release";
 
@@ -69,40 +62,38 @@
     };
   };
 
-  outputs =
-    inputs:
-    let
-      lib = inputs.snowfall-lib.mkLib {
-        inherit inputs;
-        src = ./.;
+  outputs = inputs: let
+    lib = inputs.snowfall-lib.mkLib {
+      inherit inputs;
+      src = ./.;
 
-        snowfall = {
-          meta = {
-            name = "zeus";
-            title = "NixOS config nicknamed Zeus";
-          };
-
-          namespace = "zeus";
+      snowfall = {
+        meta = {
+          name = "zeus";
+          title = "NixOS config nicknamed Zeus";
         };
+
+        namespace = "zeus";
       };
-    in
+    };
+  in
     lib.mkFlake {
       inherit inputs;
       src = ./.;
 
       channels-config = {
         allowUnfree = true;
-        permittedInsecurePackages = [ ];
+        permittedInsecurePackages = [];
       };
 
-      overlays = with inputs; [ hyprpanel.overlay ];
+      overlays = with inputs; [];
 
-      systems.modules.nixos = with inputs; [ ];
+      systems.modules.nixos = with inputs; [];
 
       systems.hosts.athena.modules = with inputs; [
         nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia
       ];
 
-      templates = import ./templates { };
+      templates = import ./templates {};
     };
 }

@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.services.polkit-gnome;
-in
-{
+in {
   options.${namespace}.services.polkit-gnome = with types; {
     enable = mkBoolOpt false "Enable gnome polkit";
   };

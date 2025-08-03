@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.hardware.audio;
-in
-{
+in {
   options.${namespace}.hardware.audio = with types; {
     enable = mkBoolOpt false "Enable pipewire";
   };
@@ -31,6 +29,6 @@ in
       wireplumber.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [ pavucontrol ];
+    environment.systemPackages = with pkgs; [pavucontrol];
   };
 }

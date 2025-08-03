@@ -8,8 +8,7 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.hyprpanel;
 
   transparentButtons = false;
@@ -31,8 +30,7 @@ let
 
   location = "Zurich";
   username = "ryan";
-in
-{
+in {
   options.${namespace}.programs.hyprpanel = with types; {
     enable = mkBoolOpt false "Enable programs.hyprpanel";
   };
@@ -43,32 +41,6 @@ in
     programs.hyprpanel = {
       enable = true;
       systemd.enable = true;
-      # hyprland.enable = true;
-      # overwrite.enable = true;
-      # overlay.enable = true;
-      settings = {
-        layout = {
-          "bar.layouts" = {
-            "0" = {
-              "left" = [
-                "dashboard"
-                "workspaces"
-                "windowtitle"
-              ];
-              "middle" = [ "media" ];
-              "right" = [
-                "systray"
-                "volume"
-                "bluetooth"
-                # "battery"
-                "network"
-                "clock"
-                "notifications"
-              ];
-            };
-          };
-        };
-      };
     };
   };
 }

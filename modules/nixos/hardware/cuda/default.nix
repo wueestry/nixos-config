@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.hardware.cuda;
-in
-{
+in {
   options.${namespace}.hardware.cuda = with types; {
     enable = mkBoolOpt false "Enable cuda module";
   };
@@ -22,10 +20,10 @@ in
       cudatoolkit
     ];
 
-    services.xserver.videoDrivers = [ "nvidia" ];
+    services.xserver.videoDrivers = ["nvidia"];
 
     systemd.services.nvidia-control-devices = {
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = ["multi-user.target"];
       serviceConfig.ExecStart = "${pkgs.linuxPackages.nvidia_x11.bin}/bin/nvidia-smi";
     };
   };

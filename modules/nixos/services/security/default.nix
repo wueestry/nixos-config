@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.services.security;
-in
-{
+in {
   options.${namespace}.services.security = with types; {
     enable = mkBoolOpt false "Enable security";
   };

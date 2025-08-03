@@ -5,12 +5,10 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.nh;
   user = config.${namespace}.config.user;
-in
-{
+in {
   options.${namespace}.programs.nh = {
     enable = mkBoolOpt false "${namespace}.programs.zsh.enable";
   };

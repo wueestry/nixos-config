@@ -6,15 +6,14 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.waybar;
 
   brightnessctl = pkgs.brightnessctl + "/bin/brightnessctl";
   pamixer = pkgs.pamixer + "/bin/pamixer";
   waybar-wttr = pkgs.stdenv.mkDerivation {
     name = "waybar-wttr";
-    buildInputs = [ (pkgs.python39.withPackages (pythonPackages: with pythonPackages; [ requests ])) ];
+    buildInputs = [(pkgs.python39.withPackages (pythonPackages: with pythonPackages; [requests]))];
     unpackPhase = "true";
     installPhase = ''
       mkdir -p $out/bin
@@ -22,8 +21,7 @@ let
       chmod +x $out/bin/waybar-wttr
     '';
   };
-in
-{
+in {
   options.${namespace}.programs.waybar = {
     enable = mkBoolOpt false "${namespace}.programs.waybar.enable";
   };
@@ -49,7 +47,7 @@ in
             "tray"
           ];
 
-          modules-center = [ ];
+          modules-center = [];
 
           modules-right = [
             "battery"
@@ -79,12 +77,11 @@ in
             tooltip = true;
             format = "{}";
             interval = 7;
-            exec =
-              let
-                todo = pkgs.todo + "/bin/todo";
-                sed = pkgs.gnused + "/bin/sed";
-                wc = pkgs.coreutils + "/bin/wc";
-              in
+            exec = let
+              todo = pkgs.todo + "/bin/todo";
+              sed = pkgs.gnused + "/bin/sed";
+              wc = pkgs.coreutils + "/bin/wc";
+            in
               pkgs.writeShellScript "todo-waybar" ''
                 #!/bin/sh
 

@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.kitty;
-in
-{
+in {
   options.${namespace}.programs.kitty = with types; {
     enable = mkBoolOpt false "Enable kitty";
   };

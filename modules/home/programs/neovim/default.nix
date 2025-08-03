@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.neovim;
-in
-{
+in {
   options.${namespace}.programs.neovim = {
     enable = mkBoolOpt false "${namespace}.programs.neovim.enable";
   };
@@ -38,7 +36,7 @@ in
         # Languages and Compiler
         gcc
         python3
-        nodejs
+        nodejs_24
         cargo
         rustc
         cmake
@@ -47,6 +45,10 @@ in
 
         ripgrep
         fzf
+
+        fd
+
+        texliveSmall
       ];
     };
     #xdg.configFile."nvim" = {

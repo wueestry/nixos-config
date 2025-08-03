@@ -8,12 +8,10 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.ags;
-in
-{
-  imports = [ inputs.ags.homeManagerModules.default ];
+in {
+  imports = [inputs.ags.homeManagerModules.default];
 
   options.${namespace}.programs.ags = with types; {
     enable = mkBoolOpt false "Enable ags";
@@ -38,7 +36,7 @@ in
     programs.ags = {
       enable = true;
       configDir = ./config;
-      extraPackages = with pkgs; [ accountsservice ];
+      extraPackages = with pkgs; [accountsservice];
     };
   };
 }

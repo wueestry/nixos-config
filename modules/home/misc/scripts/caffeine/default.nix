@@ -7,8 +7,7 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.misc.scripts.caffeine;
 
   caffeine-status = pkgs.writeShellScriptBin "caffeine-status" ''
@@ -32,8 +31,7 @@ let
 
     notif "caffeine" "$title" "$description"
   '';
-in
-{
+in {
   options.${namespace}.misc.scripts.caffeine = with types; {
     enable = mkBoolOpt false "Enable misc.scripts.caffeine";
   };

@@ -7,14 +7,12 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.hyprlock;
   foreground = "rgba(216, 222, 233, 0.70)";
   imageStr = toString config.stylix.image;
   font = config.stylix.fonts.serif.name;
-in
-{
+in {
   options.${namespace}.programs.hyprlock = with types; {
     enable = mkBoolOpt false "Enable programs.hyprlock";
   };

@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.system.boot.grub;
-in
-{
+in {
   options.${namespace}.system.boot.grub = with types; {
     enable = mkBoolOpt false "Whether or not to enable grub booting.";
   };

@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.desktop.kde;
-in
-{
+in {
   options.${namespace}.desktop.kde = with types; {
     enable = mkBoolOpt false "Whether or not to use KDE Plasma as the desktop environment.";
   };

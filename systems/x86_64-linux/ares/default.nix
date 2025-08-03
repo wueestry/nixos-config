@@ -5,9 +5,8 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-{
-  imports = [ ./hardware.nix ];
+with lib.${namespace}; {
+  imports = [./hardware.nix];
 
   networking.hostName = "ares";
 
@@ -42,6 +41,7 @@ with lib.${namespace};
     };
     services = {
       ollama = disabled;
+      syncthing-client = enabled;
       virtualisation = enabled;
     };
     system = {

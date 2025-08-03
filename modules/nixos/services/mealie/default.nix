@@ -8,11 +8,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.services.mealie;
-in
-{
+in {
   # disabledModules = [ "services/web-apps/mealie.nix" ];
   # imports = [ "${inputs.unstable}/nixos/modules/services/web-apps/mealie.nix" ];
 

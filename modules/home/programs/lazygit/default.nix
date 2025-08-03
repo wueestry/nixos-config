@@ -7,14 +7,12 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.programs.lazygit;
   transparentButtons = mkBoolOpt false "${namespace}.programs.lazygit.trasparentButtons";
   accent = "#${config.lib.stylix.colors.base0D}";
   muted = "#${config.lib.stylix.colors.base03}";
-in
-{
+in {
   options.${namespace}.programs.lazygit = with types; {
     enable = mkBoolOpt false "Enable programs.lazygit";
   };
@@ -29,7 +27,7 @@ in
               accent
               "bold"
             ];
-            inactiveBorderColor = [ muted ];
+            inactiveBorderColor = [muted];
           };
           showListFooter = false;
           showRandomTip = false;
