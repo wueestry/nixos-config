@@ -9,8 +9,9 @@
 with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.services.homepage-dashboard;
-  hostname = "apollo"; # "${networking.hostName}";
-in {
+  hostname = config.networking.hostName; # "${networking.hostName}";
+in
+{
   options.${namespace}.services.homepage-dashboard = with types; {
     enable = mkBoolOpt false "Enable homepage-dashboard";
   };
@@ -122,6 +123,13 @@ in {
                 description = "Analytics & monitoring solution for every database.";
                 icon = "grafana.png";
                 href = "http://${hostname}:3030";
+              };
+            }
+            {
+              "Readeck" = {
+                description = "Web application that lets you save the readable content of web pages you want to keep forever.";
+                icon = "readeck.png";
+                href = "http://${hostname}:9030";
               };
             }
           ];

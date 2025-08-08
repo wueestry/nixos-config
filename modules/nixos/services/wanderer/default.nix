@@ -35,6 +35,7 @@ in {
       enable = true;
       package = pkgs.meilisearch;
       listenPort = meilisearch-port;
+      listenAddress = "0.0.0.0";
       masterKeyEnvironmentFile = secrets_location; # config.sops.secrets.meili-master-key.path;
     };
     systemd.services = {
@@ -78,10 +79,9 @@ in {
           ExecStart = lib.getExe pkgs.zeus.wanderer-web;
           EnvironmentFile = secrets_location; # config.sops.secrets.meili-master-key.path;
           Environment = [
-            "ORIGIN=http://apollo:${toString frontend-port}"
-            "MEILI_URL=http://127.0.0.1:${toString meilisearch-port}"
+            "MEILI_URL=http://127.0.0.1:${toString meilisearch-port}" #http://apollo:${toString meilisearch-port}"
             "BODY_SIZE_LIMIT=Infinity"
-            "PUBLIC_POCKETBASE_URL=http://apollo:${toString backend-port}"
+            "PUBLIC_POCKETBASE_URL=http://127.0.0.1:${toString backend-port}"
             #"PUBLIC_DISABLE_SIGNUP=true"
             #"PUBLIC_PRIVATE_INSTANCE=true" # dont allow visitors from viewing trails
             "PUBLIC_VALHALLA_URL=https://valhalla1.openstreetmap.de"

@@ -38,7 +38,7 @@ with lib.${namespace}; {
       virtualisation = enabled;
       docker = {
         garmin-grafana = disabled;
-        wanderer = enabled;
+        wanderer = disabled;
       };
 
       immich = enabled;
@@ -49,11 +49,12 @@ with lib.${namespace}; {
       nextcloud = enabled;
       audiobookshelf = enabled;
       calibre = enabled;
-      wanderer = disabled;
+      wanderer = enabled;
       ollama = enabled;
       navidrome = enabled;
       syncthing = enabled;
       grafana = enabled;
+      readeck = enabled;
 
       homepage-dashboard = enabled;
     };
