@@ -7,7 +7,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.misc.scripts.sounds;
 
   increments = "5";
@@ -34,7 +35,8 @@ with lib.${namespace}; let
   sound-toggle = pkgs.writeShellScriptBin "sound-toggle" ''
     sound-change mute
   '';
-in {
+in
+{
   options.${namespace}.misc.scripts.sounds = with types; {
     enable = mkBoolOpt false "Enable misc.scripts.sounds";
   };

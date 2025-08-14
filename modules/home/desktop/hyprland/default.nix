@@ -8,7 +8,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.desktop.hyprland;
   border-size = 1;
   gaps-in = 3;
@@ -16,7 +17,8 @@ with lib.${namespace}; let
   active-opacity = 0.9;
   inactive-opacity = 0.8;
   rounding = 10;
-in {
+in
+{
   options.${namespace}.desktop.hyprland = with types; {
     enable = mkBoolOpt false "Enable hyprland";
   };
@@ -61,6 +63,10 @@ in {
         monitor = [
           ",prefered,auto,auto"
           "Unknown-1, disable"
+        ];
+
+        exec = [
+          "pkill -SIGUSR2 waybar || waybar"
         ];
 
         cursor = {

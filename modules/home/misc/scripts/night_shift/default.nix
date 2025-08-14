@@ -7,7 +7,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.misc.scripts.night_shift;
 
   night-shift-on = pkgs.writeShellScriptBin "night-shift-on" ''
@@ -49,7 +50,8 @@ with lib.${namespace}; let
         echo "󰖕"
       fi
   '';
-in {
+in
+{
   options.${namespace}.misc.scripts.night_shift = with types; {
     enable = mkBoolOpt false "Enable misc.scripts.night_shift";
   };

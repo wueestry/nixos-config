@@ -8,9 +8,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.immich;
-in {
+in
+{
   options.${namespace}.services.immich = with types; {
     enable = mkBoolOpt false "Enable immich";
   };

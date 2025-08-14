@@ -7,10 +7,12 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.starship;
   stylix = config.lib.stylix.colors;
-in {
+in
+{
   options.${namespace}.programs.starship = with types; {
     enable = mkBoolOpt false "Enable starship";
   };

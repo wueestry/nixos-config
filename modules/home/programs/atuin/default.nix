@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.atuin;
-in {
+in
+{
   options.${namespace}.programs.atuin = with types; {
     enable = mkBoolOpt false "Enable atuin";
   };

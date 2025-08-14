@@ -1,1 +1,1 @@
-_: (final: prev: {package = prev.package.override {};})
+_: (final: prev: { package = prev.package.override { }; })

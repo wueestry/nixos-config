@@ -6,11 +6,13 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.zsh;
   CLANG_BASE = "--build-base build_clang --install-base install_clang";
   BUILD_ARGS = "--symlink-install ${CLANG_BASE} --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON";
-in {
+in
+{
   options.${namespace}.programs.zsh = {
     enable = mkBoolOpt false "${namespace}.programs.zsh.enable";
   };
@@ -49,7 +51,7 @@ in {
         tree = "eza --icons=always --tree --no-quotes";
       };
 
-      plugins = [];
+      plugins = [ ];
     };
   };
 }

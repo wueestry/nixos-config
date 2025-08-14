@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.neovim;
-in {
+in
+{
   options.${namespace}.programs.neovim = {
     enable = mkBoolOpt false "${namespace}.programs.neovim.enable";
   };
@@ -49,6 +51,8 @@ in {
         fd
 
         texliveSmall
+
+        tree-sitter
       ];
     };
     #xdg.configFile."nvim" = {

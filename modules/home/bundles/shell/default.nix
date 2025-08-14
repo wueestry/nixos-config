@@ -7,15 +7,17 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.bundles.shell;
-in {
+in
+{
   options.${namespace}.bundles.shell = with types; {
     enable = mkBoolOpt false "Enable shell bundle";
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [yazi];
+    home.packages = with pkgs; [ yazi ];
     zeus = {
       programs = {
         atuin = enabled;

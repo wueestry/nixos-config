@@ -8,9 +8,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.zen;
-in {
+in
+{
   options.${namespace}.programs.zen = with types; {
     enable = mkBoolOpt false "Enable module";
   };

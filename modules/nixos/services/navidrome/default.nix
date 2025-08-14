@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.navidrome;
-in {
+in
+{
   options.${namespace}.services.navidrome = with types; {
     enable = mkBoolOpt false "Enable navidrome";
   };

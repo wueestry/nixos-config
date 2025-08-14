@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.hypridle;
-in {
+in
+{
   options.${namespace}.programs.hypridle = with types; {
     enable = mkBoolOpt false "Enable programs.hypridle";
   };

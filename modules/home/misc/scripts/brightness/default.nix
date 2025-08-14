@@ -15,7 +15,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.misc.scripts.brightness;
 
   increments = "5";
@@ -36,7 +37,8 @@ with lib.${namespace}; let
   brightness-down = pkgs.writeShellScriptBin "brightness-down" ''
     brightness-change down ${increments}
   '';
-in {
+in
+{
   options.${namespace}.misc.scripts.brightness = with types; {
     enable = mkBoolOpt false "Enable misc.scripts.brightness";
   };

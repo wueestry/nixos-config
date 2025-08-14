@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.syncthing;
-in {
+in
+{
   options.${namespace}.services.syncthing = with types; {
     enable = mkBoolOpt false "Enable syncthing";
   };

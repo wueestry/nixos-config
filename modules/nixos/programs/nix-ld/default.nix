@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.nix-ld;
-in {
+in
+{
   options.${namespace}.programs.nix-ld = {
     enable = mkBoolOpt false "${namespace}.programs.nix-ld.enable";
   };

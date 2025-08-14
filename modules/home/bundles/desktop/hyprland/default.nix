@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.bundles.desktop.hyprland;
-in {
+in
+{
   options.${namespace}.bundles.desktop.hyprland = with types; {
     enable = mkBoolOpt false "Whether or not to enable desktop hyprland bundle configuration.";
   };
@@ -35,14 +37,15 @@ in {
     zeus = {
       desktop.hyprland = enabled;
       programs = {
-        ags = enabled;
-        # dolphin = disabled;
+        ags = disabled;
+        dolphin = disabled;
         hypridle = enabled;
         hyprlock = enabled;
-        hyprpanel = enabled;
+        hyprpanel = disabled;
         hyprpaper = enabled;
-        rofi = enabled;
-        # waybar = disabled;
+        rofi = disabled;
+        waybar = enabled;
+        walker = enabled;
       };
     };
   };

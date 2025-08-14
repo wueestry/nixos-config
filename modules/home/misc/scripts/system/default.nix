@@ -7,65 +7,67 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.misc.scripts.system;
 
   menu =
     pkgs.writeShellScriptBin "menu"
-    # bash
-    ''
-      if pgrep rofi; then
-      	pkill rofi
-      else
-      	rofi --show drun
-      fi
-    '';
+      # bash
+      ''
+        if pgrep rofi; then
+        	pkill rofi
+        else
+        	rofi --show drun
+        fi
+      '';
 
   powermenu =
     pkgs.writeShellScriptBin "powermenu"
-    # bash
-    ''
-      if pgrep rofi; then
-      	pkill rofi
-      else
-        options=(
-          "󰌾 Lock"
-          "󰍃 Logout"
-          " Suspend"
-          "󰑐 Reboot"
-          "󰿅 Shutdown"
-        )
+      # bash
+      ''
+        if pgrep rofi; then
+        	pkill rofi
+        else
+          options=(
+            "󰌾 Lock"
+            "󰍃 Logout"
+            " Suspend"
+            "󰑐 Reboot"
+            "󰿅 Shutdown"
+          )
 
-        selected=$(printf '%s\n' "''${options[@]}" | rofi --dmenu)
-        selected=''${selected:2}
+          selected=$(printf '%s\n' "''${options[@]}" | rofi --dmenu)
+          selected=''${selected:2}
 
-        case $selected in
-          "Lock")
-            ${pkgs.hyprlock}/bin/hyprlock
-            ;;
-          "Logout")
-            hyprctl dispatch exit
-            ;;
-          "Suspend")
-            systemctl suspend
-            ;;
-          "Reboot")
-            systemctl reboot
-            ;;
-          "Shutdown")
-            systemctl poweroff
-            ;;
-        esac
-      fi
-    '';
+          case $selected in
+            "Lock")
+              ${pkgs.hyprlock}/bin/hyprlock
+              ;;
+            "Logout")
+              hyprctl dispatch exit
+              ;;
+            "Suspend")
+              systemctl suspend
+              ;;
+            "Reboot")
+              systemctl reboot
+              ;;
+            "Shutdown")
+              systemctl poweroff
+              ;;
+          esac
+        fi
+      '';
 
   lock =
     pkgs.writeShellScriptBin "lock"
-    # bash
-    ''
-      ${pkgs.hyprlock}/bin/hyprlock
-    '';
-in {
+      # bash
+      ''
+        ${pkgs.hyprlock}/bin/hyprlock
+      '';
+in
+{
   options.${namespace}.misc.scripts.system = with types; {
     enable = mkBoolOpt false "Enable misc.scripts.system";
   };

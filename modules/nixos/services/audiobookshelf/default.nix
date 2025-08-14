@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.audiobookshelf;
-in {
+in
+{
   options.${namespace}.services.audiobookshelf = with types; {
     enable = mkBoolOpt false "Enable audiobookshelf";
   };
@@ -17,7 +19,7 @@ in {
   config = mkIf cfg.enable {
     fileSystems."/var/lib/audiobookshelf" = {
       device = "/mnt/data/audiobookshelf";
-      options = ["bind"];
+      options = [ "bind" ];
     };
 
     services.audiobookshelf = {
@@ -25,6 +27,6 @@ in {
       host = "0.0.0.0";
       port = 8008;
     };
-    environment.systemPackages = [pkgs.audiobookshelf];
+    environment.systemPackages = [ pkgs.audiobookshelf ];
   };
 }

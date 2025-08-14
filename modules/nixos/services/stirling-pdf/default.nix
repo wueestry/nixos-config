@@ -8,9 +8,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.stirling-pdf;
-in {
+in
+{
   options.${namespace}.services.stirling-pdf = with types; {
     enable = mkBoolOpt false "Enable stirling-pdf";
   };

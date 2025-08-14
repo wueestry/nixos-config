@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.misc.gtk;
-in {
+in
+{
   options.${namespace}.misc.gtk = with types; {
     enable = mkBoolOpt false "Enable gtk";
   };
@@ -32,9 +34,9 @@ in {
       theme = {
         name = "Catppuccin-Mocha-Compact-Teal-Dark";
         package = pkgs.catppuccin-gtk.override {
-          accents = ["teal"];
+          accents = [ "teal" ];
           size = "compact";
-          tweaks = ["rimless"];
+          tweaks = [ "rimless" ];
           variant = "mocha";
         };
       };

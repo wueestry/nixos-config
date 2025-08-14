@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.rmpc;
-in {
+in
+{
   options.${namespace}.programs.rmpc = with types; {
     enable = mkBoolOpt false "Enable rmpc";
   };

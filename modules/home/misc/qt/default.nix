@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.misc.qt;
-in {
+in
+{
   options.${namespace}.misc.qt = with types; {
     enable = mkBoolOpt false "Enable qt theme";
   };

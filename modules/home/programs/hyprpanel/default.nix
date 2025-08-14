@@ -8,7 +8,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.hyprpanel;
 
   transparentButtons = false;
@@ -30,7 +31,8 @@ with lib.${namespace}; let
 
   location = "Zurich";
   username = "ryan";
-in {
+in
+{
   options.${namespace}.programs.hyprpanel = with types; {
     enable = mkBoolOpt false "Enable programs.hyprpanel";
   };

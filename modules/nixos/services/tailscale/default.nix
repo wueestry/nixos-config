@@ -6,9 +6,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.tailscale;
-in {
+in
+{
   options.${namespace}.services.tailscale = with types; {
     enable = mkBoolOpt false "Whether or not to configure Tailscale";
     autoconnect = {
@@ -25,21 +27,21 @@ in {
       }
     ];
 
-    environment.systemPackages = with pkgs; [tailscale];
+    environment.systemPackages = with pkgs; [ tailscale ];
 
     services.tailscale = enabled;
 
     networking = {
       firewall = {
-        trustedInterfaces = [config.services.tailscale.interfaceName];
+        trustedInterfaces = [ config.services.tailscale.interfaceName ];
 
-        allowedUDPPorts = [config.services.tailscale.port];
+        allowedUDPPorts = [ config.services.tailscale.port ];
 
         # Strict reverse path filtering breaks Tailscale exit node use and some subnet routing setups.
         checkReversePath = "loose";
       };
 
-      networkmanager.unmanaged = ["tailscale0"];
+      networkmanager.unmanaged = [ "tailscale0" ];
     };
 
     systemd.services.tailscale-autoconnect = mkIf cfg.autoconnect.enable {
@@ -54,7 +56,7 @@ in {
         "network-pre.target"
         "tailscale.service"
       ];
-      wantedBy = ["multi-user.target"];
+      wantedBy = [ "multi-user.target" ];
 
       # Set this service as a oneshot job
       serviceConfig.Type = "oneshot";

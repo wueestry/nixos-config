@@ -7,24 +7,28 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.desktop.hyprland.animations;
 
   animationSpeed = "medium";
 
   animationDuration =
-    if animationSpeed == "slow"
-    then "4"
-    else if animationSpeed == "medium"
-    then "2.5"
-    else "1.5";
+    if animationSpeed == "slow" then
+      "4"
+    else if animationSpeed == "medium" then
+      "2.5"
+    else
+      "1.5";
   borderDuration =
-    if animationSpeed == "slow"
-    then "10"
-    else if animationSpeed == "medium"
-    then "6"
-    else "3";
-in {
+    if animationSpeed == "slow" then
+      "10"
+    else if animationSpeed == "medium" then
+      "6"
+    else
+      "3";
+in
+{
   options.${namespace}.desktop.hyprland.animations = with types; {
     enable = mkBoolOpt false "Enable hyprland animations";
   };

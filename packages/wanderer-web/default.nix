@@ -6,7 +6,8 @@
   stdenv,
   writeShellApplication,
   ...
-}: let
+}:
+let
   version = "0.17.1";
   src = pkgs.fetchFromGitHub {
     owner = "Flomp";
@@ -19,7 +20,7 @@
     pname = "wanderer-web-dist";
 
     npmDepsHash = "sha256-fck1BYU59qW3RamUXk+gu9kA6EoUPU/8SERUr4o3x/E=";
-    npmFlags = ["--legacy-peer-deps"];
+    npmFlags = [ "--legacy-peer-deps" ];
     makeCacheWritable = true;
     sourceRoot = "${src.name}/web";
 
@@ -32,7 +33,7 @@
     '';
   };
 in
-  writeShellApplication {
-    name = "wanderer-web";
-    text = "${pkgs.nodejs_22}/bin/node ${wanderer-web-dist}/dist/";
-  }
+writeShellApplication {
+  name = "wanderer-web";
+  text = "${pkgs.nodejs_22}/bin/node ${wanderer-web-dist}/dist/";
+}

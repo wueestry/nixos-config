@@ -7,13 +7,15 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.fzf;
 
   accent = "#" + config.lib.stylix.colors.base0D;
   foreground = "#" + config.lib.stylix.colors.base05;
   muted = "#" + config.lib.stylix.colors.base03;
-in {
+in
+{
   options.${namespace}.programs.fzf = with types; {
     enable = mkBoolOpt false "Enable programs.fzf";
   };

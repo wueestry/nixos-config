@@ -8,9 +8,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.nextcloud;
-in {
+in
+{
   options.${namespace}.services.nextcloud = with types; {
     enable = mkBoolOpt false "Enable nextcloud";
   };
@@ -23,7 +25,7 @@ in {
 
     fileSystems."/var/lib/nextcloud" = {
       device = "/mnt/data/nextcloud";
-      options = ["bind"];
+      options = [ "bind" ];
     };
 
     services.nextcloud = {
@@ -34,8 +36,7 @@ in {
       home = "/var/lib/nextcloud";
       database.createLocally = true;
       extraApps = {
-        inherit
-          (config.services.nextcloud.package.packages.apps)
+        inherit (config.services.nextcloud.package.packages.apps)
           contacts
           calendar
           cookbook

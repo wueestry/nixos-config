@@ -7,7 +7,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.misc.scripts.hyprpanel;
 
   hyprpanel-toggle = pkgs.writeShellScriptBin "hyprpanel-toggle" ''
@@ -43,7 +44,8 @@ with lib.${namespace}; let
     [ $(pgrep "ags") ] && pkill ags
     hyprctl dispatch exec hyprpanel
   '';
-in {
+in
+{
   options.${namespace}.misc.scripts.hyprpanel = with types; {
     enable = mkBoolOpt false "Enable misc.scripts.hyprpanel";
   };

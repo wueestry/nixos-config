@@ -7,7 +7,8 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.homepage-dashboard;
   hostname = config.networking.hostName; # "${networking.hostName}";
 in

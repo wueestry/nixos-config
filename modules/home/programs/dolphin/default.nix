@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.dolphin;
-in {
+in
+{
   options.${namespace}.programs.dolphin = with types; {
     enable = mkBoolOpt false "Enable dolphin";
   };

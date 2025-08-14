@@ -7,19 +7,21 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.services.grafana;
-in {
+in
+{
   options.${namespace}.services.grafana = with types; {
     enable = mkBoolOpt false "Enable grafana";
   };
 
   config = mkIf cfg.enable {
     sops.secrets = {
-      garmin-email = {};
-      garmin-password = {};
-      influxdb-user = {};
-      influxdb-password = {};
+      garmin-email = { };
+      garmin-password = { };
+      influxdb-user = { };
+      influxdb-password = { };
     };
     services.grafana = {
       enable = true;
@@ -68,7 +70,7 @@ in {
       exporters = {
         node = {
           enable = true;
-          enabledCollectors = ["systemd"];
+          enabledCollectors = [ "systemd" ];
           port = 9992;
         };
       };
@@ -78,7 +80,7 @@ in {
           job_name = "chrysalis";
           static_configs = [
             {
-              targets = ["127.0.0.1:${toString config.services.prometheus.exporters.node.port}"];
+              targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
             }
           ];
         }

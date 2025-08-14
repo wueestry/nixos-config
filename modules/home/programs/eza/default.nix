@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.eza;
-in {
+in
+{
   options.${namespace}.programs.eza = with types; {
     enable = mkBoolOpt false "Enable programs.eza";
   };

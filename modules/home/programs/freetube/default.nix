@@ -7,9 +7,11 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
+with lib.${namespace};
+let
   cfg = config.${namespace}.programs.freetube;
-in {
+in
+{
   options.${namespace}.programs.freetube = with types; {
     enable = mkBoolOpt false "Enable freetube";
   };
