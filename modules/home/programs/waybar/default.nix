@@ -110,7 +110,7 @@ in
             tooltip-format-disconnected = "Disconnected";
             interval = 3;
             nospacing = 1;
-            on-click = "kitty -e nmcli";
+            on-click = "kitty -e nmtui";
           };
           battery = {
             interval = 5;
@@ -157,7 +157,7 @@ in
             format-disabled = "󰂲";
             format-connected = "";
             tooltip-format = "Devices connected: {num_connections}";
-            on-click = "blueberry";
+            on-click = "blueman-manager";
           };
           wireplumber = {
             # Changed from "pulseaudio"
@@ -182,15 +182,6 @@ in
               performance = "󰡴";
             };
           };
-          # "custom/dropbox" = {
-          #   format = "";
-          #   on-click = "nautilus ~/Dropbox";
-          #   exec = "dropbox-cli status";
-          #   return-type = "text";
-          #   interval = 5;
-          #   tooltip = true;
-          #   tooltip-format = "{}";
-          # };
         }
       ];
     };

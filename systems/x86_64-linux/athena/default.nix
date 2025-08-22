@@ -43,10 +43,11 @@ with lib.${namespace};
     programs = {
       nh = enabled;
       nix-ld = enabled;
-      steam = enabled;
+      steam = disabled;
     };
     services = {
       virtualisation = enabled;
+      syncthing-client = enabled;
     };
     system = {
       boot.systemd-boot = enabled;

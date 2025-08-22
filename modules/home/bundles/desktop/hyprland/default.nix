@@ -43,9 +43,9 @@ in
         hyprlock = enabled;
         hyprpanel = disabled;
         hyprpaper = enabled;
-        rofi = disabled;
+        rofi = enabled;
         waybar = enabled;
-        walker = enabled;
+        walker = disabled;
       };
     };
   };

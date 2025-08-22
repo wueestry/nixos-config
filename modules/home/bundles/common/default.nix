@@ -53,12 +53,12 @@ in
       programs = {
         brave = enabled;
         kitty = enabled;
-        librewolf = enabled;
+        librewolf = disabled;
         lazygit = enabled;
         neovim = enabled;
         stylix = enabled;
         tmux = enabled;
-        zen = disabled;
+        zen = enabled;
       };
     };
   };

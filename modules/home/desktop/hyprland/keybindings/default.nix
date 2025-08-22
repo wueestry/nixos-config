@@ -23,7 +23,7 @@ in
         "$mod,B, exec, ${pkgs.librewolf}/bin/librewolf" # Librewolf
         "$mod,K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
         "$mod,L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
-        "$mod,X, exec, power-menu" # Powermenu
+        "$mod,X, exec, wlogout" # Powermenu
         "$mod,D, exec, launcher" # Launcher
         "$shiftMod,SPACE, exec, hyprfocus-toggle" # Toggle HyprFocus
 
