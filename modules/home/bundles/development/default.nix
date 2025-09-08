@@ -22,6 +22,9 @@ in
       cmake
       python3
       devenv
+      nodePackages.prettier
+      gnumake
+      zed-editor
     ];
 
     programs.direnv = {

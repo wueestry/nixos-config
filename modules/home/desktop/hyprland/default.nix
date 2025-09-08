@@ -44,6 +44,7 @@ in
       gnome-themes-extra
       libva
       dconf
+      wlogout
       wayland-utils
       wayland-protocols
       direnv

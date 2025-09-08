@@ -34,6 +34,7 @@ in
         stylua
         ruff
         nixfmt-rfc-style
+        prettierd
 
         # Languages and Compiler
         gcc
