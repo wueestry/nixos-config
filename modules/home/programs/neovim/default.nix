@@ -16,6 +16,9 @@ in
     enable = mkBoolOpt false "${namespace}.programs.neovim.enable";
   };
   config = mkIf cfg.enable {
+    home.packages = ( with pkgs; [
+      opencode
+    ]);
     programs.neovim = {
       enable = true;
       defaultEditor = true;

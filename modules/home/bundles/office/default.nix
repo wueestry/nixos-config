@@ -25,6 +25,9 @@ in
 
       # planify
       newsflash
+
+      gimp
+      inkscape
     ];
 
     services.nextcloud-client = {
