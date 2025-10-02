@@ -14,7 +14,7 @@ let
   backend-port = 8090;
   frontend-port = 3000;
   meilisearch-port = 7700;
-  secrets_location = "/run/wanderer/wanderer.env";
+  secrets_location = "/home/wueestry/wanderer/wanderer.env";
 in
 {
   options.${namespace}.services.wanderer = with types; {

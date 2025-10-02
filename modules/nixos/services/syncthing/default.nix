@@ -17,8 +17,13 @@ in
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = (with pkgs; [
+      maestral
+    ]);
     services.syncthing = {
       enable = true;
+      user = "wueestry";
+      group = "users";
       guiAddress = "0.0.0.0:8384";
       openDefaultPorts = true;
       dataDir = "/mnt/data/syncthing";
