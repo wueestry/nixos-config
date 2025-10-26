@@ -12,7 +12,7 @@ let
   cfg = config.${namespace}.services.glance;
 in
 {
-  options.${namespace}.services.glane = with types; {
+  options.${namespace}.services.glance = with types; {
     enable = mkBoolOpt false "Enable glance";
   };
 

@@ -90,7 +90,7 @@
 
       overlays = with inputs; [ ];
 
-      systems.modules.nixos = with inputs; [ ];
+      systems.modules.nixos = with inputs; [];
 
       systems.hosts.athena.modules = with inputs; [
         nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia
