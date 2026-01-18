@@ -31,7 +31,7 @@ in
     services.nextcloud = {
       enable = true;
       configureRedis = true;
-      package = pkgs.nextcloud31;
+      package = pkgs.nextcloud32;
       hostName = "apollo.nextcloud.home";
       home = "/var/lib/nextcloud";
       database.createLocally = true;

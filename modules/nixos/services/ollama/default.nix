@@ -12,29 +12,22 @@ with lib.${namespace};
 let
   cfg = config.${namespace}.services.ollama;
 in
-# pkgs_unstable = import inputs.unstable {
-#  system = "x86_64-linux";
-#  config.allowUnfree = true;
-#};
 {
   options.${namespace}.services.ollama = with types; {
     enable = mkBoolOpt false "Enable ollama";
   };
 
-  # disabledModules = [
-  #   "services/misc/ollama.nix"
-  # ];
-  # imports = [
-  #   "${inputs.unstable}/nixos/modules/services/misc/ollama.nix"
-  # ];
   config = mkIf cfg.enable {
+    sops.secrets = {
+      litellm-master-key = {};
+      litellm-salt-key = {};
+    };
     services = {
       ollama = {
         enable = true;
         port = 11434;
         host = "0.0.0.0";
         acceleration = "cuda";
-        # package = pkgs_unstable.ollama;
       };
       #nextjs-ollama-llm-ui = {
       #  enable = true;
@@ -46,6 +39,15 @@ in
         enable = true;
         port = 3050;
         host = "0.0.0.0";
+      };
+      litellm = {
+        enable = false;
+        port = 11111;
+        host = "0.0.0.0";
+        settings.environment_variables = {
+          LITELLM_MASTER_KEY="$(cat ${config.sops.secrets.litellm-master-key.path})";
+          LITELLM_SALT_KEY="$(cat ${config.sops.secrets.litellm-salt-key.path})";
+        };
       };
     };
   };

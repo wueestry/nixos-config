@@ -112,13 +112,13 @@ in
                 href = "http://${hostname}:3050";
               };
             }
-            {
-              "Referee Assistance Program" = {
-                description = "React app to show RAP";
-                icon = "https://upload.wikimedia.org/wikipedia/de/5/53/SFV_Logo.svg";
-                href = "http://${hostname}:5173";
-              };
-            }
+            # {
+            #   "Referee Assistance Program" = {
+            #     description = "React app to show RAP";
+            #     icon = "https://upload.wikimedia.org/wikipedia/de/5/53/SFV_Logo.svg";
+            #     href = "http://${hostname}:5173";
+            #   };
+            # }
             {
               "Grafana" = {
                 description = "Analytics & monitoring solution for every database.";
