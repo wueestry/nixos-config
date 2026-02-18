@@ -17,7 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.gui.kitty = {
+    programs.kitty = {
       enable = true;
       font = {
         name = "MesloLGS NF";

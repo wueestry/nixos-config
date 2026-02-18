@@ -45,22 +45,16 @@ in
         qt = disabled;
       };
       utilities = enabled;
-      programs.flatpak = {
-        brave = enabled;
-        librewolf = enabled;
-        zen = enabled;
-        spotify = enabled;
-      };
       programs = {
         cli = {
           # Browsers moved to Flatpak
-          kitty = enabled;
           lazygit = enabled;
           neovim = enabled;
+          tmux = enabled;
         };
         gui = {
           stylix = enabled;
-          tmux = enabled;
+          kitty = enabled;
           # Browsers moved to Flatpak
         };
       };

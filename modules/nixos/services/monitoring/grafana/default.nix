@@ -23,7 +23,7 @@ in
       influxdb-user = { };
       influxdb-password = { };
     };
-    services.monitoring.grafana = {
+    services.grafana = {
       enable = true;
       settings = {
         server = {
@@ -47,7 +47,7 @@ in
           {
             name = "Prometheus";
             type = "prometheus";
-            url = "http://${config.services.monitoring.prometheus.listenAddress}:${toString config.services.monitoring.prometheus.port}";
+            url = "http://${config.services.prometheus.listenAddress}:${toString config.services.monitoring.prometheus.port}";
           }
           {
             name = "Garmin-InfluxDB";
@@ -64,7 +64,7 @@ in
       };
       dataDir = "/mnt/data/grafana";
     };
-    services.monitoring.prometheus = {
+    services.prometheus = {
       enable = true;
       port = 9991;
       exporters = {
@@ -86,7 +86,7 @@ in
         }
       ];
     };
-    services.monitoring.influxdb = {
+    services.influxdb = {
       enable = true;
       dataDir = "/mnt/data/influxdb";
       extraConfig = {

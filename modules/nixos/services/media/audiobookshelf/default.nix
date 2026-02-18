@@ -22,7 +22,7 @@ in
       options = [ "bind" ];
     };
 
-    services.media.audiobookshelf = {
+    services.audiobookshelf = {
       enable = true;
       host = "0.0.0.0";
       port = 8008;

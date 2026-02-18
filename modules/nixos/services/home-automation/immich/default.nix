@@ -18,7 +18,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.home-automation.immich = {
+    services.immich = {
       enable = true;
 
       port = 3001;

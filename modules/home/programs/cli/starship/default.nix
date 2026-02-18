@@ -10,6 +10,7 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.programs.cli.starship;
+  stylix = config.lib.stylix.colors;
 in
 {
   options.${namespace}.programs.cli.starship = with types; {

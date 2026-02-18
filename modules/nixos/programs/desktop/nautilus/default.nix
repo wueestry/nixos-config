@@ -9,10 +9,10 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.${namespace}.programs.nautilus;
+  cfg = config.${namespace}.programs.desktop.nautilus;
 in
 {
-  options.${namespace}.programs.nautilus = with types; {
+  options.${namespace}.programs.desktop.nautilus = with types; {
     enable = mkBoolOpt false "Enable nautilus";
   };
 

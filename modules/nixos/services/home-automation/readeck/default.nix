@@ -21,7 +21,7 @@ in
       readeck-key = { };
     };
 
-    services.home-automation.readeck = {
+    services.readeck = {
       enable = true;
       settings = {
         main = {

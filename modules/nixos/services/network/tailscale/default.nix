@@ -29,13 +29,13 @@ in
 
     environment.systemPackages = with pkgs; [ tailscale ];
 
-    services.network.tailscale = enabled;
+    services.tailscale = enabled;
 
     networking = {
       firewall = {
-        trustedInterfaces = [ config.services.network.tailscale.interfaceName ];
+        trustedInterfaces = [ config.services.tailscale.interfaceName ];
 
-        allowedUDPPorts = [ config.services.network.tailscale.port ];
+        allowedUDPPorts = [ config.services.tailscale.port ];
 
         checkReversePath = "loose";
       };
@@ -43,7 +43,7 @@ in
       networkmanager.unmanaged = [ "tailscale0" ];
     };
 
-    systemd.services.network.tailscale-autoconnect = mkIf cfg.autoconnect.enable {
+    systemd.services.tailscale-autoconnect = mkIf cfg.autoconnect.enable {
       description = "Automatic connection to Tailscale";
 
       after = [

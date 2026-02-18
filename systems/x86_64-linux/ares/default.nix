@@ -35,7 +35,11 @@ with lib.${namespace};
       gpu.nvidia = enabled;
     };
     programs = {
-      flatpak = enabled;
+      flatpak = {
+        core = enabled;
+        brave = enabled;
+        spotify = enabled;
+      };
       gaming.steam = enabled;
       security.sops = enabled;
       system = {
@@ -44,7 +48,7 @@ with lib.${namespace};
       };
     };
     services = {
-      virtualization.virtualisation = enabled;
+      virtualisation.virtualisation = enabled;
     };
     system = {
       boot.grub = enabled;

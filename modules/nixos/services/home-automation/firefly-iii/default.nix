@@ -22,7 +22,7 @@ in
       owner = "firefly-iii";
     };
 
-    services.home-automation.firefly-iii = {
+    services.firefly-iii = {
 
       enable = true;
 
@@ -42,7 +42,7 @@ in
       dataDir = "/var/lib/firefly-iii";
     };
 
-    services.home-automation.nginx.virtualHosts.${config.services.home-automation.firefly-iii.virtualHost} =
+    services.nginx.virtualHosts.${config.services.home-automation.firefly-iii.virtualHost} =
       {
         enableACME = false;
         listen = [

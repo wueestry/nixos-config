@@ -9,10 +9,10 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.${namespace}.services.virtualization.network.monitoring.home-automation.media.virtualisation;
+  cfg = config.${namespace}.services.virtualisation.virtualisation;
 in
 {
-  options.${namespace}.services.virtualization.network.monitoring.home-automation.media.virtualisation = with types; {
+  options.${namespace}.services.virtualisation.virtualisation = with types; {
     enable = mkBoolOpt false "Enable virtualisation";
   };
 

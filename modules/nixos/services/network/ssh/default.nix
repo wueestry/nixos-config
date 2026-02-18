@@ -17,7 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.network.openssh.enable = true;
+    services.openssh.enable = true;
     environment.systemPackages = [
       pkgs.sshs
     ];

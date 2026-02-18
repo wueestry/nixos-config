@@ -28,7 +28,7 @@ in
       options = [ "bind" ];
     };
 
-    services.media.nextcloud = {
+    services.nextcloud = {
       enable = true;
       configureRedis = true;
       package = pkgs.nextcloud32;
@@ -79,7 +79,7 @@ in
       maxUploadSize = "10G";
     };
 
-    services.media.nginx.virtualHosts.${config.services.media.nextcloud.hostName}.listen = [
+    services.nginx.virtualHosts.${config.services.nextcloud.hostName}.listen = [
       {
         addr = "0.0.0.0";
         port = 8081;

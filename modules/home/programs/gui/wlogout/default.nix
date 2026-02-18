@@ -17,7 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.gui.wlogout = {
+    programs.wlogout = {
       enable = true;
       layout = [
         {

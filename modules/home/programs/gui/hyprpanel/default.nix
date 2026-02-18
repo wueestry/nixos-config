@@ -40,7 +40,7 @@ in
   #  imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
 
   config = mkIf cfg.enable {
-    programs.gui.hyprpanel = {
+    programs.hyprpanel = {
       enable = true;
       systemd.enable = true;
     };

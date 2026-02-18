@@ -20,7 +20,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.gui.hyprlock = {
+    programs.hyprlock = {
       enable = true;
       settings = {
         general = {

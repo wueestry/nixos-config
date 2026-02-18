@@ -35,7 +35,7 @@ in
         '';
       };
     };
-    programs.gui.waybar = {
+    programs.waybar = {
       enable = true;
       settings = [
         {

@@ -37,7 +37,7 @@ in
       };
     };
 
-    services.media.navidrome = {
+    services.navidrome = {
       enable = true;
       settings = {
         Address = "0.0.0.0";

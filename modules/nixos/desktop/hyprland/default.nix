@@ -62,11 +62,11 @@ in
       ];
     };
 
-    zeus = {
+    olympus = {
       programs = {
-        dconf = enabled;
-        kde-connect = enabled;
-        nautilus = enabled;
+        desktop.dconf = enabled;
+        desktop.kde-connect = enabled;
+        desktop.nautilus = enabled;
       };
       services = {
         greetd = disabled;

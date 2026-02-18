@@ -24,10 +24,6 @@ with lib.${namespace};
           username = "Ryan Wüest";
         };
       };
-      gui = {
-        freetube = enabled;
-        spotify = enabled;
-      };
     };
     config.xdg = enabled;
   };

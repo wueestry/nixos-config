@@ -17,7 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.media.jellyfin = {
+    services.jellyfin = {
       enable = true;
       dataDir = "/mnt/storage/jellyfin";
       # port = 8096; Non configurable

@@ -35,7 +35,7 @@ in
       blueman
     ];
 
-    programs.gui.ags = {
+    programs.ags = {
       enable = true;
       configDir = ./config;
       extraPackages = with pkgs; [ accountsservice ];

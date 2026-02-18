@@ -21,7 +21,7 @@ in
     environment.variables = {
       "NLTK_DATA" = "/usr/share/nltk_data";
     };
-    services.home-automation.mealie = {
+    services.mealie = {
       enable = true;
       # package = inputs.unstable.legacyPackages.x86_64-linux.mealie;
       port = 8099;
