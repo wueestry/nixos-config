@@ -9,11 +9,11 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.${namespace}.programs.gui.hyprpaper;
+  cfg = config.${namespace}.desktop.utils.hyprpaper;
 in
 {
-  options.${namespace}.programs.gui.hyprpaper = with types; {
-    enable = mkBoolOpt false "Enable programs.gui.hyprpaper";
+  options.${namespace}.desktop.utils.hyprpaper = with types; {
+    enable = mkBoolOpt false "Enable desktop.utils.hyprpaper";
   };
 
   config = mkIf cfg.enable {

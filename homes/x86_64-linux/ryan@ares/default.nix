@@ -11,10 +11,9 @@ with lib.${namespace};
   snowfallorg.user.enable = true;
   olympus = {
     bundles = {
-      common = enabled;
+      shell = enabled;
       desktop.hyprland = enabled;
       development = enabled;
-      office = enabled;
     };
 
     programs = {
@@ -23,9 +22,20 @@ with lib.${namespace};
           enable = true;
           username = "Ryan Wüest";
         };
+        lazygit = enabled;
+        neovim = enabled;
+        tmux = enabled;
+      };
+      gui = {
+        stylix = enabled;
+        kitty = enabled;
       };
     };
-    config.xdg = enabled;
+    config = {
+      xdg = enabled;
+      apps = enabled;
+    };
+    utilities = enabled;
   };
 
   # This value determines the Home Manager release that your

@@ -8,12 +8,12 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.${namespace}.programs.gui.waybar;
+  cfg = config.${namespace}.desktop.utils.waybar;
   stylix = config.lib.stylix.colors;
 in
 {
-  options.${namespace}.programs.gui.waybar = {
-    enable = mkBoolOpt false "${namespace}.programs.gui.waybar.enable";
+  options.${namespace}.desktop.utils.waybar = {
+    enable = mkBoolOpt false "${namespace}.desktop.utils.waybar.enable";
   };
 
   config = mkIf cfg.enable {

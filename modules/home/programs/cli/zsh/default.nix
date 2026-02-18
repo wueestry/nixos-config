@@ -27,19 +27,19 @@ in
       syntaxHighlighting.enable = true;
 
       initContent = ''
-               # Fix an issue with tmux.
-               export KEYTIMEOUT=1
+              # Fix an issue with tmux.
+              export KEYTIMEOUT=1
 
-               # Use vim bindings.
-               set -o vi
+              # Use vim bindings.
+              set -o vi
 
-         export EDITOR="nvim"
+        export EDITOR="nvim"
 
-         export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
+        export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
 
-         export CC=clang
-         export CXX=clang++
-         alias cb="colcon build ${BUILD_ARGS}"
+        export CC=clang
+        export CXX=clang++
+        alias cb="colcon build ${BUILD_ARGS}"
       '';
 
       shellAliases = {

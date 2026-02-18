@@ -10,7 +10,7 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.${namespace}.programs.gui.hyprpanel;
+  cfg = config.${namespace}.desktop.utils.hyprpanel;
 
   transparentButtons = false;
   accent = "#${config.lib.stylix.colors.base0D}";
@@ -33,8 +33,8 @@ let
   username = "ryan";
 in
 {
-  options.${namespace}.programs.gui.hyprpanel = with types; {
-    enable = mkBoolOpt false "Enable programs.gui.hyprpanel";
+  options.${namespace}.desktop.utils.hyprpanel = with types; {
+    enable = mkBoolOpt false "Enable desktop.utils.hyprpanel";
   };
 
   #  imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];

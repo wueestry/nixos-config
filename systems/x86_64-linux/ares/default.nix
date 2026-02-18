@@ -39,6 +39,8 @@ with lib.${namespace};
         core = enabled;
         brave = enabled;
         spotify = enabled;
+        obsidian = enabled;
+        librewolf = enabled;
       };
       gaming.steam = enabled;
       security.sops = enabled;

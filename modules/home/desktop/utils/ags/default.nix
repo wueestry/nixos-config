@@ -10,12 +10,12 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.${namespace}.programs.gui.ags;
+  cfg = config.${namespace}.desktop.utils.ags;
 in
 {
   imports = [ inputs.ags.homeManagerModules.default ];
 
-  options.${namespace}.programs.gui.ags = with types; {
+  options.${namespace}.desktop.utils.ags = with types; {
     enable = mkBoolOpt false "Enable ags";
   };
 

@@ -17,17 +17,41 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [ yazi ];
+    home.packages = with pkgs; [
+      yazi
+      btop
+      coreutils
+      killall
+      tldr
+      wget
+      curl
+
+      ripgrep
+
+      unrar
+      unzip
+      zip
+
+      fastfetch
+
+      # Config formatting
+      nixfmt-rfc-style
+    ];
     olympus = {
       programs = {
         cli = {
           atuin = enabled;
           eza = enabled;
           fzf = enabled;
-          powerlevel10k = disabled;
           starship = enabled;
           zoxide = enabled;
           zsh = enabled;
+          lazygit = enabled;
+          neovim = enabled;
+          tmux = enabled;
+        };
+        gui = {
+          kitty = enabled;
         };
       };
     };

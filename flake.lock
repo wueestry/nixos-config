@@ -378,6 +378,26 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771431295,
+        "narHash": "sha256-uQ0iPqH8sLBZIeRsvri91E7mTsuYjS4ct6/jU0TPXOA=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "rev": "abfcbd3a547e2115c81364938335ff739c641e0e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -424,6 +444,7 @@
         "nix-ld": "nix-ld",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
+        "noctalia": "noctalia",
         "snowfall-lib": "snowfall-lib",
         "sops-nix": "sops-nix",
         "stylix": "stylix",

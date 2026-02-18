@@ -9,11 +9,11 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.${namespace}.programs.gui.wlogout;
+  cfg = config.${namespace}.desktop.utils.wlogout;
 in
 {
-  options.${namespace}.programs.gui.wlogout = with types; {
-    enable = mkBoolOpt false "Enable programs.gui.wlogout";
+  options.${namespace}.desktop.utils.wlogout = with types; {
+    enable = mkBoolOpt false "Enable desktop.utils.wlogout";
   };
 
   config = mkIf cfg.enable {

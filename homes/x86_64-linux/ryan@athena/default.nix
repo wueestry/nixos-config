@@ -11,7 +11,6 @@ with lib.${namespace};
   snowfallorg.user.enable = true;
   olympus = {
     bundles = {
-      common = enabled;
       desktop.hyprland = enabled;
       office = enabled;
       development = enabled;
@@ -23,10 +22,6 @@ with lib.${namespace};
           enable = true;
           username = "Ryan Wüest";
         };
-      };
-      gui = {
-        spotify = enabled;
-        gimp = enabled;
       };
     };
     config.xdg = enabled;

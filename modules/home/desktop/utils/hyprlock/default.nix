@@ -9,14 +9,14 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.${namespace}.programs.gui.hyprlock;
+  cfg = config.${namespace}.desktop.utils.hyprlock;
   foreground = "rgba(216, 222, 233, 0.70)";
   imageStr = toString config.stylix.image;
   font = config.stylix.fonts.serif.name;
 in
 {
-  options.${namespace}.programs.gui.hyprlock = with types; {
-    enable = mkBoolOpt false "Enable programs.gui.hyprlock";
+  options.${namespace}.desktop.utils.hyprlock = with types; {
+    enable = mkBoolOpt false "Enable desktop.utils.hyprlock";
   };
 
   config = mkIf cfg.enable {

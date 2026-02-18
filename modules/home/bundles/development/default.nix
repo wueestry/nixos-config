@@ -24,13 +24,6 @@ in
       devenv
       nodePackages.prettier
       gnumake
-      zed-editor
     ];
-
-    programs.direnv = {
-      enable = true;
-      enableZshIntegration = true; # see note on other shells below
-      nix-direnv.enable = true;
-    };
   };
 }

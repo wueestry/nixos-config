@@ -38,16 +38,23 @@ in
       desktop.hyprland = enabled;
       programs = {
         gui = {
-          ags = disabled;
-          dolphin = disabled;
-          hypridle = enabled;
-          hyprlock = enabled;
-          hyprpanel = disabled;
-          hyprpaper = enabled;
           rofi = enabled;
-          waybar = enabled;
+
+          # Disabled packages
           walker = disabled;
+          dolphin = disabled;
         };
+      };
+      desktop.utils = {
+        hypridle = enabled;
+        hyprlock = enabled;
+        hyprpaper = enabled;
+        waybar = disabled;
+        noctalia-shell = enabled;
+
+        # Disabled packages
+        ags = disabled;
+        hyprpanel = disabled;
       };
     };
   };

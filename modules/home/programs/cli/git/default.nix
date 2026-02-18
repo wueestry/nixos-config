@@ -20,15 +20,20 @@ in
   config = mkIf cfg.enable {
     programs.git = {
       enable = true;
-      delta = enabled;
-      extraConfig = {
+      settings = {
         pull.rebase = true;
         init.defaultBranch = "main";
         rebase.autoStash = true;
+
+        user = {
+          email = cfg.useremail;
+          name = cfg.username;
+        };
       };
       lfs = enabled;
-      userEmail = cfg.useremail;
-      userName = cfg.username;
+    };
+    programs.delta = {
+      enable = true;
     };
   };
 }

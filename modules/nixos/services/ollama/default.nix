@@ -19,8 +19,8 @@ in
 
   config = mkIf cfg.enable {
     sops.secrets = {
-      litellm-master-key = {};
-      litellm-salt-key = {};
+      litellm-master-key = { };
+      litellm-salt-key = { };
     };
     services = {
       ollama = {
@@ -45,8 +45,8 @@ in
         port = 11111;
         host = "0.0.0.0";
         settings.environment_variables = {
-          LITELLM_MASTER_KEY="$(cat ${config.sops.secrets.litellm-master-key.path})";
-          LITELLM_SALT_KEY="$(cat ${config.sops.secrets.litellm-salt-key.path})";
+          LITELLM_MASTER_KEY = "$(cat ${config.sops.secrets.litellm-master-key.path})";
+          LITELLM_SALT_KEY = "$(cat ${config.sops.secrets.litellm-salt-key.path})";
         };
       };
     };

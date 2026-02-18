@@ -9,11 +9,11 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.${namespace}.programs.gui.hypridle;
+  cfg = config.${namespace}.desktop.utils.hypridle;
 in
 {
-  options.${namespace}.programs.gui.hypridle = with types; {
-    enable = mkBoolOpt false "Enable programs.gui.hypridle";
+  options.${namespace}.desktop.utils.hypridle = with types; {
+    enable = mkBoolOpt false "Enable desktop.utils.hypridle";
   };
 
   config = mkIf cfg.enable {

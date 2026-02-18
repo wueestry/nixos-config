@@ -42,15 +42,14 @@ in
       dataDir = "/var/lib/firefly-iii";
     };
 
-    services.nginx.virtualHosts.${config.services.home-automation.firefly-iii.virtualHost} =
-      {
-        enableACME = false;
-        listen = [
-          {
-            addr = "0.0.0.0";
-            port = 9080;
-          }
-        ];
-      };
+    services.nginx.virtualHosts.${config.services.home-automation.firefly-iii.virtualHost} = {
+      enableACME = false;
+      listen = [
+        {
+          addr = "0.0.0.0";
+          port = 9080;
+        }
+      ];
+    };
   };
 }

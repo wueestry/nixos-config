@@ -55,7 +55,6 @@ in
       enable = true;
       xwayland.enable = true;
       systemd.enable = true;
-      #package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
       settings = {
         "$mod" = "SUPER";
@@ -67,7 +66,8 @@ in
         ];
 
         exec = [
-          "pkill -SIGUSR2 waybar || waybar"
+          # "pkill -SIGUSR2 waybar || waybar"
+          "noctalia-shell kill || noctalia-shell"
         ];
 
         cursor = {
@@ -104,7 +104,7 @@ in
         };
 
         gestures = {
-          workspace_swipe = true;
+          workspace_swipe_touch = true;
         };
 
         misc = {
@@ -126,7 +126,7 @@ in
 
           touchpad = {
             natural_scroll = true;
-            #clickfinger_behavior = true;
+            clickfinger_behavior = true;
             tap-to-click = true;
           };
         };
