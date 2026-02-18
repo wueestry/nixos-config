@@ -25,40 +25,38 @@ in
       tldr
       wget
 
-      # Video/Audio
-      celluloid
-      loupe
-
       # File Management
       unrar
       unzip
       zip
 
-      bitwarden
       fastfetch
 
       # Config formatting
       nixfmt-rfc-style
     ];
-    zeus = {
+    olympus = {
       bundles.shell = enabled;
       config = {
         apps = enabled;
       };
-      misc = {
-        gtk = disabled; # Done by stylix
-        qt = disabled; # Done by stylix
-        scripts = enabled;
+      gui = {
+        gtk = disabled;
+        qt = disabled;
       };
+      utilities = enabled;
       programs = {
-        brave = enabled;
-        kitty = enabled;
-        librewolf = disabled;
-        lazygit = enabled;
-        neovim = enabled;
-        stylix = enabled;
-        tmux = enabled;
-        zen = enabled;
+        cli = {
+          # Browsers moved to Flatpak
+          lazygit = enabled;
+          neovim = enabled;
+          tmux = enabled;
+        };
+        gui = {
+          stylix = enabled;
+          kitty = enabled;
+          # Browsers moved to Flatpak
+        };
       };
     };
   };

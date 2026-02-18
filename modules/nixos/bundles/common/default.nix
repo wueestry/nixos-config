@@ -12,7 +12,7 @@ with lib.${namespace};
 let
   cfg = config.${namespace}.bundles.common;
   unstable = import inputs.unstable {
-    inherit (pkgs) system;  # reuse system type from pkgs
+    inherit (pkgs) system; # reuse system type from pkgs
     config.allowUnfree = true;
   };
 in
@@ -22,9 +22,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = (with pkgs;[
-      unstable.winboat
-    ]);
     services = {
       udisks2.enable = true; # Required for e-reader connections to calibre
       gvfs.enable = true;
@@ -33,7 +30,7 @@ in
         excludePackages = [ pkgs.xterm ];
       };
     };
-    zeus = {
+    olympus = {
       config.nix = enabled;
 
       hardware = {
@@ -42,12 +39,12 @@ in
       };
 
       programs = {
-        sops = enabled;
+        security.sops = enabled;
       };
 
       services = {
         printing = enabled;
-        tailscale = enabled;
+        network.tailscale = enabled;
       };
 
       system = {

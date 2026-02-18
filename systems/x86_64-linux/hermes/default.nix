@@ -21,7 +21,7 @@ with lib.${namespace};
   boot.swraid.enable = true;
   networking.firewall.enable = false;
 
-  zeus = {
+  olympus = {
     config = {
       user = {
         name = "wueestry";
@@ -39,10 +39,12 @@ with lib.${namespace};
     };
     hardware.networking = enabled;
     services = {
-      ssh = enabled;
-      tailscale = enabled;
+      network = {
+        ssh = enabled;
+        tailscale = enabled;
+      };
 
-      immich = enabled;
+      home-automation.immich = enabled;
     };
     system = {
       boot.systemd-boot = enabled;
@@ -50,7 +52,7 @@ with lib.${namespace};
       locale = enabled;
     };
     programs = {
-      sops = enabled;
+      security.sops = enabled;
     };
   };
 

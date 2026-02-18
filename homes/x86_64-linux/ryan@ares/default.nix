@@ -9,7 +9,7 @@ with lib;
 with lib.${namespace};
 {
   snowfallorg.user.enable = true;
-  zeus = {
+  olympus = {
     bundles = {
       common = enabled;
       desktop.hyprland = enabled;
@@ -18,16 +18,14 @@ with lib.${namespace};
     };
 
     programs = {
-      git = {
-        enable = true;
-        username = "Ryan Wüest";
+      cli = {
+        git = {
+          enable = true;
+          username = "Ryan Wüest";
+        };
       };
-      freetube = enabled;
-      spotify = enabled;
     };
-    misc = {
-      xdg = enabled;
-    };
+    config.xdg = enabled;
   };
 
   # This value determines the Home Manager release that your

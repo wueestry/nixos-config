@@ -32,7 +32,7 @@ let
         };
       }
       ''
-        local target="$out/share/zeus-icons/user/${cfg.name}"
+        local target="$out/share/olympus-icons/user/${cfg.name}"
         mkdir -p "$target"
 
         cp ${cfg.icon} "$target/${cfg.icon.fileName}"

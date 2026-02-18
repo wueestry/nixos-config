@@ -13,7 +13,7 @@ with lib.${namespace};
 
   boot.swraid.enable = true;
 
-  zeus = {
+  olympus = {
     config = {
       user = {
         name = "wueestry";
@@ -31,31 +31,43 @@ with lib.${namespace};
     };
     hardware = {
       cuda = enabled;
-      nvidia = enabled;
+      gpu.nvidia = enabled;
     };
     services = {
-      ssh = enabled;
-      tailscale = enabled;
-      virtualisation = enabled;
-      docker = {
-        garmin-grafana = disabled;
+      network = {
+        ssh = enabled;
+        tailscale = enabled;
+      };
+      virtualization = {
+        virtualisation = enabled;
+        docker = {
+          garmin-grafana = disabled;
+        };
       };
 
-      immich = enabled;
-      mealie = enabled;
-      jellyfin = disabled;
-      stirling-pdf = enabled;
-      firefly-iii = enabled;
-      nextcloud = enabled;
-      audiobookshelf = enabled;
-      calibre = enabled;
-      ollama = enabled;
-      navidrome = enabled;
-      syncthing = enabled;
-      grafana = disabled;
-      readeck = enabled;
+      media = {
+        audiobookshelf = enabled;
+        jellyfin = disabled;
+        navidrome = enabled;
+        nextcloud = enabled;
+      };
 
-      homepage-dashboard = enabled;
+      home-automation = {
+        firefly-iii = enabled;
+        immich = enabled;
+        mealie = enabled;
+        readeck = enabled;
+      };
+
+      monitoring = {
+        grafana = disabled;
+      };
+
+      network.syncthing = enabled;
+      network.stirling-pdf = enabled;
+      media.calibre = enabled;
+      media.ollama = enabled;
+      home-automation.homepage-dashboard = enabled;
     };
     system = {
       boot.systemd-boot = enabled;
@@ -63,8 +75,8 @@ with lib.${namespace};
       locale = enabled;
     };
     programs = {
-      sops = enabled;
-      nh = enabled;
+      security.sops = enabled;
+      system.nh = enabled;
     };
   };
 

@@ -24,7 +24,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    zeus.desktop.hyprland = {
+    olympus.desktop.hyprland = {
       animations = enabled;
       keybindings = enabled;
     };
@@ -32,7 +32,7 @@ in
       qt5.qtwayland
       qt6.qtwayland
       libsForQt5.qt5ct
-      qt6ct
+      qt6Packages.qt6ct
       hyprshot
       hyprpicker
       swappy

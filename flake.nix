@@ -41,12 +41,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    # Hyprswitch
-    # hyprswitch.url = "github:h3rmt/hyprswitch/release";
-
     # Apple font
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
 
@@ -56,8 +50,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+    # Declarative Flatpak management
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -71,11 +66,11 @@
 
         snowfall = {
           meta = {
-            name = "zeus";
-            title = "NixOS config nicknamed Zeus";
+            name = "olympus";
+            title = "NixOS config nicknamed Olympus";
           };
 
-          namespace = "zeus";
+          namespace = "olympus";
         };
       };
     in
@@ -90,7 +85,9 @@
 
       overlays = with inputs; [ ];
 
-      systems.modules.nixos = with inputs; [];
+      systems.modules.nixos = with inputs; [
+        nix-flatpak.nixosModules.nix-flatpak
+      ];
 
       systems.hosts.athena.modules = with inputs; [
         nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia
