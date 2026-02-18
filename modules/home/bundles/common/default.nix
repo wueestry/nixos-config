@@ -25,10 +25,6 @@ in
       tldr
       wget
 
-      # Video/Audio
-      celluloid
-      loupe
-
       # File Management
       unrar
       unzip
@@ -49,18 +45,23 @@ in
         qt = disabled;
       };
       utilities = enabled;
+      programs.flatpak = {
+        brave = enabled;
+        librewolf = enabled;
+        zen = enabled;
+        spotify = enabled;
+      };
       programs = {
         cli = {
-          brave = enabled;
+          # Browsers moved to Flatpak
           kitty = enabled;
-          librewolf = disabled;
           lazygit = enabled;
           neovim = enabled;
         };
         gui = {
           stylix = enabled;
           tmux = enabled;
-          zen = enabled;
+          # Browsers moved to Flatpak
         };
       };
     };

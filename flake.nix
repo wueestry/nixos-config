@@ -60,6 +60,12 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Declarative Flatpak management
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -90,7 +96,9 @@
 
       overlays = with inputs; [ ];
 
-      systems.modules.nixos = with inputs; [ ];
+      systems.modules.nixos = with inputs; [
+        nix-flatpak.nixosModules.nix-flatpak
+      ];
 
       systems.hosts.athena.modules = with inputs; [
         nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia

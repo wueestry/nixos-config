@@ -35,6 +35,7 @@ with lib.${namespace};
       gpu.nvidia = enabled;
     };
     programs = {
+      flatpak = enabled;
       gaming.steam = enabled;
       security.sops = enabled;
       system = {

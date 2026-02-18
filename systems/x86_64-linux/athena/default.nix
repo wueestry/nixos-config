@@ -41,6 +41,7 @@ with lib.${namespace};
       cuda = enabled;
     };
     programs = {
+      flatpak = enabled;
       system = {
         nh = enabled;
         nix-ld = enabled;
