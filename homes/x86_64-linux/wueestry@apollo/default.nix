@@ -9,19 +9,21 @@ with lib;
 with lib.${namespace};
 {
   snowfallorg.user.enable = true;
-  zeus = {
+  olympus = {
     bundles = {
       development = enabled;
     };
     programs = {
-      eza = enabled;
-      git = {
-        enable = true;
-        username = "Ryan Wüest";
+      cli = {
+        eza = enabled;
+        git = {
+          enable = true;
+          username = "Ryan Wüest";
+        };
+        kitty = enabled;
+        neovim = enabled;
+        zsh = enabled;
       };
-      kitty = enabled;
-      neovim = enabled;
-      zsh = enabled;
     };
   };
 

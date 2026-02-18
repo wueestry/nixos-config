@@ -11,7 +11,7 @@ with lib.${namespace};
 
   networking.hostName = "ares";
 
-  zeus = {
+  olympus = {
     config = {
       user = {
         name = "ryan";
@@ -32,16 +32,18 @@ with lib.${namespace};
     hardware = {
       bluetooth = enabled;
       cuda = enabled;
-      nvidia = enabled;
+      gpu.nvidia = enabled;
     };
     programs = {
-      steam = enabled;
-      sops = enabled;
-      nh = enabled;
-      nix-ld = enabled;
+      gaming.steam = enabled;
+      security.sops = enabled;
+      system = {
+        nh = enabled;
+        nix-ld = enabled;
+      };
     };
     services = {
-      virtualisation = enabled;
+      virtualization.virtualisation = enabled;
     };
     system = {
       boot.grub = enabled;

@@ -18,7 +18,7 @@ with lib.${namespace};
     HandleLidSwitchExternalPower=ignore
   '';
 
-  zeus = {
+  olympus = {
     config = {
       user = {
         name = "ryan";
@@ -41,13 +41,21 @@ with lib.${namespace};
       cuda = enabled;
     };
     programs = {
-      nh = enabled;
-      nix-ld = enabled;
-      steam = disabled;
+      system = {
+        nh = enabled;
+        nix-ld = enabled;
+      };
+      gaming = {
+        steam = disabled;
+      };
     };
     services = {
-      virtualisation = enabled;
-      syncthing-client = enabled;
+      virtualization = {
+        virtualisation = enabled;
+      };
+      network = {
+        syncthing-client = enabled;
+      };
     };
     system = {
       boot.systemd-boot = enabled;

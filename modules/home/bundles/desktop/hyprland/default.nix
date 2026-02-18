@@ -34,18 +34,20 @@ in
       wl-gammactl
     ];
 
-    zeus = {
+    olympus = {
       desktop.hyprland = enabled;
       programs = {
-        ags = disabled;
-        dolphin = disabled;
-        hypridle = enabled;
-        hyprlock = enabled;
-        hyprpanel = disabled;
-        hyprpaper = enabled;
-        rofi = enabled;
-        waybar = enabled;
-        walker = disabled;
+        gui = {
+          ags = disabled;
+          dolphin = disabled;
+          hypridle = enabled;
+          hyprlock = enabled;
+          hyprpanel = disabled;
+          hyprpaper = enabled;
+          rofi = enabled;
+          waybar = enabled;
+          walker = disabled;
+        };
       };
     };
   };

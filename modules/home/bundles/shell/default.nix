@@ -18,15 +18,17 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [ yazi ];
-    zeus = {
+    olympus = {
       programs = {
-        atuin = enabled;
-        eza = enabled;
-        fzf = enabled;
-        powerlevel10k = disabled;
-        starship = enabled;
-        zoxide = enabled;
-        zsh = enabled;
+        cli = {
+          atuin = enabled;
+          eza = enabled;
+          fzf = enabled;
+          powerlevel10k = disabled;
+          starship = enabled;
+          zoxide = enabled;
+          zsh = enabled;
+        };
       };
     };
   };

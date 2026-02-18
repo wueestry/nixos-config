@@ -12,7 +12,7 @@ with lib.${namespace};
 let
   cfg = config.${namespace}.bundles.common;
   unstable = import inputs.unstable {
-    inherit (pkgs) system;  # reuse system type from pkgs
+    inherit (pkgs) system; # reuse system type from pkgs
     config.allowUnfree = true;
   };
 in
@@ -30,7 +30,7 @@ in
         excludePackages = [ pkgs.xterm ];
       };
     };
-    zeus = {
+    olympus = {
       config.nix = enabled;
 
       hardware = {
@@ -39,12 +39,12 @@ in
       };
 
       programs = {
-        sops = enabled;
+        security.sops = enabled;
       };
 
       services = {
         printing = enabled;
-        tailscale = enabled;
+        network.tailscale = enabled;
       };
 
       system = {
