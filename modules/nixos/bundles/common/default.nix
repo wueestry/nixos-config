@@ -22,9 +22,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = (with pkgs;[
-      unstable.winboat
-    ]);
     services = {
       udisks2.enable = true; # Required for e-reader connections to calibre
       gvfs.enable = true;

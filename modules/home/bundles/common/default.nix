@@ -34,7 +34,6 @@ in
       unzip
       zip
 
-      bitwarden
       fastfetch
 
       # Config formatting

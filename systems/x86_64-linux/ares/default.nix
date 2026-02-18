@@ -41,8 +41,6 @@ with lib.${namespace};
       nix-ld = enabled;
     };
     services = {
-      ollama = disabled;
-      syncthing-client = enabled;
       virtualisation = enabled;
     };
     system = {
