@@ -13,6 +13,3 @@ options.json
 
 # Direnv
 .direnv
-
-# Ags
-modules/nixos/desktop/addons/ags/bar/src/types

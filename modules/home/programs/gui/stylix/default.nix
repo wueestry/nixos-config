@@ -24,7 +24,6 @@ in
       enable = true;
 
       autoEnable = true;
-      #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
       base16Scheme = ./base16/catppuccin/custom.yaml;
       cursor = {
         package = pkgs.bibata-cursors;
@@ -67,12 +66,6 @@ in
       image = ./wallpapers/sports.png;
 
       polarity = "dark";
-      targets = {
-        kitty.enable = false;
-        waybar.enable = false;
-        hyprlock.enable = false;
-        neovim.enable = false;
-      };
     };
   };
 }

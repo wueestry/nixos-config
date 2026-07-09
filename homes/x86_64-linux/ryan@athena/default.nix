@@ -10,21 +10,9 @@ with lib.${namespace};
 {
   snowfallorg.user.enable = true;
   olympus = {
-    bundles = {
-      desktop.hyprland = enabled;
-      office = enabled;
-      development = enabled;
-    };
-
-    programs = {
-      cli = {
-        git = {
-          enable = true;
-          username = "Ryan Wüest";
-        };
-      };
-    };
     config.xdg = enabled;
+    desktop.niri = enabled;
+    programs.gui.stylix = enabled;
   };
 
   # This value determines the Home Manager release that your

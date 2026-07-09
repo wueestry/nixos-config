@@ -2,7 +2,7 @@
   description = "";
 
   inputs = {
-    # NixPkgs (nixos-24.05)
+    # NixPkgs (nixos-25.11)
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     # NixPkgs Unstable (nixos-unstable)
@@ -10,10 +10,7 @@
 
     ### Additional Inputs ###
 
-    # ags
-    ags.url = "github:Aylur/ags";
-
-    # Home Manager (release-24.05)
+    # Home Manager (release-25.11)
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,9 +31,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Niri compositor (Nix-native declarative config)
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Noctalia (Quickshell based desktop shell for niri)
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Stylix
     stylix = {
-      # url = "github:danth/stylix";
       url = "github:danth/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -53,11 +61,6 @@
     # Declarative Flatpak management
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -92,6 +95,7 @@
 
       systems.modules.nixos = with inputs; [
         nix-flatpak.nixosModules.nix-flatpak
+        niri-flake.nixosModules.niri
       ];
 
       systems.hosts.athena.modules = with inputs; [

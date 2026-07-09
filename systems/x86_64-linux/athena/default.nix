@@ -35,30 +35,16 @@ with lib.${namespace};
     bundles = {
       common = enabled;
     };
-    desktop.hyprland = enabled;
+    desktop.niri = enabled;
     hardware = {
       bluetooth = enabled;
       cuda = enabled;
+      gpu.nvidia = enabled;
     };
     programs = {
-      flatpak = {
-        core = enabled;
-        brave = enabled;
-      };
       system = {
         nh = enabled;
         nix-ld = enabled;
-      };
-      gaming = {
-        steam = disabled;
-      };
-    };
-    services = {
-      virtualization = {
-        virtualisation = enabled;
-      };
-      network = {
-        syncthing-client = enabled;
       };
     };
     system = {
@@ -73,9 +59,10 @@ with lib.${namespace};
       size = 16 * 1024;
     }
   ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # on your system were taken. It's perfectly fine and recommended to leave
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).

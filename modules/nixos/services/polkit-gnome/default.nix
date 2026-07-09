@@ -13,7 +13,7 @@ let
 in
 {
   options.${namespace}.services.polkit-gnome = with types; {
-    enable = mkBoolOpt false "Enable gnome polkit";
+    enable = mkBoolOpt false "Enable gnome polkit authentication agent";
   };
 
   config = mkIf cfg.enable {
@@ -25,11 +25,23 @@ in
     programs.seahorse.enable = true;
 
     security = {
-      pam.services.gdm.enableGnomeKeyring = true;
       polkit.enable = true;
-      #pam.services.ags = {};
     };
 
     services.gnome.gnome-keyring.enable = true;
+
+    systemd.user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
   };
 }

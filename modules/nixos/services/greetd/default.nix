@@ -10,23 +10,19 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.services.greetd;
-  name = "ryan";
 in
 {
   options.${namespace}.services.greetd = with types; {
-    enable = mkBoolOpt false "Enable greetd";
+    enable = mkBoolOpt false "Enable greetd with the regreet graphical greeter";
   };
 
   config = mkIf cfg.enable {
-    services.greetd = {
+    # `programs.regreet` wires up services.greetd + cage for us.
+    programs.regreet = {
       enable = true;
-      settings.default_session.command = pkgs.writeShellScript "greeter" ''
-        export XKB_DEFAULT_LAYOUT=${config.services.xserver.xkb.layout}
-        export XCURSOR_THEME=Qogir
-        ${name}/bin/greeter
-      '';
+      cageArgs = [
+        "-s"
+      ];
     };
-
-    systemd.tmpfiles.rules = [ "d '/var/cache/greeter' - greeter greeter - -" ];
   };
 }
