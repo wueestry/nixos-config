@@ -66,6 +66,13 @@ in
       image = ./wallpapers/sports.png;
 
       polarity = "dark";
+
+      # kitty keeps its own explicit Catppuccin-Mocha themeFile, and neovim's
+      # colorscheme is managed on its own terms - avoid stylix fighting either.
+      targets = {
+        kitty.enable = false;
+        neovim.enable = false;
+      };
     };
   };
 }

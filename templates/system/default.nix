@@ -1,32 +1,39 @@
 {
-  config,
   pkgs,
+  lib,
+  namespace,
   ...
 }:
+with lib;
+with lib.${namespace};
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware.nix ];
 
-  # Enable Bootloader (EFI or BIOS)
-  #system.boot.efi.enable = true;
-  #system.boot.bios.enable = true;
+  networking.hostName = "changeme";
 
-  # Better battery life on laptops
-  # system.battery.enable = true;
+  olympus = {
+    config.user = {
+      name = "changeme";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "audio"
+        "video"
+      ];
+    };
 
-  # suites.desktop.enable = true;
-  # suites.development.enable = true;
+    bundles.common = enabled;
 
-  # suites.server.enable = true;
+    # Uncomment to bring up the niri + noctalia desktop on this host.
+    # desktop.niri = enabled;
 
-  # Nvidia Drivers
-  # hardware.nvidia.enable = true;
-
-  # Add packages (custom for ones in these dotfiles)
-  # environment.systemPackages = with pkgs; [
-  #   custom.package
-  # ];
+    system = {
+      boot.systemd-boot = enabled;
+      xkb.xkb-us = enabled;
+    };
+  };
 
   # ======================== DO NOT CHANGE THIS ========================
-  system.stateVersion = "22.11";
+  system.stateVersion = "24.05";
   # ======================== DO NOT CHANGE THIS ========================
 }

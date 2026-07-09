@@ -10,18 +10,33 @@ with lib.${namespace};
 {
   snowfallorg.user.enable = true;
   olympus = {
-    config.xdg = enabled;
-    desktop.niri = enabled;
-    bundles.shell = enabled;
+    bundles = {
+      shell = enabled;
+    };
+    desktop.niri = {
+      enable = true;
+      browserCommand = [
+        "flatpak"
+        "run"
+        "com.zen_browser.zen"
+      ];
+    };
+
     programs = {
+      cli = {
+        git = {
+          enable = true;
+          username = "Ryan Wüest";
+        };
+      };
       gui = {
         stylix = enabled;
         nextcloud-client = enabled;
       };
-      cli.git = {
-        enable = true;
-        username = "Ryan Wüest";
-      };
+    };
+    config = {
+      xdg = enabled;
+      apps = enabled;
     };
   };
 

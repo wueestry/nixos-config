@@ -1,26 +1,16 @@
 <h1 align="center"> <img src="./.github/assets/flake.webp" width="250px"/></h1>
 <h2 align="center">My NixOS flake made with <a href="https://github.com/snowfallorg/lib">snowfall</a>.</h2>
 
-<img src="https://github.com/wueestry/nixos-config/blob/master/.github/assets/desktop.png" width="1000" />
+Desktop: [niri](https://github.com/niri-wm/niri) (via [niri-flake](https://github.com/sodiboo/niri-flake)) + [noctalia](https://github.com/noctalia-dev/noctalia), themed with [Stylix](https://github.com/danth/stylix).
+
+<!-- TODO: swap in a current desktop screenshot, the old one showed the retired Hyprland setup -->
 
 ## Systems
 
-- *Apollo*: Homeserver
-    - Running the following services on a tailscale network
-        - Audiobookshelf
-        - Calibre / Calibre Web
-        - Firefly III
-        - Immich
-        - Jellyfin
-        - Nextcloud
-        - Mealie
-        - Wanderer
-
-- *Ares*: Workstation (AMD Ryzen 7 5800X, NVIDIA RTX 3070)
-    - Dual boot with Windows
-
 - *Athena*: Lenovo Yoga Pro 7X Slim Nvidia
     - Used for development
+
+- *Ares*: Workstation (AMD Ryzen 7 5800X, NVIDIA RTX 3070)
 
 ## Installation
 1. Enable flakes in nixos. By adding the following lines to `/etc/nixos/config.nix`.

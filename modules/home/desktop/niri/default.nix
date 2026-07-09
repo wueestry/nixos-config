@@ -45,6 +45,7 @@ in
 
   options.${namespace}.desktop.niri = with types; {
     enable = mkBoolOpt false "Enable niri";
+    browserCommand = mkOpt (nullOr (listOf str)) null "Argv used to launch the default browser via Mod+B (host-specific: browser choice/packaging differs per host).";
   };
 
   config = mkIf cfg.enable {
@@ -144,9 +145,11 @@ in
 
       binds = mkMerge [
         workspace-binds
+        (mkIf (cfg.browserCommand != null) {
+          "Mod+B".action.spawn = cfg.browserCommand;
+        })
         {
           "Mod+Return".action.spawn = "kitty";
-          "Mod+B".action.spawn = "librewolf";
           "Mod+E".action.spawn = "nautilus";
 
           "Mod+Space".action.spawn = [

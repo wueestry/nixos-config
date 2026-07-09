@@ -9,14 +9,7 @@ with lib.${namespace};
 {
   imports = [ ./hardware.nix ];
 
-  networking.hostName = "athena";
-
-  # logind
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-    HandleLidSwitch=suspend
-    HandleLidSwitchExternalPower=ignore
-  '';
+  networking.hostName = "ares";
 
   olympus = {
     config = {
@@ -42,6 +35,13 @@ with lib.${namespace};
       gpu.nvidia = enabled;
     };
     programs = {
+      flatpak = {
+        core = enabled;
+        brave = enabled;
+        zen = enabled;
+        obsidian = enabled;
+      };
+      security.sops = enabled;
       system = {
         nh = enabled;
         nix-ld = enabled;
@@ -51,18 +51,14 @@ with lib.${namespace};
         nautilus = enabled;
       };
     };
+    services = {
+      virtualisation.virtualisation = enabled;
+    };
     system = {
       boot.systemd-boot = enabled;
-      xkb.xkb-ch = enabled;
+      xkb.xkb-us = enabled;
     };
   };
-
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024;
-    }
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
