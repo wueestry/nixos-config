@@ -1,0 +1,18 @@
+# Replace both placeholder keys before encrypting anything:
+#
+# Host key (derived from athena's SSH host key, once installed):
+#   nix run github:Mic92/ssh-to-age -- -i /etc/ssh/ssh_host_ed25519_key.pub
+#
+# Your personal key, so you can edit secrets from your own machine:
+#   ssh-to-age -i ~/.ssh/id_ed25519.pub
+#   # or generate a dedicated one: age-keygen -o ~/.config/sops/age/keys.txt
+keys:
+  - &host_athena age1REPLACE_WITH_ATHENA_HOST_PUBLIC_KEY
+  - &user_ryan age1REPLACE_WITH_YOUR_PERSONAL_PUBLIC_KEY
+
+creation_rules:
+  - path_regex: secrets/athena/.*\.yaml$
+    key_groups:
+      - age:
+          - *host_athena
+          - *user_ryan
