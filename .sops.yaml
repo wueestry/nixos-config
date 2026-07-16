@@ -1,7 +1,0 @@
-keys:
-  - &ares age17mmwju752829yjwz4335lfe0chyuskcczn78a8xvc8m8f3mj83fsapdshg
-creation_rules:
-  - path_regex: secrets/secrets.yaml$
-    key_groups:
-    - age:
-      - *ares
