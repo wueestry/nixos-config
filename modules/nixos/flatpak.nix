@@ -13,7 +13,9 @@
     ];
 
     packages = [
-      "org.mozilla.firefox"
+      "app.zen_browser.zen"
+      "com.brave.Browser"
+      "md.obsidian.Obsidian"
     ];
   };
 

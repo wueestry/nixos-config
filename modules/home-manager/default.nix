@@ -1,9 +1,10 @@
 {
   imports = [
+    ./cli-tools.nix
     ./shell.nix
     ./git.nix
+    ./kitty.nix
     ./neovim.nix
-    ./niri.nix
     ./noctalia.nix
     ./sops-tools.nix
   ];
