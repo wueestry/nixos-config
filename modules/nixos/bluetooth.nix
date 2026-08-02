@@ -4,7 +4,7 @@
     powerOnBoot = true;
   };
 
-  # Fallback tray applet/manager in case noctalia-shell's own bluetooth
+  # Fallback tray applet/manager in case DMS's own bluetooth
   # widget doesn't cover what you need.
-  services.blueman.enable = true;
+  # services.blueman.enable = true;
 }

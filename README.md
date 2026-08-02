@@ -47,15 +47,16 @@ step.
 `nixpkgs` tracks the `nixos-26.05` stable channel; `nixpkgs-unstable` is
 a second input available for pulling individual packages ahead of stable
 (not currently wired into any module — add an overlay like the removed
-`unstable.nix` example if/when you need it). `noctalia` deliberately does
-*not* follow the pinned `nixpkgs`, since it needs a newer `quickshell`
-than stable ships.
+`unstable.nix` example if/when you need it). `dms` and `dgop` deliberately
+do *not* follow the pinned `nixpkgs`, since they need a newer
+`quickshell`/toolchain than stable ships.
 
 ## `modules/nixos/`
 
 | File | What it does |
 |---|---|
 | `boot.nix` | systemd-boot bootloader |
+| `plymouth.nix` | graphical boot splash + themed LUKS decryption prompt |
 | `networking.nix` | NetworkManager, redistributable wifi/bluetooth firmware |
 | `audio.nix` | pipewire (+ alsa/pulse compat) |
 | `bluetooth.nix` | Bluetooth stack + blueman applet |
@@ -77,8 +78,8 @@ that actually works today.
 | `shell.nix` | zsh with autosuggestions/syntax highlighting |
 | `git.nix` | git identity |
 | `neovim.nix` | neovim as default editor |
-| `niri.nix` | per-user niri settings (currently just spawns `noctalia-shell`) |
-| `noctalia.nix` | enables noctalia-shell (the desktop shell running on niri) |
+| `niri.nix` | per-user niri settings (currently Swiss German keyboard layout) |
+| `dank-material-shell.nix` | enables DankMaterialShell (the desktop shell running on niri) |
 | `sops-tools.nix` | `sops`/`age`/`ssh-to-age` CLIs for editing secrets |
 
 ## MicroVMs (`vms/`)

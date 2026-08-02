@@ -10,11 +10,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     sops-nix = {
@@ -22,15 +17,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Noctalia (via quickshell) tracks bleeding-edge nixpkgs internally;
-    # deliberately NOT following our stable nixpkgs here to avoid breaking
-    # its build against a quickshell version it doesn't expect.
-    noctalia.url = "github:noctalia-dev/noctalia/legacy-v4";
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
@@ -40,7 +35,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, nix-flatpak, sops-nix, niri, noctalia, nixos-hardware, microvm, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nix-flatpak, sops-nix, dms, dgop, nixos-hardware, microvm, ... }:
     let
       lib = import ./lib inputs;
     in
@@ -48,7 +43,6 @@
       nixosConfigurations = {
         athena = lib.mkHost {
           hostname = "athena";
-          users = [ "ryan" ];
         };
 
         # Template MicroVM — see vms/example/. Copy that directory to add
