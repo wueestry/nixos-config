@@ -16,6 +16,8 @@
     };
   };
 
+  virtualisation.spiceUSBRedirection.enable = true;
+
   programs.virt-manager.enable = true;
 
   environment.systemPackages = [ pkgs.distrobox ];
@@ -24,4 +26,18 @@
   boot.kernelModules = [ "kvm-amd" ];
 
   users.users.ryan.extraGroups = [ "libvirtd" "kvm" ];
+
+  # Create a systemd service to start the default network on boot
+  systemd.services.libvirt-default-network = {
+    description = "Start libvirt default network";
+    after = [ "libvirtd.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.libvirt}/bin/virsh net-start default";
+      ExecStop = "${pkgs.libvirt}/bin/virsh net-destroy default";
+      User = "root";
+    };
+  };
 }

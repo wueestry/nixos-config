@@ -24,13 +24,30 @@
     ];
   };
 
-  # Force Electron-based Flatpaks to use native Wayland instead of XWayland.
-  # XWayland adds latency and causes Electron apps to crash on niri.
+  # Enable native Wayland for Obsidian so focus works when launched from
+  # layer-shell launchers (like DMS). XWayland fails because xwayland-satellite
+  # needs a focused toplevel to hand focus to a new X11 window — the DMS
+  # launcher is a layer surface, not a toplevel, so focus always fails and
+  # Obsidian exits. Native Wayland handles focus through the compositor directly.
+  # --system is required because the flatpak is installed system-wide.
   system.activationScripts.flatpakOverrides = {
     text = ''
-      ${pkgs.flatpak}/bin/flatpak override --user --socket=wayland \
+      ${pkgs.flatpak}/bin/flatpak override --system \
+        --socket=wayland \
         --env=ELECTRON_OZONE_PLATFORM_HINT=auto \
         md.obsidian.Obsidian || true
+    '';
+    deps = [];
+  };
+
+  # Disable Electron's inner renderer sandbox so zypak doesn't GPF when
+  # launched from a systemd scope (DMS uses systemd-run). The flatpak bwrap
+  # sandbox still isolates the app.
+  system.activationScripts.obsidianFlags = {
+    text = ''
+      FLAGS_DIR="/home/ryan/.var/app/md.obsidian.Obsidian/config/obsidian"
+      mkdir -p "$FLAGS_DIR"
+      echo "--no-sandbox" > "$FLAGS_DIR/user-flags.conf"
     '';
     deps = [];
   };
